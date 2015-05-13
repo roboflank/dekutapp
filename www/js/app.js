@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('looper', ['looper.account','looper.dev','looper.home','looper.login','looper.register','looper.tweet', 'ionic','lbServices','bd.timedistance'])
+angular.module('looper', ['looper.account','looper.dev','looper.home','looper.login','looper.register','looper.tweet', 'ionic','lbServices','bd.timedistance', 'ngCordova'])
 
     /*.run(function ($ionicPlatform) {
      $ionicPlatform.ready(function () {
@@ -18,12 +18,23 @@ angular.module('looper', ['looper.account','looper.dev','looper.home','looper.lo
      });
      })*/
 
-    .run(function (User) {
+    .run(function (User, $ionicPlatform, $rootScope, $location) {
         //Check if User is authenticated
         if (User.getCachedCurrent() == null) {
             User.getCurrent();
         }
+    	//EDIT THESE LINES
+		//Title of the blog
+		$rootScope.TITLE = "Raymond Camden's Blog";
+		//RSS url
+		$rootScope.RSS = "http://www.raymondcamden.com/rss.cfm";
+
+		$rootScope.goHome = function() {
+			$location.path('/entries');
+		};
+    
     })
+
 .controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
   $scope.showMenu = function () {
     $ionicSideMenuDelegate.toggleLeft();
