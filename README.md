@@ -1,3 +1,4 @@
 ## Client
 
-This is the place for your application Ionic front-end files.
+This Branch is for the Apps version but with twitt feature
+
