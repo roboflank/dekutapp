@@ -2,6 +2,9 @@
 
 This Branch is for the Apps version but with twitt feature
 
+##Server
+The server for this app is here https://github.com/denzelwamburu/dekutappserver
+
 ## Getting Started
 One line install
 ```
@@ -25,6 +28,7 @@ Ionic start DekutApp
 ```
 ionic serve
 ```
+
 
 
 ### Other ressources used
