@@ -29,6 +29,8 @@ Ionic start DekutApp
 ionic serve
 ```
 
+-Configure the server to work with the app
+
 
 
 ### Other ressources used
