@@ -47,7 +47,18 @@ angular.module('looper', ['looper.account','looper.dev','looper.home','looper.lo
                 url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
-            })
+            }).
+        state('Entries', {
+				url: '/entries', 
+				controller: 'EntriesCtrl', 
+				templateUrl: 'partials/entries.html',
+			})
+			.state('Entry', {
+				url: '/entry/:index',
+				controller: 'EntryCtrl', 
+				templateUrl: 'partials/entry.html',
+			})
+
         .state('intro', {
                 url: '/intro',
                 templateUrl: 'templates/intro.html'
