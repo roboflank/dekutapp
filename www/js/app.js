@@ -47,8 +47,12 @@ angular.module('looper', ['looper.account','looper.dev','looper.home','looper.lo
                 url: '/login',
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
-            }).
-        state('Entries', {
+            })
+                 .state('news', {
+                url: '/news',
+                templateUrl: 'templates/land-news.html'
+            })
+        .state('Entries', {
 				url: '/entries', 
 				controller: 'EntriesCtrl', 
 				templateUrl: 'partials/entries.html',
@@ -68,6 +72,83 @@ angular.module('looper', ['looper.account','looper.dev','looper.home','looper.lo
                 templateUrl: 'templates/register.html',
                 controller: 'RegisterCtrl'
             })
+        .state('tour', {
+            url: "/tour",
+            abstract: true,
+            templateUrl: "templates/tour.html"
+        })
+.state('tour.home', {
+            url: '',
+            views: {
+                'tour-home': {
+                    templateUrl: 'templates/tour-home.html'
+
+                }
+            }
+        })
+    .state('tour.about', {
+            url: '/about',
+            views: {
+                'tour-about': {
+                    templateUrl: 'templates/tour-about.html'
+
+                }
+            }
+        })
+        .state('tour.map', {
+            url: '/map',
+            views: {
+                'tour-map': {
+                    templateUrl: 'templates/tour-map.html',
+                     controller: 'MapCtrl'
+                  
+
+                }
+            }
+        })
+       .state('tour.facilities', {
+            url: '/facilities',
+            views: {
+                'tour-facilities': {
+                    templateUrl: 'templates/tour-facilities.html'
+
+                }
+            }
+        })
+    //Home after Login
+.state('land', {
+            url: "/land",
+            abstract: true,
+            templateUrl: "templates/land.html"
+        })
+.state('land.home', {
+            url: '',
+            views: {
+                'land-home': {
+                    templateUrl: 'templates/land-home.html'
+
+                }
+            }
+        })
+    .state('land.news', {
+            url: '/news',
+            views: {
+                'land-news': {
+                    templateUrl: 'templates/land-news.html'
+
+                }
+            }
+        })
+ .state('land.notices', {
+            url: '/notices',
+            views: {
+                'land-notices': {
+                    templateUrl: 'templates/land-notices.html'
+
+                }
+            }
+        })
+
             .state('tabs', {
                 url: '/tab',
                 abstract: true,
