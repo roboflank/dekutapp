@@ -1,4 +1,4 @@
-angular.module('looper.login', ['lbServices', 'ionic'])
+angular.module('dekutapp.login', ['lbServices', 'ionic'])
     .controller('LoginCtrl', function ($scope, User, $location, $ionicPopup) {
         if (User.getCachedCurrent()!==null) {
            $location.path('tab/home');

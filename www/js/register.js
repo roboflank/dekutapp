@@ -1,4 +1,4 @@
-angular.module('looper.register', ['lbServices', 'ionic'])
+angular.module('dekutapp.register', ['lbServices', 'ionic'])
     .controller('RegisterCtrl', function ($scope, User, Avatar, $ionicPopup, $location) {
         /**
          * Currently you need to initialiate the variables

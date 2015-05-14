@@ -1,4 +1,4 @@
-angular.module('looper.tweet', ['lbServices', 'ionic'])
+angular.module('dekutapp.tweet', ['lbServices', 'ionic'])
     .controller('TweetCtrl', function ($scope, $location, User, $stateParams, Tweet,Avatar) {
         $scope.currentUser = User.getCurrent();
         $scope.tweet = {};

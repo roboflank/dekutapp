@@ -1,4 +1,4 @@
-angular.module('looper.home', ['lbServices'])
+angular.module('dekutapp.home', ['lbServices'])
 .controller('HomeTabCtrl', function ($scope, $location, User, Tweet, Like, Avatar) {
     $scope.currentUser = User.getCurrent();
     $scope.newTweet = {};
