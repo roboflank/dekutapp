@@ -1,7 +1,7 @@
 <ion-view title="Register" class="ionic">
  <ion-nav-bar class="bar bar-header bar-dark" style="position: static; margin-bottom: 25px;">
    <a href="#/login">
-   <button class="button icon ion-key" href="#/login"></button>
+   <button class="button icon ion-locked" href="#/login"></button>
 </a>
     </ion-nav-bar>
 
@@ -44,12 +44,17 @@
                         <img ng-src="img/avatar/{{i}}.png" ng-click="$parent.avatar.id={{i}}" ng-class="$parent.avatar.id==={{i}} ? 'avatar-active':''"/>
                     </div>
                 </div>
-
+<div class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                    </label>
+                    I read the terms &amp; conditions.
+                </div>
                 <button ng-disabled="!registerForm.$valid || !avatar.id" ng-click="register()"
                         class="button button-full button-flat button-positive icon-left ion-outlet">
                     Register
                 </button>
             </div>
-        </form>
+                    </form>
     </ion-content>
 </ion-view>
