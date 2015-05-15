@@ -4,7 +4,7 @@ angular.module('dekutapp.account', ['lbServices', 'ionic'])
         Tweet.count({ownerId: $scope.currentUser.id})
             .$promise
             .then(function (res) {
-                $scope.currentUser.tweets = res.count - 10;
+                $scope.currentUser.tweets = res.count;
             });
 
         /**
