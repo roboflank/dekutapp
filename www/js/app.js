@@ -55,7 +55,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
         .state('Entries', {
 				url: '/entries', 
 				controller: 'EntriesCtrl', 
-				templateUrl: 'entries.html',
+				templateUrl: 'templates/entries.html',
 			})
 			.state('Entry', {
 				url: '/entry/:index',
