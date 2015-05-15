@@ -60,7 +60,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
 			.state('Entry', {
 				url: '/entry/:index',
 				controller: 'EntryCtrl', 
-				templateUrl: 'entry.html',
+				templateUrl: 'templates/entry.html',
 			})
 
         .state('intro', {
