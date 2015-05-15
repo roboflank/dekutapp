@@ -55,12 +55,12 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
         .state('Entries', {
 				url: '/entries', 
 				controller: 'EntriesCtrl', 
-				templateUrl: 'partials/entries.html',
+				templateUrl: 'entries.html',
 			})
 			.state('Entry', {
 				url: '/entry/:index',
 				controller: 'EntryCtrl', 
-				templateUrl: 'partials/entry.html',
+				templateUrl: 'entry.html',
 			})
 
         .state('intro', {
