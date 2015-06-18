@@ -23,7 +23,7 @@
                 </label>
             </div>
             <div class="padding">
-                <h3>Choose your avatar</h3>
+                <h3>Choose your avatar<small>&nbsp;(Custom Avatars coming soon)</small></h3>
                 <div class="row">
                     <div class="col"  ng-repeat="i in [1,2,3,4]">
                         <img ng-src="img/avatar/{{i}}.png" ng-click="$parent.avatar.id={{i}}" ng-class="$parent.avatar.id==={{i}} ? 'avatar-active':''"/>

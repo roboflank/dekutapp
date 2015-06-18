@@ -52,6 +52,7 @@ ionic serve
 * Adding TimeTable && School Cirriculum for each School/course
 * Feedback page
 * Liking,Favoriting and sharing a news Item.
+* ChatRoom
 
 
 ### Other ressources used
