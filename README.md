@@ -45,8 +45,18 @@ ionic serve
 
 -Configure the server to work with the app
 
+##ToDo
+* Replace Profile Avatar with Custom User images
+* Add User Profile Page
+* Social Authentication
+* Adding TimeTable && School Cirriculum for each School/course
+* Feedback page
+* Liking,Favoriting and sharing a news Item.
 
 
 ### Other ressources used
 - custom time filter for angular https://github.com/B-Sides/angular-timedistance
 - pictures used in this app http://www.deviantart.com/art/Face-Avatars-107881096
+
+
+Feel Free to Contribute :happy:
