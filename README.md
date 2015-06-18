@@ -18,7 +18,8 @@ Secondaries(click for further information):
 * npm (installed together with node.js, usually bundled in it)
 * [bower](http://bower.io)
 * Git 
-
+* [Intel XDK](https://download.xdk.intel.com/xdk/xdk_web_linux64_master_1995.tgz)
+* [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-40.0a2.en-US.linux-x86_64.tar.bz2)
 ## Getting Started
 One line install
 ```
