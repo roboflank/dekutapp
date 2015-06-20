@@ -28,18 +28,18 @@ git clone https://github.com/denzelwamburu/kimathiuniapp.git && cd kimathiuniapp
 
 To Run the app locally, follow the simple steps below:
 
--Clone the repo to your /projectfolder or download the project
+Clone the repo to your /projectfolder or download the project
 ```
 git clone github.com/denzelwamburu/kimathiuniapp.git 
 ```
--Open Your Terminal and start a new Ionic Project
+Open Your Terminal and start a new Ionic Project
 
 ```
 Ionic start DekutApp
 ```
--Copy the downloaded files of this project and paste it to the www folder and override the previous files
+Copy the downloaded files of this project and paste it to the www folder and override the previous files
 <br/>
--Running the app on your browser simply append
+Running the app on your browser simply append
 ```
 ionic serve
 ```
@@ -48,7 +48,7 @@ ionic serve
 
 ##ToDo
 * Replace Profile Avatar with Custom User images
-* Add User Profile Page
+* Add User Profile Page.
 * Social Authentication
 * Adding TimeTable && School Cirriculum for each School/course
 * Feedback page
@@ -57,8 +57,11 @@ ionic serve
 * Add Hashtag and @ mentions, configure trends
 * Notices & Events Happening
 * Loading bar when Http request is being processed: In SignUp & Login, Commenting.
+* Offline Detector - Give error message when phone is offline.
+* Update Profile Feature -  Update username, avatar and Password
 
-
+##E-Learning Portal
+E-Learning portal  ``` COMING SOON ```
 
 ### Other ressources used
 - custom time filter for angular https://github.com/B-Sides/angular-timedistance
