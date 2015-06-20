@@ -1,4 +1,4 @@
-<ion-view title="Register" class="ionic">
+<ion-view title="Register For DekutApp" class="ionic">
  <ion-nav-bar class="bar bar-header bar-dark" style="position: static; margin-bottom: 25px;">
    <a href="#/login">
    <button class="button icon ion-locked" href="#/login"></button>
@@ -46,9 +46,11 @@
                 </div>
 <div class="item item-checkbox">
                     <label class="checkbox">
-                        <input type="checkbox" required>
+                        <input type="checkbox" ng-model="regestration.terms" required>
                     </label>
-                    I read the terms &amp; conditions.
+                   <a href="">                    I read the terms &amp; conditions.
+
+    </a>
                 </div>
                 <button ng-disabled="!registerForm.$valid || !avatar.id" ng-click="register()"
                         class="button button-full button-flat button-positive icon-left ion-outlet">
