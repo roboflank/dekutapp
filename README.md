@@ -59,6 +59,7 @@ ionic serve
 * Loading bar when Http request is being processed: In SignUp & Login, Commenting.
 * Offline Detector - Give error message when phone is offline.
 * Update Profile Feature -  Update username, avatar and Password
+* Semester Counter, Count Weeks, Days left for the semester
 
 ##E-Learning Portal
 E-Learning portal  ``` COMING SOON ```
