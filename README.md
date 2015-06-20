@@ -54,6 +54,10 @@ ionic serve
 * Feedback page
 * Liking,Favoriting and sharing a news Item.
 * ChatRoom
+* Add Hashtag and @ mentions, configure trends
+* Notices & Events Happening
+* Loading bar when Http request is being processed: In SignUp & Login, Commenting.
+
 
 
 ### Other ressources used
@@ -61,4 +65,4 @@ ionic serve
 - pictures used in this app http://www.deviantart.com/art/Face-Avatars-107881096
 
 
-Feel Free to Contribute :happy:
+Feel Free to Contribute :smiley:
