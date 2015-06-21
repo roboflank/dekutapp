@@ -44,7 +44,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
     //Get a unique controller for Email
     $scope.sendEmail = function() {
         // 1
-        var bodyText = "<h2>Look at this images!</h2>";
+        var bodyText = "<h2>Look at the ScreenShot!</h2>";
         if (null != $scope.images) {
             var images = [];
             var savedImages = $scope.images;
@@ -57,11 +57,11 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
              
             // 4
             window.plugin.email.open({
-                to:          ["saimon@devdactic.com"], // email addresses for TO field
+                to:          ["denzjoseph@gmail.com"], // email addresses for TO field
                 cc:          Array, // email addresses for CC field
                 bcc:         Array, // email addresses for BCC field
                 attachments: images, // file paths or base64 data streams
-                subject:    "Just some images", // subject of the email
+                subject:    "DekutApp FeedBack", // subject of the email
                 body:       bodyText, // email body (for HTML, set isHtml to true)
                 isHtml:    true, // indicats if the body is HTML or plain text
             }, function () {
