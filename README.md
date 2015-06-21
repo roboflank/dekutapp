@@ -18,8 +18,8 @@ Secondaries(click for further information):
 * npm (installed together with node.js, usually bundled in it)
 * [bower](http://bower.io)
 * Git 
-* [Intel XDK](https://download.xdk.intel.com/xdk/xdk_web_linux64_master_1995.tgz)
-* [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-40.0a2.en-US.linux-x86_64.tar.bz2)
+* [Intel XDK](https://download.xdk.intel.com/xdk/xdk_web_linux64_master_1995.tgz) - Link for Linux
+* [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-40.0a2.en-US.linux-x86_64.tar.bz2) - Mozilla for Linux
 ## Getting Started
 One line install
 ```
@@ -44,7 +44,7 @@ Running the app on your browser simply append
 ionic serve
 ```
 
--Configure the server to work with the app
+Configure the server to work with the app
 
 ##ToDo
 * Replace Profile Avatar with Custom User images
@@ -60,6 +60,7 @@ ionic serve
 * Offline Detector - Give error message when phone is offline.
 * Update Profile Feature -  Update username, avatar and Password
 * Semester Counter, Count Weeks, Days left for the semester
+* Add Header shrinker for large contents
 
 ##Bugs
 * SignUp Button not showing when screen oriented.
