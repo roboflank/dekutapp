@@ -48,7 +48,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
             })
-                 .state('news', {
+             .state('news', {
                 url: '/news',
                 templateUrl: 'templates/land-news.html'
             })
@@ -72,6 +72,52 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                 templateUrl: 'templates/register.html',
                 controller: 'RegisterCtrl'
             })
+        
+        //Academics Logics
+        .state('academics', {
+            url: "/academics",
+            abstract: true,
+            templateUrl: "templates/academics.html"
+        })
+.state('academics.home', {
+            url: '',
+            views: {
+                'academics-home': {
+                    templateUrl: 'templates/academics-home.html'
+
+                }
+            }
+        })
+    .state('academics.notes', {
+            url: '/notes',
+            views: {
+                'academics-notes': {
+                    templateUrl: 'templates/academics-notes.html'
+
+                }
+            }
+        })
+        .state('academics.reminders', {
+            url: '/academics',
+            views: {
+                'academics-reminders': {
+                    templateUrl: 'templates/academics-reminders.html'
+                  
+
+                }
+            }
+        })
+       .state('tour.facilities', {
+            url: '/facilities',
+            views: {
+                'tour-facilities': {
+                    templateUrl: 'templates/tour-facilities.html'
+
+                }
+            }
+        })
+        
+        //Tour Logics
         .state('tour', {
             url: "/tour",
             abstract: true,
