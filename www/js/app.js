@@ -98,7 +98,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
             }
         })
         .state('academics.reminders', {
-            url: '/academics',
+            url: '/reminders',
             views: {
                 'academics-reminders': {
                     templateUrl: 'templates/academics-reminders.html'
@@ -107,11 +107,11 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                 }
             }
         })
-       .state('tour.facilities', {
-            url: '/facilities',
+       .state('academics.timetables', {
+            url: '/timetables',
             views: {
-                'tour-facilities': {
-                    templateUrl: 'templates/tour-facilities.html'
+                'academics-timetables': {
+                    templateUrl: 'templates/academics-timetables.html'
 
                 }
             }
