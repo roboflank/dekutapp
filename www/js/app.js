@@ -84,7 +84,8 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
             })
          .state('email', {
                 url: '/email',
-                templateUrl: 'templates/email.html'
+                templateUrl: 'templates/email.html',
+                controller: 'NavCtrl'
         })
              .state('news', {
                 url: '/news',
