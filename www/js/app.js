@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','dekutapp.login','dekutapp.register','dekutapp.tweet', 'ionic','lbServices','bd.timedistance', 'ngCordova', 'rssappControllers'])
+angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','dekutapp.login','dekutapp.register','dekutapp.tweet', 'ionic','lbServices','bd.timedistance', 'ngCordova', 'rssappControllers', 'ionic-material'])
 
     /*.run(function ($ionicPlatform) {
      $ionicPlatform.ready(function () {
@@ -102,30 +102,19 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
             views: {
                 'academics-reminders': {
                     templateUrl: 'templates/academics-reminders.html'
-                  
-
                 }
             }
         })
-       .state('academics.timetables', {
-            url: '/timetables',
-            views: {
-                'academics-timetables': {
-                    templateUrl: 'templates/academics-timetables.html'
-
-                }
-            }
-        })
-        .state('academics.resources', {
-            url: '/resources',
-            views: {
-                'academics-timetables': {
-                    templateUrl: 'templates/academics-resources.html'
-
-                }
-            }
-        })
-        
+      
+     // Timetable and Academic Logics
+        .state('timetables', {
+                url: '/timetables',
+                templateUrl: 'templates/academics-timetables.html'
+            })
+        .state('resources', {
+                url: '/resources',
+                templateUrl: 'templates/academics-resources.html'
+            })
         
         //Tour Logics
         .state('tour', {
