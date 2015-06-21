@@ -1,9 +1,7 @@
-<ion-view class="ionic">
+<ion-view ng-controller="NavCtrl" class="ionic">
     <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
-  <button class="button icon ion-navicon" ng-click="toogleLeft()"></button>
-<ion-nav-title>
-    <span class="title">Our Location</span>
-  </ion-nav-title>            
+  <button class="button icon ion-navicon" ng-click="showMenu()"></button>
+            
         <button ng-click="centerOnMe()" class="pull-right button button-icon icon ion-pinpoint"></button>
 
     <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">

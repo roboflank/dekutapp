@@ -99,8 +99,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
             url: '/map',
             views: {
                 'tour-map': {
-                    templateUrl: 'templates/tour-map.html',
-                     controller: 'MapCtrl'
+                    templateUrl: 'templates/tour-map.html'
                   
 
                 }
