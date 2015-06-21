@@ -61,6 +61,12 @@ ionic serve
 * Update Profile Feature -  Update username, avatar and Password
 * Semester Counter, Count Weeks, Days left for the semester
 
+##Bugs
+* SignUp Button not showing when screen oriented.
+* Map not loading.
+
+
+
 ##E-Learning Portal
 E-Learning portal  ``` COMING SOON ```
 
