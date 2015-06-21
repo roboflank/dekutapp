@@ -199,7 +199,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                     console.log("Redirect");
                     if (rejection.status == 401 && $location.path() !== '/login' && $location.path() !== '/register') {
                         $location.nextAfterLogin = $location.path();
-                        $location.path('/intro');
+                        $location.path('#/tab/home');
                      }
                     return $q.reject(rejection);
                 }
