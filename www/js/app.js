@@ -79,7 +79,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
             abstract: true,
             templateUrl: "templates/academics.html"
         })
-.state('academics.home', {
+       .state('academics.home', {
             url: '',
             views: {
                 'academics-home': {
@@ -88,7 +88,7 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                 }
             }
         })
-    .state('academics.notes', {
+       .state('academics.notes', {
             url: '/notes',
             views: {
                 'academics-notes': {
@@ -116,6 +116,16 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                 }
             }
         })
+        .state('academics.resources', {
+            url: '/resources',
+            views: {
+                'academics-timetables': {
+                    templateUrl: 'templates/academics-resources.html'
+
+                }
+            }
+        })
+        
         
         //Tour Logics
         .state('tour', {
