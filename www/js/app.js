@@ -39,7 +39,41 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
   $scope.showMenu = function () {
     $ionicSideMenuDelegate.toggleLeft();
   };
+    //Injecting Email Controller.
+    //Very Bad coding technique
+    //Get a unique controller for Email
+    $scope.sendEmail = function() {
+        // 1
+        var bodyText = "<h2>Look at this images!</h2>";
+        if (null != $scope.images) {
+            var images = [];
+            var savedImages = $scope.images;
+            for (var i = 0; i < savedImages.length; i++) {
+                // 2
+                images.push("" + $scope.urlForImage(savedImages[i]));
+                // 3
+                images[i] = images[i].replace('file://', '');
+            }
+             
+            // 4
+            window.plugin.email.open({
+                to:          ["saimon@devdactic.com"], // email addresses for TO field
+                cc:          Array, // email addresses for CC field
+                bcc:         Array, // email addresses for BCC field
+                attachments: images, // file paths or base64 data streams
+                subject:    "Just some images", // subject of the email
+                body:       bodyText, // email body (for HTML, set isHtml to true)
+                isHtml:    true, // indicats if the body is HTML or plain text
+            }, function () {
+                console.log('email view dismissed');
+            },
+            this);    
+        }
+}
 })
+
+//Email Controller
+
 
     .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
         $stateProvider
@@ -48,6 +82,10 @@ angular.module('dekutapp', ['dekutapp.account','dekutapp.dev','dekutapp.home','d
                 templateUrl: 'templates/login.html',
                 controller: 'LoginCtrl'
             })
+         .state('email', {
+                url: '/email',
+                templateUrl: 'templates/email.html'
+        })
              .state('news', {
                 url: '/news',
                 templateUrl: 'templates/land-news.html'
