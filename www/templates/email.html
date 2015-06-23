@@ -1,39 +1,32 @@
 <ion-view class="ionic walkthrough-view">
-    
-    <!--School Photo in Background-->
-<ion-content class="ionic login animate-pan-in-left" style="background-image: url('../img/banner.jpg');">
+  <ion-content scroll="false">
 
-        <div class="hero no-header flat">
-            <div class="content double-padding]">
-                <!-- Replace banner.jpg with official school app-->
-                <i class="icon hero-icon royal-bg"style="background-image: url('../img/banner.jpg');"></i>
-                <h1>Help Build DekutApp</h1>
-                <div class="mottocontent">
-           <div class="card padding">
-  <div class="item item-divider">
-     Help Build DekutApp
-    </div>
-  <div class="item item-text-wrap">
-Contribute In the Building Of Dekut App. Your FeedBack is Highly Appreciated. 
-      Leave us a comment or feedback through Email, Text or even a call, so that we can interact with that information.    
-   Links Provided Below.
-    </div>
-  <div class="item item-divider">
-           <h3>Let Us Know What you think About the App THrough the Channels Below</h3>
-    </div>
-</div>
-    <div>
-              <div class="button-bar">
-  <a ng-click="sendEmail()" class="button  button-flat button-assertive ink icon-left ion-email"></a>
-  <a ng-click="sendEmail()" class="button  button-flat button-assertive ink icon-left ion-email"></a>
-  <a href="tel:+254707769247" class="button button-full button-flat button-assertive ink icon-left ion-email"></a>
-</div>
+    <div class="top-content row">
+     
+      <div class="col col-center">
+        <h2 class="title">Help Build DekutApp</h2>
+                    <div class="card padding">
+                        
+                        <div class="item item-text-wrap">
+                            Contribute In the Building Of Dekut App. Your FeedBack is Highly Appreciated. Leave us a comment or feedback through Email, Text or even a call, so that we can interact with that information. Links Provided Below.
+                        </div>
 
+                    </div>        <a ng-click="sendEmail()">
+            <button class="button button-fab button-balanced icon ion-email"></button>
+          </a>
         </div>
-            </div>
+
+    </div>
+      
+   <div class="padding">
+       <a href="tel:+254707769247">
+       <button class="button button-full button-flat button-assertive ink icon-left ion-log-in">Call US</button></a>
+            
+       <a href="tel:+254707769247">
+      <button class="button button-full button-flat button-positive icon-left ion-email">Text Us</button>
+       </a>
+       
         </div>
-        
-       <a href="#/tab/home">
-                <button class="button button-fab button-fab-bottom-right button-assertive icon ion-home waves-effect waves-button waves-light"></button>
-    </ion-content>
+      
+  </ion-content>
 </ion-view>
