@@ -109,9 +109,9 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             templateUrl: 'templates/login.html',
             controller: 'LoginCtrl'
         })
-        .state('email', {
-            url: '/email',
-            templateUrl: 'templates/email.html',
+        .state('feedback', {
+            url: '/feedback',
+            templateUrl: 'templates/feedback.html',
             controller: 'NavCtrl'
         })
         .state('news', {
