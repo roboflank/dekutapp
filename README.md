@@ -58,7 +58,7 @@ Configure the server to work with the app
 * Notices & Events Happening
 * Loading bar when Http request is being processed: In SignUp & Login, Commenting.
 * Offline Detector - Give error message when phone is offline.
-* Update Profile Feature -  Update username, avatar and Password
+* Update Profile Feature -Add Status Update -  Update username, avatar and Password
 * Semester Counter, Count Weeks, Days left for the semester
 * Add Header shrinker for large contents
 

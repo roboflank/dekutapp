@@ -1,7 +1,7 @@
 {
-  "name": "myapp",
-  "version": "1.0.0",
-  "description": "myApp: An Ionic project",
+  "name": "DekutApp",
+  "version": "0.9.1",
+  "description": "Dedan Kimathi University Mobile Application",
   "dependencies": {
     "cordova": "^4.1.2",
     "gulp": "^3.5.6",

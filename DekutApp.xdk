@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "c66043b5-bb0e-4c13-8cfb-5fad92cd7287",
-      "lastModifiedDate": 1431692504710,
+      "lastModifiedDate": 1434979369590,
       "creationDate": 1431692504568
     },
     "sourceDirectory": "www",
@@ -50,15 +50,51 @@
           "android-installLocation": "auto"
         },
         "isActive_": true,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {
             "origin": "*"
           }
         ],
-        "icons_": [],
-        "splashes_": [],
+        "icons_": [
+          {
+            "relPath": "img/resources/icons/72.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          }
+        ],
+        "splashes_": [
+          {
+            "relPath": "img/resources/splashscreen/splash-320by426.jpg",
+            "density": "ldpi",
+            "height": 426,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/resources/splashscreen/splas-320by470.jpg",
+            "density": "mdpi",
+            "height": 470,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/resources/splashscreen/splash-480by640.jpg",
+            "density": "hdpi",
+            "height": 640,
+            "width": 480,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/resources/splashscreen/splas-720by1280.jpg",
+            "density": "xhdpi",
+            "height": 960,
+            "width": 720,
+            "orientation": "portrait"
+          }
+        ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
         "appVersion_": "0.0.1",
@@ -73,24 +109,63 @@
         "preferences_": {
           "android-minSdkVersion": "14",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "Fullscreen": true
         },
         "isActive_": true,
-        "appName_": "SchoolApp",
-        "appID_": "not.yet.specified",
+        "appName_": "DekutApp",
+        "appID_": "ID0.9.0",
         "appAccess_": [
           {
             "origin": "*"
           }
         ],
-        "icons_": [],
-        "splashes_": [],
+        "icons_": [
+          {
+            "relPath": "img/resources/icons/72.png",
+            "density": "hdpi",
+            "height": 72,
+            "width": 72
+          }
+        ],
+        "splashes_": [
+          {
+            "relPath": "img/resources/splashscreen/splash-320by426.jpg",
+            "density": "ldpi",
+            "height": 426,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/resources/splashscreen/splas-320by470.jpg",
+            "density": "mdpi",
+            "height": 470,
+            "width": 320,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/resources/splashscreen/splash-480by640.jpg",
+            "density": "hdpi",
+            "height": 640,
+            "width": 480,
+            "orientation": "portrait"
+          },
+          {
+            "relPath": "img/resources/splashscreen/splas-720by1280.jpg",
+            "density": "xhdpi",
+            "height": 960,
+            "width": 720,
+            "orientation": "portrait"
+          }
+        ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.0.1",
+        "appVersion_": "0.9.0",
         "appVersionCode_": "1",
         "crosswalkVersion_": "10",
-        "cordovaCLIVersion_": "4.1.2"
+        "cordovaCLIVersion_": "4.1.2",
+        "appDescription_": "Dedan Kimathi University Mobile Application.",
+        "appAuthor_": "Denzel Wamburu + Thomas Muhika"
       },
       "iOS": {
         "platform_": "ios",
@@ -101,7 +176,7 @@
           "ios-configuration": "adhoc"
         },
         "isActive_": true,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {
@@ -122,7 +197,7 @@
         "name_": "Windows8",
         "preferences_": {},
         "isActive_": true,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {
@@ -142,7 +217,7 @@
         "name_": "WebApp",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {
@@ -161,7 +236,7 @@
         "name_": "Firefox",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {
@@ -180,7 +255,7 @@
         "name_": "Chrome",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {
@@ -199,7 +274,7 @@
         "name_": "Facebook",
         "preferences_": {},
         "isActive_": false,
-        "appName_": "SchoolApp",
+        "appName_": "DekutApp",
         "appID_": "not.yet.specified",
         "appAccess_": [
           {

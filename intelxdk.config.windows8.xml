@@ -4,7 +4,7 @@
 <!--To change the contents of this file, see the documentation on the intelxdk.config.additions.xml file.-->
 <intelxdk:version value="1.0"/>
 <intelxdk:cordova-cli version="4.1.2"/>
-<name>SchoolApp</name>
+<name>DekutApp</name>
 <content src="index.html"/>
 <access origin="*"/>
 <intelxdk:plugin intelxdk:name="Device" intelxdk:value="org.apache.cordova.device" intelxdk:version="0.2.13"/>

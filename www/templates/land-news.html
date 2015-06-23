@@ -1,15 +1,16 @@
-<ion-view title="News">
+   <ion-pane class="ionic">
+            <ion-header-bar class="ionic bar bar-header bar-positive">
+                <h1 class="title">Simple RSS Reader</h1>
+              <a href="#/tab/home"> <button class="button icon ion-navicon"></button>
+</a>
 
-	<ion-content class="padding">
-
-		<ion-list class="list list-inset">
-
-			<ion-item ng-repeat="entry in entries" href="#/entry/{{$index}}">
-				{{entry.title}}
-			</ion-item>
-
-		</ion-list>
-
-	</ion-content>
-	
-</ion-view>
+            </ion-header-bar>
+            <ion-content ng-controller="FeedController" ng-init="init()">
+                <div class="list">
+                   <a ng-repeat="entry in entries" class="item" ng-click="browse(entry.link)">
+    <b>{{entry.title}}</b><br>
+    <span ng-bind-html="entry.contentSnippet"></span>
+</a>
+                </div>
+            </ion-content>
+        </ion-pane>
