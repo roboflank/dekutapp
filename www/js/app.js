@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material'])
+angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'rssappControllers', 'ionic-material'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -23,19 +23,18 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         if (User.getCachedCurrent() == null) {
             User.getCurrent();
         }
-        //To fit notification Bar
-        $ionicPlatform.ready(function () {
-            // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-            // for form inputs)
-            if (window.cordova && window.cordova.plugins.Keyboard) {
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-            }
-            if (window.StatusBar) {
-                StatusBar.styleDefault();
-            }
-        });
-    /**   
-    //EDIT THESE LINES
+    //To fit notification Bar
+    $ionicPlatform.ready(function () {
+ // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+ // for form inputs)
+ if (window.cordova && window.cordova.plugins.Keyboard) {
+ cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+ }
+ if (window.StatusBar) {
+ StatusBar.styleDefault();
+ }
+ });
+        //EDIT THESE LINES
         //Title of the blog
         $rootScope.TITLE = "Raymond Camden's Blog";
         //RSS url
@@ -44,7 +43,6 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         $rootScope.goHome = function () {
             $location.path('/entries');
         };
-    **/
 
     })
     .controller("FeedController", function ($http, $scope) {
