@@ -119,16 +119,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             controller: 'FeedController',
             templateUrl: 'templates/news.html'
         })
-        .state('Entries', {
-            url: '/entries',
-            controller: 'EntriesCtrl',
-            templateUrl: 'templates/entries.html',
-        })
-        .state('Entry', {
-            url: '/entry/:index',
-            controller: 'EntryCtrl',
-            templateUrl: 'templates/entry.html',
-        })
+
 
     .state('intro', {
             url: '/intro',
