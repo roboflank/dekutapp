@@ -117,7 +117,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         .state('news', {
             url: '/news',
             controller: 'FeedController',
-            templateUrl: 'templates/land-news.html'
+            templateUrl: 'templates/news.html'
         })
         .state('Entries', {
             url: '/entries',
@@ -222,39 +222,6 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             views: {
                 'tour-facilities': {
                     templateUrl: 'templates/tour-facilities.html'
-
-                }
-            }
-        })
-        //Home after Login
-        .state('land', {
-            url: "/land",
-            abstract: true,
-            templateUrl: "templates/land.html"
-        })
-        .state('land.home', {
-            url: '',
-            views: {
-                'land-home': {
-                    templateUrl: 'templates/land-home.html'
-
-                }
-            }
-        })
-        .state('land.news', {
-            url: '/news',
-            views: {
-                'land-news': {
-                    templateUrl: 'templates/land-news.html'
-
-                }
-            }
-        })
-        .state('land.notices', {
-            url: '/notices',
-            views: {
-                'land-notices': {
-                    templateUrl: 'templates/land-notices.html'
 
                 }
             }
