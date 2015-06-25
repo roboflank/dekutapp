@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'rssappControllers', 'ionic-material'])
+angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -34,16 +34,6 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  StatusBar.styleDefault();
  }
  });
-        //EDIT THESE LINES
-        //Title of the blog
-        $rootScope.TITLE = "Raymond Camden's Blog";
-        //RSS url
-        $rootScope.RSS = "http://www.raymondcamden.com/rss.cfm";
-
-        $rootScope.goHome = function () {
-            $location.path('/entries');
-        };
-
     })
     .controller("FeedController", function ($http, $scope) {
 
@@ -122,7 +112,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         .state('feedback', {
             url: '/feedback',
             templateUrl: 'templates/feedback.html',
-            controller: 'NavCtrl'
+            controller: 'EmailCtrl'
         })
         .state('news', {
             url: '/news',
