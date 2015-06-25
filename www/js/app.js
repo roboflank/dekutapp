@@ -173,6 +173,12 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             url: '/resources',
             templateUrl: 'templates/academics-resources.html'
         })
+    //Eservices Route
+    .state('eservices', {
+            url: '/eservices',
+            templateUrl: 'templates/eservices.html'
+        })
+
 
     //Tour Logics
     .state('tour', {
