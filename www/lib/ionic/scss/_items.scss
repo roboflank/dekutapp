@@ -156,9 +156,9 @@
 .item-content h5,
 .item-content h6,
 .item-content p {
-  //overflow: hidden;
-  //text-overflow: ellipsis;
-  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // Linked list items
