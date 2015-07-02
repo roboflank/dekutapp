@@ -59,6 +59,19 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         };
     })
 
+.factory('Sessions', function($resource) {
+        return $resource('http://localhost:5000/sessions/:sessionId');
+    })
+    //Contoller for getting posts
+    .controller('SessionsCtrl', function($scope, Sessions) {
+        $scope.sessions = Sessions.query();
+    })
+    //Controller for Sessions(plural)
+    .controller('SessionCtrl', function($scope, $stateParams, Sessions) {
+        $scope.session = Sessions.get({
+            sessionId: $stateParams.sessionId
+        });
+    })
 
 //Email Controller
 .controller('EmailCtrl', function($scope) {
@@ -173,7 +186,8 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         //Notice Board Logics
         .state('notices', {
             url: '/notices',
-            templateUrl: 'templates/notices.html'
+            templateUrl: 'templates/notices.html',
+            controller: 'SessionsCtrl'
         })
 
 

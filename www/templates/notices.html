@@ -1,9 +1,17 @@
 <ion-view>
-              <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
-                <h1 class="title">Notice Board</h1>
+    <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
+        <h1 class="title">Notice Board</h1>
 
-    <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
-    </ion-nav-back-button>
+        <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
 
-</ion-nav-bar>
+    </ion-nav-bar>
+    <ion-content class="has-header has-subheader">
+        <ion-list class="list">
+
+            <ion-item ng-repeat="session in sessions" type="item-text-wrap" class="item-avatar">
+                <p class="title">{{session.title}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>
