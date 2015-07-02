@@ -121,6 +121,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             controller: 'RegisterCtrl'
         })
 
+
     //Academics Logics
     .state('academics', {
             url: "/academics",
@@ -157,7 +158,8 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     // Timetable and Academic Logics
     .state('timetables', {
             url: '/timetables',
-            templateUrl: 'templates/academics-timetables.html'
+            templateUrl: 'templates/academics-timetables.html',
+            controller: 'TimetableCtrl'
         })
         .state('resources', {
             url: '/resources',
@@ -167,6 +169,11 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         .state('eservices', {
             url: '/eservices',
             templateUrl: 'templates/eservices.html'
+        })
+        //Notice Board Logics
+        .state('notices', {
+            url: '/notices',
+            templateUrl: 'templates/notices.html'
         })
 
 

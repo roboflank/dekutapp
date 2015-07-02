@@ -1,14 +1,42 @@
 
-<ion-view ng-controller="NavCtrl" class="ionic">
+<ion-view ng-controller="TimetableCtrl" class="ionic">
               <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
-                <h1 class="title">lecture Timetable</h1>
+                <h1 class="title">Lectures Timetable</h1>
 
     <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
     </ion-nav-back-button>
     
 </ion-nav-bar>
     <ion-content>
-TimeTables Content Here :)
+
+    <ion-list ng-controller="TimetableCtrl">
+
+            <div class="item col-header item-icon-right">
+                <div class="flex-container wrap">
+                    <div ng-repeat="column in data.columns" ng-click="sortBy(column.id)">
+                        <div class="column" ng-class="{ 'underlined' : data.sortOn === column.id }">{{column.name}}&nbsp;</div>
+                        <div class="column-sort">
+                            <i ng-class="{'ion-chevron-up' : data.sortReverse === false, 'ion-chevron-down' : data.sortReverse === true} " ng-if="data.sortOn === column.id"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item low-pad-item item-icon-right" ng-repeat="item in data.items | orderBy:sortData:data.sortReverse ">
+                <div class="flex-container wrap">
+                    <div ng-repeat="column in data.columns">
+                        <div class="column">{{item[column.id]}}&nbsp;</div>
+                    </div>
+                </div>
+                <i class="icon ion-chevron-right icon-accessory"></i>
+            </div>
+      </ion-list>
+
+
+
+
+
+
     </ion-content>
     <a href="#/academics">
                 <button class="button button-fab button-fab-bottom-right button-assertive icon ion-home waves-effect waves-button waves-light"></button>

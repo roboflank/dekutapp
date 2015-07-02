@@ -31,6 +31,7 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
          * @name login()
          * @description
          * sign-in function for users which created an account
+         * var next shows the redirection page after login, default is tab/home
          */
         $scope.login = function () {
             $scope.loginResult = User.login({include: 'user', rememberMe: true}, $scope.credentials,
