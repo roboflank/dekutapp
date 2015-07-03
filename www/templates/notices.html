@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view class="ionic">
     <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
         <h1 class="title">Notice Board</h1>
 
@@ -6,12 +6,29 @@
         </ion-nav-back-button>
 
     </ion-nav-bar>
-    <ion-content class="has-header has-subheader">
-        <ion-list class="list">
+    <ion-content>
 
-            <ion-item ng-repeat="session in sessions" type="item-text-wrap" class="item-avatar">
+            <ion-item ng-repeat="session in sessions" class="list card stable-bg">
                 <p class="title">{{session.title}}</p>
+                <div class="item item-body">
+                    {{session.description}}
+                    <p>
+                        <a class="subdued">1 Like</a>
+                        <a class="subdued">5 Comments</a>
+                    </p>
+                </div>
+                    <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-thumbsup"></i> Like
+                    </a>
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-chatbox"></i> Comment
+                    </a>
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-share"></i> Share
+                    </a>
+                </div>
             </ion-item>
-        </ion-list>
+
     </ion-content>
 </ion-view>
