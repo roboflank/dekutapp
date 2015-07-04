@@ -1,7 +1,7 @@
 <ion-view class="ionic">
     <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
         <h1 class="title">Notice Board</h1>
-<a class="button icon ion-navicon" href="#/tab/home"></a>
+        <a class="button icon ion-navicon" href="#/tab/home"></a>
 
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
         </ion-nav-back-button>
@@ -9,7 +9,7 @@
     </ion-nav-bar>
     <ion-content>
 
-        <ion-item ng-repeat="session in sessions" class="list card padding stable-bg">
+        <ion-item ng-repeat="session in sessions" class="list card padding stable-bg" href="#/notices/{{session.id}}">
             <p class="item item-divider title">{{session.title}}</p>
             <div class="item item-body">
                 {{session.description}}

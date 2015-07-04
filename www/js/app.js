@@ -23,8 +23,18 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         if (User.getCachedCurrent() == null) {
             User.getCurrent();
         }
+      // In Ionic the accessory bar is hidden by default. Do not hide the keyboard accessory bar for this app
+            // so the drop-down form input can be used properly.
+     if(window.cordova && window.cordova.plugins.Keyboard) {
+                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+            }
+
+            if(window.StatusBar) {
+                StatusBar.styleLightContent(); //status bar will have white text and icons
+            }
 
     })
+
     .controller("FeedController", function($http, $scope) {
 
         $scope.init = function() {
@@ -188,6 +198,11 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             url: '/notices',
             templateUrl: 'templates/notices.html',
             controller: 'SessionsCtrl'
+        })
+     .state('notice', {
+            url: '/notices/:sessionId',
+            templateUrl: 'templates/notice.html',
+            controller: 'SessionCtrl'
         })
 
 
