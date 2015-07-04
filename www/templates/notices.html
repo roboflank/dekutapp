@@ -7,10 +7,31 @@
         </ion-nav-back-button>
 
     </ion-nav-bar>
+<ion-header-bar class="bar bar-stable bar-subheader item-input-inset">
+      <div class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input id="searchKey" type="search" placeholder="Search Schedule" ng-model="search"
+               autocorrect="off" ng-change="setFilter()">
+        <button class="button button-clear" ng-click="clear()">X</button>
+      </div>
+  </ion-header-bar>
+    <ion-content class="has-header has-subheader">
 
-    <ion-content>
+<label class="item item-input item-select">
+              <div class="input-label pull-right">
+                  <strong>Sort By</strong>
+              </div>
+              <select ng-model="field">
+                  <option value="all" ng-selected="true">All</option>
+                  <option value="title">Title</option>
+                  <option value="speaker">Speaker</option>
+                  <option value="description">Description</option>
+                  <option value="room">Room</option>
 
-        <ion-item ng-repeat="session in sessions" class="list card padding stable-bg" href="#/notices/{{session.id}}">
+              </select>
+          </label>
+        <ion-item ng-repeat="session in sessions | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{session.id}}">
+
             <p class="item item-divider title">{{session.title}}</p>
             <div class="item item-body">
                 {{session.description}}
@@ -38,12 +59,14 @@
     </ion-content>
     <div ng-controller="ExtensionsCtrl"><button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button></div>
        <script id="my-modal.html" type="text/ng-template">
-            <ion-modal-view>
+            <ion-modal-view class="ionic">
                 <ion-header-bar>
-                    <h1 class="title">My Modal Title</h1>
+                    <h1 class="title">Notice Board Instructions</h1>
                 </ion-header-bar>
                 <ion-content class="padding">
-                    My Modal Contents
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
                 </ion-content>
             </ion-modal-view>
         </script>
