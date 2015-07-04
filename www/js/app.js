@@ -19,23 +19,23 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  })*/
 
 .run(function(User, $ionicPlatform, $rootScope, $location) {
-        //Check if User is authenticated
-        if (User.getCachedCurrent() == null) {
-            User.getCurrent();
-        }
-      // In Ionic the accessory bar is hidden by default. Do not hide the keyboard accessory bar for this app
-            // so the drop-down form input can be used properly.
-     if(window.cordova && window.cordova.plugins.Keyboard) {
-                cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
-            }
+    //Check if User is authenticated
+    if (User.getCachedCurrent() == null) {
+        User.getCurrent();
+    }
+    // In Ionic the accessory bar is hidden by default. Do not hide the keyboard accessory bar for this app
+    // so the drop-down form input can be used properly.
+    if (window.cordova && window.cordova.plugins.Keyboard) {
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
+    }
 
-            if(window.StatusBar) {
-                StatusBar.styleLightContent(); //status bar will have white text and icons
-            }
+    if (window.StatusBar) {
+        StatusBar.styleLightContent(); //status bar will have white text and icons
+    }
 
-    })
+})
 
-    .controller("FeedController", function($http, $scope) {
+.controller("FeedController", function($http, $scope) {
 
         $scope.init = function() {
             $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
@@ -84,7 +84,8 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     })
 
 //Custom Material Effects in The App
-.controller('ExtensionsCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup,  ionicMaterialInk) {
+.controller('ExtensionsCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
+
 
     // Triggered on a button click, or some other target
     $scope.actionSheet = function() {
@@ -114,9 +115,10 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
 
     };
 
+
     $scope.loading = function() {
         $ionicLoading.show({
-            template: '<div class="loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
+            template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
         });
 
         // For example's sake, hide the sheet after two seconds
@@ -134,7 +136,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
 
     $scope.openModal = function() {
         $scope.modal.show();
-        $timeout(function () {
+        $timeout(function() {
             $scope.modal.hide();
         }, 2000);
     };
@@ -146,10 +148,11 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     // Popover
     $scope.popover = function() {
         $scope.$parent.popover.show();
-        $timeout(function () {
+        $timeout(function() {
             $scope.$parent.popover.hide();
         }, 2000);
     };
+
 
     // Confirm
     $scope.showPopup = function() {
@@ -290,7 +293,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             templateUrl: 'templates/notices.html',
             controller: 'SessionsCtrl'
         })
-     .state('notice', {
+        .state('notice', {
             url: '/notices/:sessionId',
             templateUrl: 'templates/notice.html',
             controller: 'SessionCtrl'
