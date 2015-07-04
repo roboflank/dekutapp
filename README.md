@@ -18,15 +18,15 @@ Secondaries(click for further information):
 * npm (installed together with node.js, usually bundled in it)
 * [bower](http://bower.io)
 * [Git](http://git-scm.com) 
-* [Intel XDK](https://download.xdk.intel.com/xdk/xdk_web_linux64_master_1995.tgz) - Link for Linux
+* [Intel XDK](https://download.xdk.intel.com/xdk/xdk_web_linux64_master_1995.tgz) - For Linux
 * [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-40.0a2.en-US.linux-x86_64.tar.bz2) - Mozilla for Linux
 ## Getting Started
-One line install
+Setup Locally
 ```
 git clone https://github.com/denzelwamburu/kimathiuniapp.git && cd kimathiuniapp && sudo npm install 
 ```
 
-To Run the app locally, follow the simple steps below:
+To Run the app locally, follow these simple steps below:
 
 Clone the repo to your /projectfolder or download the project
 ```
@@ -47,9 +47,8 @@ ionic serve
 Configure the server to work with the app
 
 ##ToDo
-* Replace Profile Avatar with Custom User images
-* Add User Profile Page.
-* Social Authentication
+* Replace Profile Avatar with Custom User images (Using Gravatar)
+* Social Sharing
 * Adding TimeTable && School Cirriculum for each School/course
 * Feedback page
 * Liking,Favoriting and sharing a news Item.
@@ -60,7 +59,7 @@ Configure the server to work with the app
 * Offline Detector - Give error message when phone is offline.
 * Update Profile Feature -Add Status Update -  Update username, avatar and Password
 * Semester Counter, Count Weeks, Days left for the semester
-* Add Header shrinker for large contents
+* Add Header shrinker for large contents (ionic.ion.shinkHeader)
 
 ##Bugs
 * SignUp Button not showing when screen oriented.

@@ -7,6 +7,7 @@
         </ion-nav-back-button>
 
     </ion-nav-bar>
+
     <ion-content>
 
         <ion-item ng-repeat="session in sessions" class="list card padding stable-bg" href="#/notices/{{session.id}}">
@@ -33,5 +34,17 @@
             </div>
         </ion-item>
 
+
     </ion-content>
+    <div ng-controller="ExtensionsCtrl"><button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button></div>
+       <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">My Modal Title</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                    My Modal Contents
+                </ion-content>
+            </ion-modal-view>
+        </script>
 </ion-view>
