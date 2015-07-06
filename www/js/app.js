@@ -77,12 +77,13 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         $scope.sessions = Sessions.query();
     })
     //Controller for Sessions(plural)
-    .controller('SessionCtrl', function($scope, $stateParams, Sessions) {
+    .controller('SessionCtrl', function($scope, $stateParams, Sessions,  $cordovaSocialSharing) {
         $scope.session = Sessions.get({
             sessionId: $stateParams.sessionId
         });
 
     //Added Share Function/Feature in Sessions Controller
+    // check if  $cordovaSocialSharing module is a must
     $scope.shareNative = function() {
         if (window.plugins && window.plugins.socialsharing) {
             window.plugins.socialsharing.share("Just Read This Notice on DekutApp " + $scope.session.title + ".",
