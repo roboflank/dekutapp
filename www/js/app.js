@@ -69,36 +69,6 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         };
     })
 
-.factory('Sessions', function($resource) {
-        return $resource('http://localhost:5000/sessions/:sessionId');
-    })
-    //Contoller for getting posts
-    .controller('SessionsCtrl', function($scope, Sessions) {
-        $scope.sessions = Sessions.query();
-    })
-    //Controller for Sessions(plural)
-    .controller('SessionCtrl', function($scope, $stateParams, Sessions,  $cordovaSocialSharing) {
-        $scope.session = Sessions.get({
-            sessionId: $stateParams.sessionId
-        });
-
-    //Added Share Function/Feature in Sessions Controller
-    // check if  $cordovaSocialSharing module is a must
-    $scope.shareNative = function() {
-        if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Just Read This Notice on DekutApp " + $scope.session.title + ".",
-                'Dekut Notices', null, "http://pgday.phonegap.com/us2014",
-                function() {
-                    console.log("Success")
-                },
-                function (error) {
-                    console.log("Share fail " + error)
-                });
-        }
-        else console.log("Share plugin not available");
-} //End of native sharing
-
-    })
 
 //Email Controller
 .controller('EmailCtrl', function($scope) {
