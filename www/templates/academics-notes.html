@@ -7,6 +7,23 @@
     
 </ion-nav-bar>
     <ion-content>
-Save Your Notes Here. Feature Coming Soon :)
+
+Save Your Notes Here. Feature Coming Soon
+        <button class="button button-fab button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="showPopup()"></button>
+               <button class="button button-full button-flat button-assertive ink icon-left ion-log-in" ng-click="showPopup()">PopUp</button>
+        <button class="button button-full button-flat button-assertive ink icon-left ion-log-in" ng-click="loading()">Modal</button>
+<button class="button button-full" ng-click="actionSheet()">Action Sheet</button>
+        <button class="button button-full" ng-click="openModal()">Modal</button>
+        <button class="button button-full" ng-click="popover()">Popover</button>
+        <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">My Modal Title</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                    My Modal Contents
+                </ion-content>
+            </ion-modal-view>
+        </script>
     </ion-content>
 </ion-view>

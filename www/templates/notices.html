@@ -1,28 +1,25 @@
 <ion-view class="ionic">
-    <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
+    <ion-header-bar class="ionic bar bar-header bar-positive item-input-inset" style="position: static;">
         <h1 class="title">Notice Board</h1>
         <a class="button icon ion-navicon" href="#/tab/home"></a>
 
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
         </ion-nav-back-button>
-
-    </ion-nav-bar>
-<ion-header-bar class="bar bar-stable bar-subheader item-input-inset">
-      <div class="item-input-wrapper">
+ <div class="item-input-wrapper">
         <i class="icon ion-search placeholder-icon"></i>
-        <input id="searchKey" type="search" placeholder="Search Schedule" ng-model="search"
+        <input id="searchKey" type="search" placeholder="Search The Notice Board" ng-model="search"
                autocorrect="off" ng-change="setFilter()">
-        <button class="button button-clear" ng-click="clear()">X</button>
       </div>
-  </ion-header-bar>
-    <ion-content class="has-header has-subheader">
+    </ion-header-bar>
+
+    <ion-content class="ionic">
 
 <label class="item item-input item-select">
               <div class="input-label pull-right">
                   <strong>Sort By</strong>
               </div>
               <select ng-model="field">
-                  <option value="all" ng-selected="true">All</option>
+                  <option value="all" ng-selected="true" selected>All</option>
                   <option value="title">Title</option>
                   <option value="speaker">Speaker</option>
                   <option value="description">Description</option>
