@@ -90,9 +90,9 @@ angular.module('dekutapp.controller', [])
             this.classList.toggle('active');
         });
     }
-});
+})
 
-controller("InviteCtrl", function($scope, $cordovaSocialSharing) {
+.controller("InviteCtrl", function($scope, $cordovaSocialSharing) {
 
     $scope.shareAnywhere = function() {
         $cordovaSocialSharing.share("Download DekutApp", "Checkout DekutApp", "www/img/resources/icons/96.png", "http://dekutapp.github.io");
