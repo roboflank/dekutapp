@@ -18,7 +18,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  });
  })*/
 
-.run(function(User, $ionicPlatform, $rootScope, $location) {
+.run(function (User, $ionicPlatform, $rootScope, $location) {
     //Check if User is authenticated
     if (User.getCachedCurrent() == null) {
         User.getCurrent();
@@ -33,46 +33,61 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         StatusBar.styleLightContent(); //status bar will have white text and icons
     }
 
+    /**  if (window.Connection) {
+           if (navigator.connection.type == Connection.NONE) {
+               $ionicPopup.confirm({
+                       title: 'No Internet Connection',
+                       content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
+                   })
+                   .then(function (result) {
+                       if (!result) {
+                           ionic.Platform.exitApp();
+                       }
+                   });
+           }
+       }
+       **/
+
 })
 
-.controller("FeedController", function($http, $scope) {
+.controller("FeedController", function ($http, $scope) {
 
-        $scope.init = function() {
+        $scope.init = function () {
             $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
                     params: {
                         "v": "1.0",
                         "q": "http://blog.nraboy.com/feed/"
                     }
                 })
-                .success(function(data) {
+                .success(function (data) {
                     $scope.rssTitle = data.responseData.feed.title;
                     $scope.rssUrl = data.responseData.feed.feedUrl;
                     $scope.rssSiteUrl = data.responseData.feed.link;
                     $scope.entries = data.responseData.feed.entries;
                     window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
                 })
-                .error(function(data) {
+                .error(function (data) {
                     console.log("ERROR: " + data);
                     if (window.localStorage["entries"] !== undefined) {
                         $scope.entries = JSON.parse(window.localStorage["entries"]);
                     }
                 });
         }
-        $scope.browse = function(v) {
+        $scope.browse = function (v) {
             window.open(v, "_system", "location=yes");
         }
 
     })
-    .controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
-        $scope.showMenu = function() {
+    .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
+        $scope.showMenu = function () {
             $ionicSideMenuDelegate.toggleLeft();
         };
     })
 
 
 //Email Controller
-.controller('EmailCtrl', function($scope) {
-    $scope.sendEmail = function() {
+.controller('EmailCtrl', function ($scope) {
+    $scope.sendEmail = function () {
         // 1
         var bodyText = "<h2>Look at the ScreenShot!</h2>";
         if (null != $scope.images) {
@@ -94,7 +109,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
                     subject: "DekutApp FeedBack", // subject of the email
                     body: bodyText, // email body (for HTML, set isHtml to true)
                     isHtml: true, // indicats if the body is HTML or plain text
-                }, function() {
+                }, function () {
                     console.log('email view dismissed');
                 },
                 this);
@@ -102,7 +117,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     }
 })
 
-.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider
         .state('login', {
             url: '/login',
@@ -282,9 +297,9 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
 
     $urlRouterProvider.otherwise('/intro');
 
-    $httpProvider.interceptors.push(function($q, $location) {
+    $httpProvider.interceptors.push(function ($q, $location) {
         return {
-            responseError: function(rejection) {
+            responseError: function (rejection) {
                 console.log("Redirect");
                 if (rejection.status == 401 && $location.path() !== '/login' && $location.path() !== '/register') {
                     $location.nextAfterLogin = $location.path();
