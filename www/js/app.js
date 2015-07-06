@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ngTable', 'dekutapp.controller'])
+angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ngTable', 'dekutapp.controller', 'rssappControllers', 'rssappServices'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -293,7 +293,26 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
                     controller: 'AccountCtrl'
                 }
             }
-        });
+        })
+    .state('Home', {
+				url: '/home',
+				controller: 'HomeCtrl',
+				templateUrl: 'templates/rsshome.html'
+			})
+			.state('Entries', {
+				url: '/entries',
+				controller: 'EntriesCtrl',
+				templateUrl: 'templates/entries.html',
+			})
+			.state('Entry', {
+				url: '/entry/:index',
+				controller: 'EntryCtrl',
+				templateUrl: 'templates/entry.html',
+			})
+			.state('Offline', {
+				url: '/offline',
+				templateUrl: 'templates/offline.html'
+			});
 
     $urlRouterProvider.otherwise('/intro');
 
