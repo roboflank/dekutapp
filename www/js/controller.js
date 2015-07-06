@@ -95,7 +95,7 @@ angular.module('dekutapp.controller', [])
 controller("InviteCtrl", function($scope, $cordovaSocialSharing) {
 
     $scope.shareAnywhere = function() {
-        $cordovaSocialSharing.share("This is your message", "This is your subject", "www/imagefile.png", "http://blog.nraboy.com");
+        $cordovaSocialSharing.share("Download DekutApp", "Checkout DekutApp", "www/img/resources/icons/96.png", "http://dekutapp.github.io");
     }
 
     $scope.shareViaTwitter = function(message, image, link) {
