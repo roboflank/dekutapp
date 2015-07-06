@@ -20,7 +20,11 @@
     {
       "locator": "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin/"
     },
-    "org.apache.cordova.network-information"
+    "org.apache.cordova.network-information",
+    {
+      "locator": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
+      "id": "nl.x-services.plugins.calendar"
+    }
   ],
   "cordovaPlatforms": []
 }
