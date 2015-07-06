@@ -11,15 +11,16 @@
 
          <div class="list">
             <div class="item">
-                <div class="item-avatar"> <img src="pics/{{session.pic}}"/></div>
+               <!-- <div class="item-avatar"> <img src="pics/{{session.pic}}"/></div>-->
                 <div class="sessionTitle"><h2>{{session.title}}</h2>
                     <p>{{session.speaker|uppercase}}</p>
                 </div>
 
                 <p>{{session.room}} | {{session.time}}
+                   <!-- <button>
                     <a class="tab-item addCal" ng-click="addToCalendar()">
                     <i class="icon ion-calendar" style="font-size: 16px">
-                        Add</i></a></button>
+                        Add</i></a></button> -->
                 </p>
             </div>
             <div class="item item-body">
@@ -30,9 +31,9 @@
                     <i class="icon ion-heart" ng-class="{'fave': session.isFave}"></i>
                     Favorite
                 </a>
-                <a class="tab-item" ng-click="follow()">
-                    <i class="icon ion-social-twitter"></i>
-                    Follow
+                <a class="tab-item" ng-click="addToCalender()">
+                    <i class="icon icon-left ion-calendar button-balanced"></i>
+                    Add
                 </a>
                 <a class="tab-item" ng-click="shareNative()">
                     <i class="icon ion-share"></i>

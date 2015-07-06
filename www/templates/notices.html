@@ -34,20 +34,15 @@
                 {{session.description}}
                 <h4>By {{session.speaker}}</h4>
 
-                <p>
-                    <a class="subdued">1 Like</a>
-                    <a class="subdued">5 Comments</a>
-                </p>
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
-                <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                    <i class="icon ion-thumbsup"></i> Like
+               <a class="tab-item" ng-click="addToCalender()">
+                    <i class="icon icon-left ion-calendar button-balanced"></i>
+                    Add
                 </a>
-                <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                    <i class="icon ion-chatbox"></i> Comment
-                </a>
-                <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                    <i class="icon ion-share"></i> Share
+                <a class="tab-item" ng-click="shareNative()">
+                    <i class="icon ion-share"></i>
+                    Share
                 </a>
             </div>
         </ion-item>
