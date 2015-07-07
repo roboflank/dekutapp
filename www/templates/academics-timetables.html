@@ -1,5 +1,5 @@
 
-<ion-view ng-controller="TimetableCtrl" class="ionic">
+<ion-view ng-controller="TimetableNotificationCtrl" class="ionic walkthrough-view">
               <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
                 <h1 class="title">Lectures Timetable</h1>
 
@@ -7,33 +7,25 @@
     </ion-nav-back-button>
     
 </ion-nav-bar>
-    <ion-content>
+    <ion-content class="has-header">
+  <div class="top-content row">
 
-    <ion-list ng-controller="TimetableCtrl">
+      <div class="col col-center">
+        <h2 class="title">Your Class TimeTable Will Appear</h2>
+      <small>Click on Add Notification Button To Add A Reminder in one minute</small>
+                <small>Click is Schedule To check if notification is added</small>
 
-            <div class="item col-header item-icon-right">
-                <div class="flex-container wrap">
-                    <div ng-repeat="column in data.columns" ng-click="sortBy(column.id)">
-                        <div class="column" ng-class="{ 'underlined' : data.sortOn === column.id }">{{column.name}}&nbsp;</div>
-                        <div class="column-sort">
-                            <i ng-class="{'ion-chevron-up' : data.sortReverse === false, 'ion-chevron-down' : data.sortReverse === true} " ng-if="data.sortOn === column.id"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <div class="item low-pad-item item-icon-right" ng-repeat="item in data.items | orderBy:sortData:data.sortReverse ">
-                <div class="flex-container wrap">
-                    <div ng-repeat="column in data.columns">
-                        <div class="column">{{item[column.id]}}&nbsp;</div>
-                    </div>
-                </div>
-                <i class="icon ion-chevron-right icon-accessory"></i>
-            </div>
-      </ion-list>
+    </div>
 
 
+<div class="padding">
 
+    <button class="button button-flat button-energized icon-left ion-calendar button-full" ng-click="add()">Add notification</button>
+    <button class="button button-flat button-energized icon-left ion-clock button-full" ng-click="isScheduled()">Is Scheduled</button>
+
+        </div>
 
 
 

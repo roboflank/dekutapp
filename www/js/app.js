@@ -18,7 +18,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  });
  })*/
 	.constant("settings", {
-		title:"Raymond Camden's Blog",
+		title:"Dekut News",
 		rss:"http://feeds.feedburner.com/raymondcamdensblog"
 	})
 
@@ -194,7 +194,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     .state('timetables', {
             url: '/timetables',
             templateUrl: 'templates/academics-timetables.html',
-            controller: 'TimetableCtrl'
+            controller: 'TimetableNotificationCtrl'
         })
         .state('resources', {
             url: '/resources',

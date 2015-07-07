@@ -1,4 +1,4 @@
-angular.module('dekutapp.controller', [])
+angular.module('dekutapp.controller', ['ionic', 'ngCordova'])
     //Custom Material Effects in The App
     .controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
 
@@ -159,4 +159,36 @@ angular.module('dekutapp.controller', [])
             } else console.log("Calendar plugin not available.");
         }
 
-    });
+    })
+
+//TimeTable Local Notifications
+.controller("TimetableNotificationCtrl", function($scope, $cordovaLocalNotification) {
+
+    $scope.add = function() {
+        var alarmTime = new Date();
+        alarmTime.setMinutes(alarmTime.getMinutes() + 1);
+        $cordovaLocalNotification.add({
+            id: "1234",
+            date: alarmTime,
+            message: "This is a message",
+            title: "This is a title",
+            autoCancel: true,
+            sound: null
+        }).then(function () {
+            console.log("The notification has been set");
+        });
+    };
+
+    $scope.isScheduled = function() {
+        $cordovaLocalNotification.isScheduled("1234").then(function(isScheduled) {
+            alert("Notification 1234 Scheduled: " + isScheduled);
+        });
+    }
+    //Prompt for permission in iOS 8 only
+    $ionicPlatform.ready(function() {
+    if(device.platform === "iOS") {
+        window.plugin.notification.local.promptForPermission();
+    }
+});
+
+});
