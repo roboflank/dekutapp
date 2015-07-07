@@ -17,6 +17,10 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  }
  });
  })*/
+	.constant("settings", {
+		title:"Raymond Camden's Blog",
+		rss:"http://feeds.feedburner.com/raymondcamdensblog"
+	})
 
 .run(function (User, $ionicPlatform, $rootScope, $location) {
     //Check if User is authenticated
@@ -47,6 +51,11 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
            }
        }
        **/
+
+    //Go home func
+    $rootScope.goHome = function() {
+			$location.path('/entries');
+		};
 
 })
 
@@ -294,6 +303,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
                 }
             }
         })
+    //Rss Routes
     .state('Home', {
 				url: '/home',
 				controller: 'HomeCtrl',
