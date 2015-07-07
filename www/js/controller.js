@@ -190,5 +190,9 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova'])
         window.plugin.notification.local.promptForPermission();
     }
 });
+    //Add Event Listener for notification added
+    $scope.$on("$cordovaLocalNotification:added", function(id, state, json) {
+    alert("Added a notification");
+});
 
 });

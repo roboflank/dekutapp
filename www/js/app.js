@@ -17,12 +17,12 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  }
  });
  })*/
-	.constant("settings", {
-		title:"Dekut News",
-		rss:"http://feeds.feedburner.com/raymondcamdensblog"
-	})
+.constant("settings", {
+    title: "Dekut News",
+    rss: "http://feeds.feedburner.com/raymondcamdensblog"
+})
 
-.run(function (User, $ionicPlatform, $rootScope, $location) {
+.run(function(User, $ionicPlatform, $rootScope, $location) {
     //Check if User is authenticated
     if (User.getCachedCurrent() == null) {
         User.getCurrent();
@@ -54,49 +54,71 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
 
     //Go home func
     $rootScope.goHome = function() {
-			$location.path('/entries');
-		};
+        $location.path('/entries');
+    };
+
+ /** $ionicPlatform.ready(function() {
+        if(window.cordova &amp;&amp; window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+        }
+        if(window.StatusBar) {
+            StatusBar.styleDefault();
+        }
+        window.plugin.notification.local.onadd = function (id, state, json) {
+            var notification = {
+                id: id,
+                state: state,
+                json: json
+            };
+            $timeout(function() {
+                $rootScope.$broadcast("$cordovaLocalNotification:added", notification);
+            });
+        };
+    });
+
+    **/
+
 
 })
 
-.controller("FeedController", function ($http, $scope) {
+.controller("FeedController", function($http, $scope) {
 
-        $scope.init = function () {
+        $scope.init = function() {
             $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
                     params: {
                         "v": "1.0",
                         "q": "http://blog.nraboy.com/feed/"
                     }
                 })
-                .success(function (data) {
+                .success(function(data) {
                     $scope.rssTitle = data.responseData.feed.title;
                     $scope.rssUrl = data.responseData.feed.feedUrl;
                     $scope.rssSiteUrl = data.responseData.feed.link;
                     $scope.entries = data.responseData.feed.entries;
                     window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
                 })
-                .error(function (data) {
+                .error(function(data) {
                     console.log("ERROR: " + data);
                     if (window.localStorage["entries"] !== undefined) {
                         $scope.entries = JSON.parse(window.localStorage["entries"]);
                     }
                 });
         }
-        $scope.browse = function (v) {
+        $scope.browse = function(v) {
             window.open(v, "_system", "location=yes");
         }
 
     })
-    .controller('NavCtrl', function ($scope, $ionicSideMenuDelegate) {
-        $scope.showMenu = function () {
+    .controller('NavCtrl', function($scope, $ionicSideMenuDelegate) {
+        $scope.showMenu = function() {
             $ionicSideMenuDelegate.toggleLeft();
         };
     })
 
 
 //Email Controller
-.controller('EmailCtrl', function ($scope) {
-    $scope.sendEmail = function () {
+.controller('EmailCtrl', function($scope) {
+    $scope.sendEmail = function() {
         // 1
         var bodyText = "<h2>Look at the ScreenShot!</h2>";
         if (null != $scope.images) {
@@ -118,7 +140,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
                     subject: "DekutApp FeedBack", // subject of the email
                     body: bodyText, // email body (for HTML, set isHtml to true)
                     isHtml: true, // indicats if the body is HTML or plain text
-                }, function () {
+                }, function() {
                     console.log('email view dismissed');
                 },
                 this);
@@ -126,7 +148,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     }
 })
 
-.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $stateProvider
         .state('login', {
             url: '/login',
@@ -303,32 +325,32 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
                 }
             }
         })
-    //Rss Routes
-    .state('Home', {
-				url: '/home',
-				controller: 'HomeCtrl',
-				templateUrl: 'templates/rsshome.html'
-			})
-			.state('Entries', {
-				url: '/entries',
-				controller: 'EntriesCtrl',
-				templateUrl: 'templates/entries.html',
-			})
-			.state('Entry', {
-				url: '/entry/:index',
-				controller: 'EntryCtrl',
-				templateUrl: 'templates/entry.html',
-			})
-			.state('Offline', {
-				url: '/offline',
-				templateUrl: 'templates/offline.html'
-			});
+        //Rss Routes
+        .state('Home', {
+            url: '/home',
+            controller: 'HomeCtrl',
+            templateUrl: 'templates/rsshome.html'
+        })
+        .state('Entries', {
+            url: '/entries',
+            controller: 'EntriesCtrl',
+            templateUrl: 'templates/entries.html',
+        })
+        .state('Entry', {
+            url: '/entry/:index',
+            controller: 'EntryCtrl',
+            templateUrl: 'templates/entry.html',
+        })
+        .state('Offline', {
+            url: '/offline',
+            templateUrl: 'templates/offline.html'
+        });
 
     $urlRouterProvider.otherwise('/intro');
 
-    $httpProvider.interceptors.push(function ($q, $location) {
+    $httpProvider.interceptors.push(function($q, $location) {
         return {
-            responseError: function (rejection) {
+            responseError: function(rejection) {
                 console.log("Redirect");
                 if (rejection.status == 401 && $location.path() !== '/login' && $location.path() !== '/register') {
                     $location.nextAfterLogin = $location.path();

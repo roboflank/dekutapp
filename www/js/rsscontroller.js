@@ -7,7 +7,7 @@
 	.controller('HomeCtrl', ['$ionicPlatform', '$scope', '$rootScope', '$cordovaNetwork', '$ionicLoading', '$location', 'rssService', 'settings', function($ionicPlatform, $scope, $rootScope, $cordovaNetwork, $ionicLoading, $location, rssService, settings) {
 
 		$ionicLoading.show({
-      		template: 'Loading...'
+      		template: 'Working on it...'
 		});
 
 		$ionicPlatform.ready(function() {
