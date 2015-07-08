@@ -1,5 +1,5 @@
 <ion-view class="ionic walkthrough-view">
-    <ion-content scroll="false">
+    <ion-content>
 
         <div class="top-content row">
 
@@ -8,12 +8,18 @@
                 <div class="card padding">
 
                     <div class="item item-text-wrap">
-                        Contribute In the Building Of Dekut App. Your FeedBack is Highly Appreciated. Leave us a comment or feedback through Email, Text or even a call, so that we can interact with that information. Links are Provided Below.
+                        Contribute In the Building Of DekutApp. Your FeedBack is Highly Appreciated. Leave us a comment or feedback through Email, Text or even a call, so that we can interact with that information. Links are Provided Below.
                     </div>
 
                 </div>
                 <a ng-click="sendEmail()">
-                    <button class="button button-fab button-balanced icon ion-email"></button>
+                    <button class="button button-fab button-assertive icon ion-email"></button>
+                </a>
+                  <a href="https://www.twitter.com/dekutapp">
+                    <button class="button button-fab button-positive icon ion-social-twitter"></button>
+                </a>
+                 <a href="https://www.facebook.com/dekutapp">
+                    <button class="button button-fab button-positive icon ion-social-facebook"></button>
                 </a>
                       <div ng-controller="InviteCtrl">
         <button class="button button-block button-energized icon ion-person-stalker" ng-click="shareAnywhere()">
@@ -29,16 +35,16 @@
                 <button class="button button-full button-flat button-assertive ink icon-left ion-log-in">Call US</button>
             </a>
 
-            <a href="tel:+254707769247">
+            <a href="sms:+254707769247?body=DekutAppFeedBack">
                 <button class="button button-full button-flat button-positive icon-left ion-email">Text Us</button>
             </a>
+<div class="text-center">
+        <a class="button button-clear button-full button-block button-energized icon ion-social-github" href="https://www.github.com/denzelwamburu/kimathiuniapp.git">
+&nbsp; You A Dev? Fork Us &nbsp;<i class="icon ion-fork-repo"></i>
+</a>
+        </div>
+        </div>
 
-        </div>
-          <div ng-controller="InviteCtrl">
-        <button class="button button-block button-energized icon ion-person-stalker" ng-click="shareAnywhere()">
- Invite A Friend
-</button>
-        </div>
 
     </ion-content>
 </ion-view>
