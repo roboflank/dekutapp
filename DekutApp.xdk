@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "c66043b5-bb0e-4c13-8cfb-5fad92cd7287",
-      "lastModifiedDate": 1434979369590,
+      "lastModifiedDate": 1436367896690,
       "creationDate": 1431692504568
     },
     "sourceDirectory": "www",
@@ -47,7 +47,8 @@
         "preferences_": {
           "android-minSdkVersion": "10",
           "android-targetSdkVersion": "19",
-          "android-installLocation": "auto"
+          "android-installLocation": "auto",
+          "android-signed": true
         },
         "isActive_": true,
         "appName_": "DekutApp",
