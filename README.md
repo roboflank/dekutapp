@@ -17,20 +17,20 @@ Secondaries(click for further information):
 
 * npm (installed together with node.js, usually bundled in it)
 * [bower](http://bower.io)
-* [Git](http://git-scm.com) 
+* [Git](http://git-scm.com)
 * [Intel XDK](https://download.xdk.intel.com/xdk/xdk_web_linux64_master_1995.tgz) - For Linux
 * [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora/firefox-40.0a2.en-US.linux-x86_64.tar.bz2) - Mozilla for Linux
 ## Getting Started
 Setup Locally
 ```
-git clone https://github.com/denzelwamburu/kimathiuniapp.git && cd kimathiuniapp && sudo npm install 
+git clone https://github.com/denzelwamburu/kimathiuniapp.git && cd kimathiuniapp && sudo npm install
 ```
 
 To Run the app locally, follow these simple steps below:
 
 Clone the repo to your /projectfolder or download the project
 ```
-git clone github.com/denzelwamburu/kimathiuniapp.git 
+git clone github.com/denzelwamburu/kimathiuniapp.git
 ```
 Open Your Terminal and start a new Ionic Project
 
@@ -64,6 +64,8 @@ Configure the server to work with the app
 ##Bugs
 * SignUp Button not showing when screen oriented.
 * Map not loading.
+* Tweets not showing while Using MongoDb.
+* No redirect after SignUp
 
 
 

@@ -37,7 +37,9 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         StatusBar.styleLightContent(); //status bar will have white text and icons
     }
 
-    /**  if (window.Connection) {
+    //Replace $ionicPopup function with toast function
+    /**  
+    if (window.Connection) {
            if (navigator.connection.type == Connection.NONE) {
                $ionicPopup.confirm({
                        title: 'No Internet Connection',
@@ -57,14 +59,9 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         $location.path('/entries');
     };
 
- /** $ionicPlatform.ready(function() {
-        if(window.cordova &amp;&amp; window.cordova.plugins.Keyboard) {
-            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        }
-        if(window.StatusBar) {
-            StatusBar.styleDefault();
-        }
-        window.plugin.notification.local.onadd = function (id, state, json) {
+    $ionicPlatform.ready(function() {
+//load cordova local notifications plugin with default settings
+        window.plugin.notification.local.onadd = function(id, state, json) {
             var notification = {
                 id: id,
                 state: state,
@@ -76,7 +73,6 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         };
     });
 
-    **/
 
 
 })

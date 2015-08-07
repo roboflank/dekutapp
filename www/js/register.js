@@ -1,5 +1,5 @@
 angular.module('dekutapp.register', ['lbServices', 'ionic'])
-    .controller('RegisterCtrl', function ($scope, User, Avatar, $ionicPopup, $location) {
+    .controller('RegisterCtrl', function ($scope, User, Avatar, $ionicPopup, $location, $ionicLoading) {
         /**
          * Currently you need to initialiate the variables
          * if you want to use them in the controller. This seems to be a bug with
@@ -53,7 +53,20 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                     $scope.showAlert(err.statusText, err.data.error.message);
                 });
         };
+ /*
+         * Show loading while data is being processed
+         * Then hide loading when feedback is gotten
+         */
 
+        $scope.show = function(message) {
+            $ionicLoading.show({
+                template: 'Please Wait...'
+            });
+        };
+
+        $scope.hide = function() {
+            $ionicLoading.hide();
+        };
         /**
          * @name showAlert()
          * @param {string} title

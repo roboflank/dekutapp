@@ -1,7 +1,7 @@
 angular.module('dekutapp.login', ['lbServices', 'ionic'])
-    .controller('LoginCtrl', function ($scope, User, $location, $ionicPopup) {
-        if (User.getCachedCurrent()!==null) {
-           $location.path('tab/home');
+    .controller('LoginCtrl', function($scope, User, $location, $ionicPopup, $ionicLoading) {
+        if (User.getCachedCurrent() !== null) {
+            $location.path('tab/home');
         }
         /**
          * Currently you need to initialiate the variables
@@ -17,14 +17,28 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
          * @desctiption
          * Show a popup with the given parameters
          */
-        $scope.showAlert = function (title, errorMsg) {
+        $scope.showAlert = function(title, errorMsg) {
             var alertPopup = $ionicPopup.alert({
                 title: title,
                 template: errorMsg
             });
-            alertPopup.then(function (res) {
+            alertPopup.then(function(res) {
                 console.log($scope.loginError);
             });
+        };
+        /*
+         * Show loading while data is being processed
+         * Then hide loading when feedback is gotten
+         */
+
+        $scope.show = function(message) {
+            $ionicLoading.show({
+                template: 'Please Wait...'
+            });
+        };
+
+        $scope.hide = function() {
+            $ionicLoading.hide();
         };
 
         /**
@@ -33,20 +47,30 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
          * sign-in function for users which created an account
          * var next shows the redirection page after login, default is tab/home
          */
-        $scope.login = function () {
-            $scope.loginResult = User.login({include: 'user', rememberMe: true}, $scope.credentials,
-                function () {
+        $scope.login = function() {
+            $scope.show();
+            $scope.loginResult = User.login({
+                    include: 'user',
+                    rememberMe: true
+                }, $scope.credentials,
+
+                function() {
                     var next = $location.nextAfterLogin || 'tab/home';
                     $location.nextAfterLogin = null;
                     $location.path(next);
+                    $scope.hide();
                 },
-                function (err) {
+                function(err) {
+                    $scope.hide();
+
                     $scope.loginError = err;
+
                     $scope.showAlert(err.statusText, err.data.error.message);
                 }
             );
+
         };
-        $scope.goToRegister = function () {
+        $scope.goToRegister = function() {
             $location.path('register');
         };
 

@@ -1,7 +1,9 @@
 (function (window, angular, undefined) {
     'use strict';
 
-    var urlBase = "http://localhost:3000/api";
+    //var urlBase = "http://localhost:3000/api";
+    var urlBase = "https://dkutappserver.herokuapp.com/api";
+
     var authHeader = 'authorization';
 
     /**
