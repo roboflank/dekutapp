@@ -34,15 +34,22 @@
                 on-infinite="loadMore()">
         </ion-infinite-scroll>
     </ion-content>
-    <form novalidate="novalidate" name="tweetForm">
-        <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+       <script id="newtweet.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                <form novalidate="novalidate" name="tweetForm">
             <label class="item-input-wrapper">
                 <input type="text" placeholder="Type your tweet" ng-model="newTweet.content" required/>
             </label>
             <button ng-disabled="!tweetForm.$valid" class="button button-small button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
                 Send
             </button>
-        </ion-footer-bar>
     </form>
-<button ng-disabled="!tweetForm.$valid" class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="saveTweet()"></button>
+                </ion-content>
+            </ion-modal-view>
+        </script>
+ <button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button>
 </ion-view>
