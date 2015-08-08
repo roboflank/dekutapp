@@ -24,6 +24,10 @@
     {
       "locator": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
       "id": "nl.x-services.plugins.calendar"
+    },
+    {
+      "locator": "https://github.com/danwilson/google-analytics-plugin.git",
+      "id": "cordova-plugin-google-analytics"
     }
   ],
   "cordovaPlatforms": []

@@ -17,11 +17,6 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
  }
  });
  })*/
-.constant("settings", {
-    title: "Dekut News",
-    rss: "http://feeds.feedburner.com/raymondcamdensblog"
-})
-
 .run(function(User, $ionicPlatform, $rootScope, $location) {
     //Check if User is authenticated
     if (User.getCachedCurrent() == null) {
@@ -71,6 +66,11 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
                 $rootScope.$broadcast("$cordovaLocalNotification:added", notification);
             });
         };
+         if(typeof analytics !== undefined) {
+                analytics.startTrackerWithId("UA-XXXXXXXX-XX");
+            } else {
+                console.log("Google Analytics Unavailable");
+            }
     });
 
 
