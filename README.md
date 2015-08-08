@@ -1,9 +1,5 @@
-## Client
-
-This Branch is for the Apps version but with twitt feature
-
 ##Server
-The server for this app is here https://github.com/denzelwamburu/dekutappserver
+The server for this app is here https://github.com/Dekutapp/dekutappserver
 
 ## Dependencies
 You will need to install some stuff, if you haven't already:
@@ -23,14 +19,14 @@ Secondaries(click for further information):
 ## Getting Started
 Setup Locally
 ```
-git clone https://github.com/denzelwamburu/kimathiuniapp.git && cd kimathiuniapp && sudo npm install
+git clone https://github.com/Dekutapp/dekutapp.git && cd dekutapp && bower install && sudo npm install
 ```
 
 To Run the app locally, follow these simple steps below:
 
 Clone the repo to your /projectfolder or download the project
 ```
-git clone github.com/denzelwamburu/kimathiuniapp.git
+git clone github.com/Dekutapp/dekutapp.git
 ```
 Open Your Terminal and start a new Ionic Project
 
@@ -75,6 +71,6 @@ E-Learning portal  ``` COMING SOON ```
 ### Other ressources used
 - custom time filter for angular https://github.com/B-Sides/angular-timedistance
 - pictures used in this app http://www.deviantart.com/art/Face-Avatars-107881096
+- Ionic Material https://ionicmaterial.com
 
-
-Feel Free to Contribute :smiley:
+Feel Free to Contribute :heartbeat:

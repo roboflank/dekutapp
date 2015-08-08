@@ -8,7 +8,7 @@ propose changes to this document in a pull request.
 
 ## Submitting Issues
 
-* You can create an issue [here](https://github.com/denzelwamburu/kimathiuniapp/issues/new),
+* You can create an issue [here](https://github.com/DekutApp/dekutapp/issues/new),
   and include as many details as possible with your report.
 * Include the version of Android that you are using, the device when are testing and the DkutApp version.
 * Include screenshots and animated GIFs whenever possible; they are immensely
@@ -17,7 +17,7 @@ propose changes to this document in a pull request.
   such as Emacs, vi, Xcode, etc.
 * Check the web console for errors to include. If you can reproduce the error, use this approach to get the
   full stack trace and include it in the issue.
-* Perform a [cursory search](https://github.com/denzelwamburu/kimathiuniapp/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+)
+* Perform a [cursory search](https://github.com/Dekutapp/dekutapp/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+)
   to see if a similar issue has already been submitted.
 * Please setup a [profile picture](https://help.github.com/articles/how-do-i-set-up-my-profile-picture)
   to make yourself recognizable and so we can all get to know each other better.
@@ -26,10 +26,10 @@ propose changes to this document in a pull request.
 ## Submitting Pull Request
 
 * First make a new Fork of the project.
-* Perform a [cursory search](https://github.com/kimathiuniapp/kimathiuniapp/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+)
+* Perform a [cursory search](https://github.com/Dekutapp/dekutapp/pulls?utf8=%E2%9C%93&q=is%3Apr+is%3Aopen+)
 to see if a similar pull request has already been submitted.
 * Create a new Issue for this Pull Request.
-* Name your branch something like this kimathiunapp-NumberOfTheIssue
+* Name your branch something like this dekutapp-NumberOfTheIssue
 * Consider use [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/).
 * Write and run Unit Test [see here for unit test](#running-tests-(TODO)).
 * Follow the Javascript style guide and conventions.
