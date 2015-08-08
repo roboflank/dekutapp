@@ -1,4 +1,17 @@
 /* Empty. Add your own CSS if you like */
+
+.login {
+    background: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 80%;
+    height: 246px;
+    margin: auto;
+    z-index: 2;
+    position: relative;
+}
+
 .date {
     float: right;
 }

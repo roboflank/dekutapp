@@ -67,7 +67,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             });
         };
          if(typeof analytics !== undefined) {
-                analytics.startTrackerWithId("UA-XXXXXXXX-XX");
+                analytics.startTrackerWithId("UA-54400853-2");
             } else {
                 console.log("Google Analytics Unavailable");
             }
