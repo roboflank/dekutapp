@@ -1,7 +1,7 @@
 angular.module('dekutapp.home', ['lbServices'])
 .controller('HomeTabCtrl', function ($scope, $location, User, Tweet, Like, Avatar, $ionicModal) {
 //Define Modal object
-    $ionicModal.fromTemplateUrl('newtweet.html', {
+    $ionicModal.fromTemplateUrl('templates/newtweet.html', {
             scope: $scope,
             animation: 'slide-in-up'
         }).then(function (modal) {
@@ -228,9 +228,13 @@ angular.module('dekutapp.home', ['lbServices'])
             function (res) {
                 delete $scope.newTweet;
                 $scope.refresh();
+            $scope.close = function() {
+        $scope.modal.hide();
+    };
             },
             function (err) {
                 console.log(err)
             })
+        
     };
 })
