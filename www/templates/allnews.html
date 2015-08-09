@@ -1,121 +1,69 @@
-<ion-view view-title="Renting Items" class="ionic title">
- <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-  </ion-nav-buttons>
-    
-    <button class="button button-fab button-fab-bottom-right button-assertive icon ion-android-add waves-effect waves-button waves-light"></button>
-  <ion-nav-title>
-    <span>RENT!T</span>
-  </ion-nav-title>
+<ion-view class="ionic">
+    <ion-header-bar class="ionic bar bar-header bar-positive item-input-inset" style="position: static;">
+        <h1 class="title">Notice Board</h1>
+        <a class="button icon ion-navicon" href="#/tab/home"></a>
 
-    <ion-tabs class="tabs-striped tabs-top tabs-background-royal tabs-light">
+        <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+ <div class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input id="searchKey" type="search" placeholder="Search The News" ng-model="search"
+               autocorrect="off" ng-change="setFilter()">
+      </div>
+    </ion-header-bar>
 
-        <ion-tab title="ALL ITEMS">
-            <ion-nav-view name="home-tab">
-                <!--Miracle begins here-->
-                <ion-content>
-     <!-- Refresh to get the new posts -->
+    <ion-content class="ionic">
 
-    <div class="list card stable-bg" ng-repeat="article in articles">
-              <!--  <div class="item item-avatar">
-                    <img src="img/phone.png">
-                    <h2>{{article.title}}</h2>
-                </div>
--->
-        <div class="content">
-           <a  ng-href="#app/articles/{{article._id}}"><h4 class="item tabs tabs-secondary bar-dark">{{article.title}}</h4></a> 
-        <div class="item item-body">
-{{article.content}}                    <p>
-                        <a class="subdued">1 Like</a>
-                        <a class="subdued">5 Comments</a>
-                    </p>
-                </div>
-        </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-thumbsup"></i> Like
-                    </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-chatbox"></i> Comment
-                    </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-share"></i> Share
-                    </a>
-                </div>
+<label class="item item-input item-select">
+              <div class="input-label pull-right">
+                  <strong>Sort By</strong>
+              </div>
+              <select ng-model="field">
+                  <option value="all" ng-selected="true" selected>All</option>
+                  <option value="title">Title</option>
+                  <option value="speaker">Speaker</option>
+                  <option value="description">Description</option>
+                  <option value="room">Room</option>
+
+              </select>
+          </label>
+        <ion-item ng-repeat="article in articles | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#app/articles/{{article._id}}">
+
+            <p class="item item-divider title">{{article.title}}</p>
+            <div class="item item-body">
+{{article.content}}  
+                <h4>By {{article.displayname}}</h4>
+
             </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+               <a class="tab-item" ng-click="addToCalender()">
+                    <i class="icon icon-left ion-calendar button-balanced"></i>
+                    Add
+                </a>
+                <a class="tab-item" ng-click="shareNative()">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>
+        </ion-item>
+
+
+    </ion-content>
+   <!-- 
+<div ng-controller="ExtensionsCtrl"><button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button></div>
+       <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
+                    <p> We are working on the Details we will gie you the feedback soon. :)
+
                 </ion-content>
-            </ion-nav-view>
-        </ion-tab>
-
-        <ion-tab title="BUSINESSES">
-            <ion-nav-view name="dev-tab">
-            <ion-content ng-controller="ItemsCtrl">
-
-    <div class="list card stable-bg" ng-repeat="item in items">
-              <!--  <div class="item item-avatar">
-                    <img src="img/phone.png">
-                    <h2>{{article.title}}</h2>
-                </div>
--->
-        <div class="content">
-           <a  ng-href="#app/items/{{item._id}}"><h4 class="item tabs tabs-secondary bar-dark">{{item.name}}</h4></a> 
-        <div class="item item-body">
-{{item.content}}                    <p>
-                        <a class="subdued">1 Like</a>
-                        <a class="subdued">5 Comments</a>
-                    </p>
-                </div>
-        </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-thumbsup"></i> Like
-                    </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-chatbox"></i> Comment
-                    </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-share"></i> Share
-                    </a>
-                </div>
-            </div>                </ion-content>
-            </ion-nav-view>
-        </ion-tab>
-<!--
-        <ion-tab title="Account" icon="ion-person">
-            <ion-nav-view name="account-tab">
-            <ion-content>
-                <div class="list">
-
-  <a class="item item-icon-left" href="#">
-    <i class="icon ion-email"></i>
-    Check mail
-  </a>
-
-  <a class="item item-icon-left item-icon-right" href="#">
-    <i class="icon ion-chatbubble-working"></i>
-    Call Ma
-    <i class="icon ion-ios-telephone-outline"></i>
-  </a>
-
-  <a class="item item-icon-left" href="#">
-    <i class="icon ion-mic-a"></i>
-    Record album
-    <span class="item-note">
-      Grammy
-    </span>
-  </a>
-
-  <a class="item item-icon-left" href="#">
-    <i class="icon ion-person-stalker"></i>
-    Friends
-    <span class="badge badge-assertive">0</span>
-  </a>
-
-</div>
-                </ion-content>
-            </ion-nav-view>
-        </ion-tab>
--->
-
-    </ion-tabs>
+            </ion-modal-view>
+        </script> -->
 </ion-view>
+<ion-content>
