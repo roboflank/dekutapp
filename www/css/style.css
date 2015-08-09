@@ -7,19 +7,21 @@
   padding-bottom: 0; }
   .item-md-label .input-label {
     position: absolute;
-    padding: 5px 0 0;
-    z-index: 2;
+padding: 0px 4px 83px;
+      z-index: 2;
     -webkit-transform: translate3d(0, -30px, 0) scale(1);
     transform: translate3d(0, -30px, 0) scale(1);
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
-    color: #444;
-    opacity: 0.5;
+    color: #fff;
+    opacity: 3.5;
     transform-origin: 0; }
   .item-md-label input {
     z-index: 1;
     position: relative;
-    bottom: 0; }
+    bottom: 0; 
+  background-color: #444;
+  }
   .item-md-label .highlight {
     position: absolute;
     bottom: 0;

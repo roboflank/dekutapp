@@ -1,24 +1,23 @@
-<ion-content class="ionic login animate-pan-in-left" style="background-image: url('../img/banner.jpg');">
+<ion-content class="ionic login animate-pan-in-left" style="background-image: url('../img/13.jpg');">
 
     <div class="hero no-header flat">
         <div class="content">
             <i class="ion-unlocked icon hero-icon royal-bg"></i>
-            <h1 class="title-center">DukApp</h1>
+            <h1 class="title-center">Login</h1>
         </div>
     </div>
     <!--div for continue with google-->
     <form novalidate="novalidate" name="loginForm">
 
         <div class="list">
-            <ion-md-input type="text" name="username" placeholder="E-mail or username" ng-model="credentials.username" required></ion-md-input>
+            <ion-md-input type="text" name="username" placeholder="Username" ng-model="credentials.username" required></ion-md-input>
             <ion-md-input type="password" name="password" placeholder="Password" ng-model="credentials.password" required></ion-md-input>
         </div>
         <div class="padding">
             <button ng-disabled="!loginForm.$valid" class="button button-block button-positive waves-effect waves-light" ng-click="login()">Login &nbsp
                 <i class="ion-key"></i>
             </button>
-            <button class="button button-block button-positive waves-effect waves-light" ng-click="goToRegister()">Don't have an account yet?
-                <i class="ion-key"></i>
+            <button class="button button-block button-raised button-stable ink-dark" ng-click="goToRegister()">Don't have an account yet?
             </button>
         </div>
     </form>
