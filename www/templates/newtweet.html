@@ -1,34 +1,19 @@
-<div class="ionic modal slide-in-up" ng-controller="newCtrl">
+<div class="ionic modal slide-in-up" ng-controller="HomeTabCtrl">
    <header class="bar bar-header bar-positive flat">
-      <h1 class="title fab-left">New Item</h1>
+      <h1 class="title fab-left">New Twitt</h1>
       <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
    </header>
    <ion-content class="padding has-header">
-       <form name="StockForm">
+                <form novalidate="novalidate" name="tweetForm">
          <label class="item item-input item-floating-label">
-                    <span class="input-label">Item Name:</span>
-                    <input type="text" name="itemname" placeholder="Item Name" ng-model="data.item" required>
+                    <span class="input-label">What's Happening</span>
+                <input type="text" placeholder="Type your tweet" ng-model="newTweet.content" required/>
                 </label>
-           <label class="item item-input item-floating-label">
-                    <span class="input-label">Quantity: </span>
-                    <input type="text" name="itemquantity" placeholder="Quantity in Stock" ng-model="data.quantity" required>
-                </label>
-      <div class="item item-checkbox">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                    </label>
-
-Notify Me When Item Stock is running Low
-       </div>
-       <div ng-controller="dateCtrl">
-         <ionic-datepicker idate="currentDate" disablepreviousdates="true"  disablefuturedates="false" callback="datePickerCallback" disableddates="disabledDates" title="title" mondayfirst="true">
-       <button class="button button-block button-positive"> {{ currentDate | date:'dd - MMMM - yyyy' }} </button>
-       </ionic-datepicker>
-       </div>
-  <button ng-disabled="StockForm.$invalid" class="button button-full button-positive icon-left ion-checkmark"
-                        ng-click="createNew()">
-                    Submit
-                </button>
+           
+  <button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-checkmark"
+                        data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
+Send
+                    </button>
        </form>
 
    </ion-content>
