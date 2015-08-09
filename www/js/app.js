@@ -234,7 +234,18 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
             templateUrl: 'templates/notice.html',
             controller: 'SessionCtrl'
         })
-
+    
+    //news article logics
+.state('articles', {
+    url: "/articles",
+        templateUrl: 'templates/allnews.html',
+        controller: 'ArticlesCtrl'
+  })
+     .state('article', {
+    url: "/articles/:articleId",
+        templateUrl: 'templates/newsitem.html',
+        controller: 'ArticleCtrl'
+  })
 
     //Tour Logics
     .state('tour', {

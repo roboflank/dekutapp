@@ -1,5 +1,21 @@
 angular.module('dekutapp.controller', ['ionic', 'ngCordova'])
-    //Custom Material Effects in The App
+//Factory for Articles
+
+.factory('Articles', function ($resource) {
+  return $resource('http://localhost:3000/api/articles/:articleId');
+})
+
+//Contoller for getting posts
+.controller('ArticlesCtrl', function($scope, Articles) {
+    $scope.articles = Articles.query();
+})
+//Controller for Articles(plural)
+.controller('ArticleCtrl', function($scope, $stateParams, Articles) {
+    $scope.article = Articles.get({articleId: $stateParams.articleId});
+})    
+
+
+//Custom Material Effects in The App
     .controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
 
 
