@@ -1,12 +1,14 @@
-<ion-view title="Tweet Detail" class="ionic">
+<div  class="ionic">
+    <ion-view title="Tweet Detail">
     <ion-content padding="false">
         <ion-item class="item-avatar-left">
             <img ng-src="{{tweet.avatar}}">
             <h2>{{tweet.ownerUsername}}<p class="date">{{tweet.date | timeDistance}}</p></h2>
-            <p>
-                <!--<blockquote style="padding-top: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align: justify;"></blockquote>-->
-                {{tweet.content}}
-            </p>
+           <div class="item item-body">
+                            {{tweet.content}}
+
+            </div>
+           
         </ion-item>
 
         <h4 style="margin-left: 10px">Comments</h4>
@@ -31,3 +33,4 @@
         </ion-footer-bar>
     </form>
 </ion-view>
+</div>
