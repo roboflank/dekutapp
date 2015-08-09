@@ -36,19 +36,24 @@
     </ion-content>
        <script id="newtweet.html" type="text/ng-template">
             <ion-modal-view class="ionic">
-                <ion-header-bar>
-                    <h1 class="title">Notice Board Instructions</h1>
-                </ion-header-bar>
-                <ion-content class="padding">
+                <header class="bar bar-header bar-positive flat">
+      <h1 class="title fab-left">New Twitt</h1>
+      <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+   </header>
+   <ion-content class="padding has-header">
                 <form novalidate="novalidate" name="tweetForm">
-            <label class="item-input-wrapper">
-                <input type="text" placeholder="Type your tweet" ng-model="newTweet.content" required/>
-            </label>
-            <button ng-disabled="!tweetForm.$valid" class="button button-small button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
-                Send
-            </button>
-    </form>
-                </ion-content>
+         <label class="item item-input item-floating-label">
+                    <span class="input-label">What's Happening</span>
+                <input type="text" placeholder="Type your twitt" ng-model="newTweet.content" required/>
+                </label>
+           
+  <button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-checkmark"
+                        data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
+Send
+                    </button>
+       </form>
+
+   </ion-content>
             </ion-modal-view>
         </script>
  <button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button>

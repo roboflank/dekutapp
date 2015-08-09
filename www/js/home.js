@@ -1,5 +1,5 @@
 angular.module('dekutapp.home', ['lbServices'])
-.controller('HomeTabCtrl', function ($scope, $location, User, Tweet, Like, Avatar) {
+.controller('HomeTabCtrl', function ($scope, $location, User, Tweet, Like, Avatar, $ionicModal) {
     $scope.currentUser = User.getCurrent();
     $scope.newTweet = {};
     $scope.tweets = [];
@@ -22,6 +22,29 @@ angular.module('dekutapp.home', ['lbServices'])
             title: 'Error',
             template: data
         })
+    };
+    
+    //Show Modal for new Tweet
+    $ionicModal.fromTemplateUrl('newtweet.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.openModal = function () {
+            $scope.modal.show();
+            $timeout(function () {
+                $scope.modal.hide();
+            }, 2000);
+        };
+        // Cleanup the modal when we're done with it
+        $scope.$on('$destroy', function () {
+            $scope.modal.remove();
+        });
+
+     $scope.close = function() {
+        $scope.modal.hide();
     };
 
 
@@ -202,6 +225,7 @@ angular.module('dekutapp.home', ['lbServices'])
      * Create a new entry in the tweet model
      */
     $scope.saveTweet = function () {
+        $scope.close();
         $scope.newTweet.date = new Date().toJSON();
         $scope.newTweet.ownerId = $scope.currentUser.id;
         $scope.newTweet.ownerUsername = $scope.currentUser.username;
