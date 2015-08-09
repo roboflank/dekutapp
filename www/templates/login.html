@@ -1,33 +1,5 @@
-<ion-view title="Welcome To DekutApp" class="title ionic">
-    <ion-nav-bar class="bar bar-header bar-dark"></ion-nav-bar>
 
-    <ion-content class="ionic login">
-        <form novalidate="novalidate" name="loginForm">
-            <div class="list list-inset">
-                <label class="item item-input">
-                    <i class="icon ion-ios7-person"></i>
-                    <input type="text" name="username" placeholder="E-mail or username" ng-model="credentials.username"
-                           required>
-                </label>
-                <label class="item item-input">
-                    <i class="icon ion-ios7-locked"></i>
-                    <input type="password" name="password" placeholder="Password" ng-model="credentials.password"
-                           required>
-                </label>
-            </div>
-            <div class="padding">
-                <button ng-disabled="!loginForm.$valid" class="button button-full button-flat button-assertive ink icon-left ion-log-in"
-                        ng-click="login()">
-                    Login
-                </button>
-                <button class="button button-block button-royal button-outline" ng-click="goToRegister()">Don't have an account yet?</button>
-
-            </div>
-        </form>
-    </ion-content>
-</ion-view>
-<!--
-<ion-content class="ionic login animate-pan-in-left" style="background-image: url(./img/banner.jpg);">        
+<ion-content class="ionic login animate-pan-in-left">        
 
         <div class="hero no-header flat">
             <div class="content">
@@ -37,7 +9,7 @@
         </div>
         <!--div for continue with google-->
         
-      <!--  <div class="list">
+     <div class="list">
             <ion-md-input placeholder="Email" highlight-color="balanced" type="email" ng-model="user.email"></ion-md-input>
             <ion-md-input placeholder="Password" highlight-color="energized" type="password" ng-model="user.password"></ion-md-input>
         </div>
@@ -47,14 +19,11 @@
             </button>
             
         </div>
-    <!--   <div class="contbutt">
-        <a class="button button-assertive" ng-click="login('google')">
-          <i class="ion-social-googleplus"></i>&nbsp Continue With Google
-          <i class="ion-social-facebook"></i> 
+  
 
 
       </a>
       </div>
         
-    </ion-content> -->
+    </ion-content> 
 
