@@ -11,9 +11,9 @@
  * the UI Router and the core router.
  *
  * It also provides a `when()` method to register routes that map to certain urls.
- * Behind the scenes it actually delegates either to
- * {@link ui.router.router.$urlRouterProvider $urlRouterProvider} or to the
- * {@link ui.router.state.$stateProvider $stateProvider} to postprocess the given
+ * Behind the scenes it actually delegates either to 
+ * {@link ui.router.router.$urlRouterProvider $urlRouterProvider} or to the 
+ * {@link ui.router.state.$stateProvider $stateProvider} to postprocess the given 
  * router definition object.
  */
 $RouteProvider.$inject = ['$stateProvider', '$urlRouterProvider'];
@@ -43,7 +43,7 @@ function $RouteProvider(  $stateProvider,    $urlRouterProvider) {
    * @description
    * Registers a route with a given route definition object. The route definition
    * object has the same interface the angular core route definition object has.
-   *
+   * 
    * @example
    * <pre>
    * var app = angular.module('app', ['ui.router.compat']);

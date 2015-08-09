@@ -5,9 +5,9 @@
  * @requires ui.router.util.$urlMatcherFactoryProvider
  *
  * @description
- * `$urlRouterProvider` has the responsibility of watching `$location`.
- * When `$location` changes it runs through a list of rules one by one until a
- * match is found. `$urlRouterProvider` is used behind the scenes anytime you specify
+ * `$urlRouterProvider` has the responsibility of watching `$location`. 
+ * When `$location` changes it runs through a list of rules one by one until a 
+ * match is found. `$urlRouterProvider` is used behind the scenes anytime you specify 
  * a url in a state configuration. All urls are compiled into a UrlMatcher object.
  *
  * There are several methods on `$urlRouterProvider` that make it useful to use directly
@@ -15,7 +15,7 @@
  */
 $UrlRouterProvider.$inject = ['$urlMatcherFactoryProvider'];
 function $UrlRouterProvider(  $urlMatcherFactory) {
-  var rules = [],
+  var rules = [], 
       otherwise = null;
 
   // Returns a string that is a prefix of all strings matching the RegExp
@@ -94,8 +94,8 @@ function $UrlRouterProvider(  $urlMatcherFactory) {
    * });
    * </pre>
    *
-   * @param {string|object} rule The url path you want to redirect to or a function
-   * rule that returns the url path. The function version is passed two params:
+   * @param {string|object} rule The url path you want to redirect to or a function 
+   * rule that returns the url path. The function version is passed two params: 
    * `$injector` and `$location` services.
    *
    * @return {object} $urlRouterProvider - $urlRouterProvider instance
@@ -244,8 +244,8 @@ function $UrlRouterProvider(  $urlMatcherFactory) {
          *
          * @description
          * Triggers an update; the same update that happens when the address bar url changes, aka `$locationChangeSuccess`.
-         * This method is useful when you need to use `preventDefault()` on the `$locationChangeSuccess` event,
-         * perform some custom logic (route protection, auth, config, redirection, etc) and then finally proceed
+         * This method is useful when you need to use `preventDefault()` on the `$locationChangeSuccess` event, 
+         * perform some custom logic (route protection, auth, config, redirection, etc) and then finally proceed 
          * with the transition by calling `$urlRouter.sync()`.
          *
          * @example
