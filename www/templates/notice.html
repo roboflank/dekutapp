@@ -12,7 +12,7 @@
          <div class="list">
             <div class="item">
                <!-- <div class="item-avatar"> <img src="pics/{{session.pic}}"/></div>-->
-                <div class="sessionTitle"><h2>{{session.title}}</h2>
+                <div class="sessionTitle"><h2>{{notice.title}}</h2>
                     <p>{{session.speaker|uppercase}}</p>
                 </div>
 
@@ -24,7 +24,7 @@
                 </p>
             </div>
             <div class="item item-body">
-                <p>{{session.description}}</p>
+                <p>{{notice.content}}</p>
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" ng-click="addFavorite()">

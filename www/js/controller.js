@@ -1,17 +1,13 @@
-angular.module('dekutapp.controller', ['ionic', 'ngCordova'])
-//Factory for Articles
+angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'dekutapp.factory'])
 
-.factory('Articles', function ($resource) {
-  return $resource('http://localhost:3000/api/articles/:articleId');
-})
 
 //Contoller for getting posts
-.controller('ArticlesCtrl', function($scope, Articles) {
-    $scope.articles = Articles.query();
+.controller('ArticlesCtrl', function($scope, Article) {
+    $scope.articles = Article.query();
 })
 //Controller for Articles(plural)
-.controller('ArticleCtrl', function($scope, $stateParams, Articles) {
-    $scope.article = Articles.get({articleId: $stateParams.articleId});
+.controller('ArticleCtrl', function($scope, $stateParams, Article) {
+    $scope.article = Article.get({articleId: $stateParams.articleId});
 })    
 
 
@@ -124,19 +120,19 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova'])
 
 })
 
-.factory('Sessions', function ($resource) {
-        return $resource('http://localhost:5000/sessions/:sessionId');
+.factory('Notices', function ($resource) {
+        return $resource('http://localhost:3000/api/notices/:noticeId');
     })
     //Contoller for getting posts
-    .controller('SessionsCtrl', function ($scope, Sessions) {
-        $scope.sessions = Sessions.query();
+    .controller('NoticesCtrl', function ($scope, Notices) {
+        $scope.notices = Notices.query();
     })
     //Controller for Sessions(plural)
-    .controller('SessionCtrl', function ($scope, $stateParams, Sessions, $cordovaSocialSharing) {
-        $scope.session = Sessions.get({
-            sessionId: $stateParams.sessionId
+    .controller('NoticeCtrl', function ($scope, $stateParams, Notices, $cordovaSocialSharing) {
+        $scope.notice = Notices.get({
+            noticeId: $stateParams.noticeId
         });
-
+   
         //Added Share Function/Feature in Sessions Controller
         // check if  $cordovaSocialSharing module is a must
         $scope.shareNative = function () {

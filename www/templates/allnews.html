@@ -1,6 +1,6 @@
 <ion-view class="ionic">
     <ion-header-bar class="ionic bar bar-header bar-positive item-input-inset" style="position: static;">
-        <h1 class="title">Notice Board</h1>
+        <h1 class="title">Dekut News</h1>
         <a class="button icon ion-navicon" href="#/tab/home"></a>
 
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
@@ -21,17 +21,17 @@
               <select ng-model="field">
                   <option value="all" ng-selected="true" selected>All</option>
                   <option value="title">Title</option>
-                  <option value="speaker">Speaker</option>
-                  <option value="description">Description</option>
-                  <option value="room">Room</option>
+                  <option value="speaker">Date</option>
+                  <option value="description">Department</option>
+                  <option value="room">Type</option>
 
               </select>
           </label>
-        <ion-item ng-repeat="article in articles | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#app/articles/{{article._id}}">
+        <ion-item ng-repeat="article in articles" class="list card padding stable-bg" href="#/app/articles/{{article._id}}">
 
             <p class="item item-divider title">{{article.title}}</p>
             <div class="item item-body">
-{{article.content}}  
+{{article.content}}
                 <h4>By {{article.displayname}}</h4>
 
             </div>
@@ -49,7 +49,7 @@
 
 
     </ion-content>
-   <!-- 
+   <!--
 <div ng-controller="ExtensionsCtrl"><button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button></div>
        <script id="my-modal.html" type="text/ng-template">
             <ion-modal-view class="ionic">
@@ -66,4 +66,3 @@
             </ion-modal-view>
         </script> -->
 </ion-view>
-<ion-content>

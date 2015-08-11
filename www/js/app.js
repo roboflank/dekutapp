@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput', 'dekutapp.controller', 'rssappControllers', 'rssappServices'])
+angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput', 'dekutapp.controller', 'rssappControllers', 'rssappServices', 'dekutapp.factory'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -33,7 +33,7 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
     }
 
     //Replace $ionicPopup function with toast function
-    /**  
+    /**
     if (window.Connection) {
            if (navigator.connection.type == Connection.NONE) {
                $ionicPopup.confirm({
@@ -227,29 +227,29 @@ angular.module('dekutapp', ['dekutapp.account', 'dekutapp.dev', 'dekutapp.home',
         .state('notices', {
             url: '/notices',
             templateUrl: 'templates/notices.html',
-            controller: 'SessionsCtrl'
+            controller: 'NoticesCtrl'
         })
         .state('notice', {
-            url: '/notices/:sessionId',
+            url: '/notices/:noticeId',
             templateUrl: 'templates/notice.html',
-            controller: 'SessionCtrl'
+            controller: 'NoticeCtrl'
         })
-    
+
     //news article logics
 .state('articles', {
-    url: "/articles",
+    url: '/articles',
         templateUrl: 'templates/allnews.html',
         controller: 'ArticlesCtrl'
   })
      .state('article', {
-    url: "/articles/:articleId",
+    url: '/articles/:articleId',
         templateUrl: 'templates/newsitem.html',
         controller: 'ArticleCtrl'
   })
 
     //Tour Logics
     .state('tour', {
-            url: "/tour",
+            url: '/tour',
             abstract: true,
             templateUrl: "templates/tour.html"
         })

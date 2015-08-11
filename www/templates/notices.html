@@ -27,12 +27,12 @@
 
               </select>
           </label>
-        <ion-item ng-repeat="session in sessions | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{session.id}}">
+        <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{session.id}}">
 
-            <p class="item item-divider title">{{session.title}}</p>
+            <p class="item item-divider title">{{notice.title}}</p>
             <div class="item item-body">
-                {{session.description}}
-                <h4>By {{session.speaker}}</h4>
+                {{notice.content}}
+                <h4>By {{notice.user.displayName}}</h4>
 
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
