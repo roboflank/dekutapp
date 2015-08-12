@@ -12,7 +12,7 @@
 
          <div class="ionic list card stable-bg">
             <div class="item">
-                                <div class="title"><h2>{{notice.title}}</h2>
+                                <div class="title"><h2>{{article.title}}</h2>
 
                 </div>
 
@@ -24,6 +24,9 @@
 </a>
                         <a class="subdued">5 Comments</a>
                     </p>
+                  <a ng-href="{{article.newsurl}}">
+      <button class="button button-full button-flat button-positive icon-left ion-outlet">View in Site</button>
+       </a>
                 </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" ng-click="addFavorite()">
