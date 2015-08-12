@@ -227,7 +227,7 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
         .state('notices', {
             url: '/notices',
             templateUrl: 'templates/notices.html',
-            controller: 'NoticeCtrl'
+            controller: 'NoticesCtrl'
         })
         .state('notice', {
             url: '/notices/:noticeId',

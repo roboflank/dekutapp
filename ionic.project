@@ -1,8 +1,4 @@
 {
   "name": "DekutApp",
-  "app_id": "",
-  "proxies" : [{
-  "path" : "http://localhost:3000/api/notices/ ,
-  "proxyUrl" : "http://localhost:3000/api/notices/
-  }]
+  "app_id": ""
 }

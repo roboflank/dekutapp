@@ -120,10 +120,8 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
 })
 
-.factory('Notice', function ($resource) {
-        return $resource('http://localhost:3000/api/notices/:noticeId');
-    })
-    //Contoller for getting posts
+
+    //Contoller for getting notices
     .controller('NoticesCtrl', function ($scope, Notice) {
         $scope.notices = Notice.query();
     })
