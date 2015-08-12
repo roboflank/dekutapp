@@ -27,7 +27,7 @@
 
               </select>
           </label>
-        <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{session.id}}">
+        <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{notice.id}}">
 
             <p class="item item-divider title">{{notice.title}}</p>
             <div class="item item-body">

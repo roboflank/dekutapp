@@ -120,16 +120,16 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
 })
 
-.factory('Notices', function ($resource) {
+.factory('Notice', function ($resource) {
         return $resource('http://localhost:3000/api/notices/:noticeId');
     })
     //Contoller for getting posts
-    .controller('NoticesCtrl', function ($scope, Notices) {
-        $scope.notices = Notices.query();
+    .controller('NoticesCtrl', function ($scope, Notice) {
+        $scope.notices = Notice.query();
     })
     //Controller for Sessions(plural)
-    .controller('NoticeCtrl', function ($scope, $stateParams, Notices, $cordovaSocialSharing) {
-        $scope.notice = Notices.get({
+    .controller('NoticeCtrl', function ($scope, $stateParams, Notice, $cordovaSocialSharing) {
+        $scope.notice = Notice.get({
             noticeId: $stateParams.noticeId
         });
    
