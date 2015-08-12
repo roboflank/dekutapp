@@ -27,26 +27,25 @@
 
               </select>
           </label>
-        <ion-item ng-repeat="article in articles" class="list card padding stable-bg" href="#/app/articles/{{article._id}}">
+        <ion-item ng-repeat="article in articles" class="list card stable-bg" href="#/app/articles/{{article._id}}">
 
-            <p class="item item-divider title">{{article.title}}</p>
+            <p class="item">{{article.title}}</p>
             <div class="item item-body">
 {{article.content}}
-                <h4>By {{article.displayname}}</h4>
+                <h4>By {{article.user.displayName}}</h4>
 
             </div>
-            <div class="item tabs tabs-secondary tabs-icon-left">
-               <a class="tab-item" ng-click="addToCalender()">
-                    <i class="icon icon-left ion-calendar button-balanced"></i>
-                    Add
-                </a>
-                <a class="tab-item" ng-click="shareNative()">
-                    <i class="icon ion-share"></i>
-                    Share
-                </a>
-            </div>
+  
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5" ng-click="addToCalender()">
+                        <i class="icon ion-calendar"></i> Add
+                    </a>
+                    
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5" ng-click="shareNative()">
+                        <i class="icon ion-share"></i> Share
+                    </a>
+                </div>
         </ion-item>
-
 
     </ion-content>
    <!--

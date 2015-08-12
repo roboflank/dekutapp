@@ -1,28 +1,50 @@
-<ion-view title="{{article.title}}">
-<ion-content class="Ionic has-header">
 
-    <div class="list card stable-bg">
-                <div class="item">
-                    <h2>{{article.title}}</h2>
+<ion-view class="ionic">
+    <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
+        <h1 class="title">{{article.title}}</h1>
+        <a class="button icon ion-navicon" href="#/tab/home"></a>
+
+        <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+
+    </ion-nav-bar>
+    <ion-content class="ionic has-header">
+
+         <div class="ionic list card stable-bg">
+            <div class="item">
+                                <div class="title"><h2>{{notice.title}}</h2>
+
                 </div>
-                <div class="item item-body">
+
+            </div>
+              <div class="item item-body">
 {{article.content}}                    <p>
-                        <a class="subdued">1 Like</a>
+                     By   <a class="subdued">
+                  {{article.user.displayName|uppercase}}
+</a>
                         <a class="subdued">5 Comments</a>
                     </p>
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left">
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-thumbsup"></i> Like
-                    </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-chatbox"></i> Comment
-                    </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-share"></i> Share
-                    </a>
-                </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ng-click="addFavorite()">
+                    <i class="icon ion-heart" ng-class="{'fave': session.isFave}"></i>
+                    Favorite
+                </a>
+                <a class="tab-item" ng-click="addToCalender()">
+                    <i class="icon icon-left ion-calendar"></i>
+                    Add
+                </a>
+                <a class="tab-item" ng-click="shareNative()">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+                <!-- Use this if you want to share with the openFB option instead -->
+                <!--<a class="tab-item" ng-click="share(session)">-->
+                    <!--<i class="icon ion-social-facebook"></i>-->
+                    <!--Share-->
+                <!--</a>-->
             </div>
-<button class="button button-fab button-balanced icon ion-leaf ink-dark"></button>
-</ion-content>
+        </div>
+
+    </ion-content>
 </ion-view>
