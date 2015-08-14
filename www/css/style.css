@@ -1,3 +1,6 @@
+.titled {
+  color: aliceblue;
+}
 /* Empty. Add your own CSS if you like */
 .item-md-label {
   display: block;
@@ -19,7 +22,7 @@ padding: 0px 4px 83px;
   .item-md-label input {
     z-index: 1;
     position: relative;
-    bottom: 0; 
+    bottom: 0;
   background-color: #444;
   }
   .item-md-label .highlight {
