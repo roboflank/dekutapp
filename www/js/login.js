@@ -33,7 +33,7 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
 
         $scope.show = function(message) {
             $ionicLoading.show({
-                template: 'Please Wait...'
+                template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Please Wait...</div>'
             });
         };
 
