@@ -1,9 +1,34 @@
 angular.module('dekutapp.tweet', ['lbServices', 'ionic'])
-    .controller('TweetCtrl', function($scope, $location, User, $stateParams, Tweet, Avatar) {
-        $scope.currentUser = User.getCurrent();
+    .controller('TweetCtrl', function($scope, $location, User, $stateParams, Tweet, Avatar, $ionicModal) {
+     
+   
+    
+    $scope.currentUser = User.getCurrent();
         $scope.tweet = {};
         $scope.comments = {};
 
+     //Modal objects
+    $ionicModal.fromTemplateUrl('newcomment.html', {
+            scope: $scope,
+            animation: 'slide-in-up'
+        }).then(function (modal) {
+            $scope.modal = modal;
+        });
+
+        $scope.openModal = function () {
+            $scope.modal.show();
+            $timeout(function () {
+                $scope.modal.hide();
+            }, 2000);
+        };
+        // Cleanup the modal when we're done with it
+        $scope.$on('$destroy', function () {
+            $scope.modal.remove();
+        });
+
+     $scope.close = function() {
+        $scope.modal.hide();
+    };
         /**
          * @type {{object}}
          * See LoginCtrl why we need to initialiate the ng-model variable
@@ -90,6 +115,8 @@ angular.module('dekutapp.tweet', ['lbServices', 'ionic'])
          * save a new comment and fetch new comments
          */
         $scope.saveComment = function() {
+                    $scope.close();
+
             $scope.newComment.date = new Date().toJSON();
             $scope.newComment.tweetId = $stateParams.id;
             $scope.newComment.ownerId = $scope.currentUser.id;
