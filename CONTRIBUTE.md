@@ -1,8 +1,8 @@
-##Contributing to DkutApp
+##Contributing to dekutApp
 
 :+1::tada: First off, thanks for taking the time to contribute! :tada::+1:
 
-The following is a set of guidelines for contributing to DkutApp.
+The following is a set of guidelines for contributing to dekutApp.
 These are just guidelines, not rules, use your best judgment and feel free to
 propose changes to this document in a pull request.
 
@@ -10,7 +10,7 @@ propose changes to this document in a pull request.
 
 * You can create an issue [here](https://github.com/DekutApp/dekutapp/issues/new),
   and include as many details as possible with your report.
-* Include the version of Android that you are using, the device when are testing and the DkutApp version.
+* Include the version of Android that you are using, the device when are testing and the dekutApp version.
 * Include screenshots and animated GIFs whenever possible; they are immensely
   helpful.
 * Include the behavior you expected and other places you've seen that behavior
@@ -46,7 +46,7 @@ to see if a similar pull request has already been submitted.
 * Remember to reference related issues or pull request, e.g: `"fixes #123"` liberally.
 * Consider use [commitizen](https://github.com/commitizen/cz-cli) to make your life easier with this.
 
-Rinse & Repeat until the Dkutapp looks amazing and awesome.
+Rinse & Repeat until the dekutapp looks amazing and awesome.
 
 
 ## New Issue Styleguide
@@ -55,7 +55,7 @@ Please use this guide when you create a new issue:
 
 ```
 ### DESCRIPTION
-The DkutApp exploded my Android Phone, some performance errors appear.
+The dekutApp exploded my Android Phone, some performance errors appear.
 
 ### Trace
 Here is the stack trace.
@@ -69,10 +69,10 @@ Attaching a screenshot is highly recommended.
 5. The phone exploded.
 
 ### EXPECTED
-The DkutApp don't exploded my phone or browser.
+The dekutApp don't exploded my phone or browser.
 
 ### REALITY
-The DkutApp exploded my browser.
+The dekutApp exploded my browser.
 
 ### Annexes
 Here is a photo or a gif of the issue
