@@ -1,6 +1,9 @@
 .titled {
   color: aliceblue;
 }
+.hellotitled {
+    color: black;
+}
 /* Empty. Add your own CSS if you like */
 .item-md-label {
   display: block;
@@ -83,7 +86,7 @@ padding: 0px 4px 83px;
     z-index: -1;
     opacity: 0.6;
     display: block;
-    background: url("../img/banner.jpg") no-repeat center center fixed;
+    background: url("../img/bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
