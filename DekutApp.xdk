@@ -37,6 +37,15 @@
         "dependsOn": [],
         "dependedBy": []
       }
+       {
+        "id": "nl.x-services.plugins.calendar",
+        "version": "3.0.0",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": []
+      }
     ],
     "serviceMethods": [],
     "buildConfigurations": {

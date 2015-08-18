@@ -678,7 +678,7 @@ so as to postion the logo in the middle of the app
 .ionic .hero h1 .ionic .hero h2, .ionic .hero h3, .ionic .hero h4, .ionic .hero h5, .ionic .hero h6 {
     color: #fff;
     margin: 0;
-    
+
 }
 .ionic .hero h4 {
     color: rgba(255, 255, 255, 0.7);
@@ -994,7 +994,7 @@ so as to postion the logo in the middle of the app
     padding: 6px;
     margin: 0;
     /* background: transparent; */
-    
+
     white-space: nowrap;
     text-align: center;
     text-transform: uppercase;
@@ -1167,7 +1167,7 @@ so as to postion the logo in the middle of the app
 }
 /* Uncomment if you want images to fade in after the card
 
-  .ionic .animate-blinds > .in .item-bg-image > img:last-child { 
+  .ionic .animate-blinds > .in .item-bg-image > img:last-child {
     opacity: 0;
   }
 
@@ -1187,7 +1187,7 @@ so as to postion the logo in the middle of the app
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
-  .ionic .animate-blinds > .in .item-bg-image > img:last-child { 
+  .ionic .animate-blinds > .in .item-bg-image > img:last-child {
     opacity: 0;
   }
 
