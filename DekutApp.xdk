@@ -46,6 +46,24 @@
         "dependsOn": [],
         "dependedBy": []
       }
+      {
+        "id": "de.appplant.cordova.plugin.email-composer",
+        "version": "0.8.2",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": []
+      } 
+      {
+        "id": "nl.x-services.plugins.socialsharing",
+        "version": "4.3.16",
+        "selectedState": "Auto",
+        "data": {},
+        "paramvals": {},
+        "dependsOn": [],
+        "dependedBy": []
+      }
     ],
     "serviceMethods": [],
     "buildConfigurations": {
