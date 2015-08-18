@@ -1,6 +1,3 @@
-##Server
-The server for this app is here https://github.com/Dekutapp/dekutappserver
-
 ## Dependencies
 You will need to install some stuff, if you haven't already:
 
@@ -16,30 +13,17 @@ Secondaries(click for further information):
 * [Git](http://git-scm.com)
 * [Intel XDK](https://download.xdk.intel.com/xdk/) - For Linux
 * [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora) - Mozilla for Linux
+
 ## Getting Started
-Setup Locally
+Setup Locally:
 ```
 git clone https://github.com/Dekutapp/dekutapp.git && cd dekutapp && bower install && sudo npm install
 ```
 
-To Run the app locally, follow these simple steps below:
-
-Clone the repo to your /projectfolder or download the project
-```
-git clone github.com/Dekutapp/dekutapp.git
-```
-Open Your Terminal and start a new Ionic Project
-
-```
-Ionic start DekutApp
-```
-Copy the downloaded files of this project and paste it to the www folder and override the previous files
-<br/>
-Running the app on your browser simply append
+Run the app locally on your Browser
 ```
 ionic serve
 ```
-
 Configure the server to work with the app
 
 ##ToDo
@@ -60,7 +44,7 @@ Configure the server to work with the app
 ##Bugs
 * SignUp Button not showing when screen oriented.
 * Map not loading.
-* Tweets not showing while Using MongoDb.
+* Tweets not showing while using MongoDb.
 * No redirect after SignUp
 
 
