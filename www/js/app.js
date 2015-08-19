@@ -290,6 +290,15 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
                 }
             }
         })
+          .state('tour.contacts', {
+            url: '/contacts',
+            views: {
+                'tour-contacts': {
+                    templateUrl: 'templates/tour-contacts.html'
+
+                }
+            }
+        })
 
     .state('tabs', {
             url: '/tab',
