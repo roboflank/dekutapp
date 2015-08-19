@@ -1,3 +1,13 @@
+/* Map Stuff Here */
+.scroll {
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+/* Text Styles */
 .titled {
   color: aliceblue;
 }

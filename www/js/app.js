@@ -275,8 +275,8 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
             url: '/map',
             views: {
                 'tour-map': {
-                    templateUrl: 'templates/tour-map.html'
-
+                    templateUrl: 'templates/tour-map.html',
+                    controller: 'MapCtrl'
 
                 }
             }
