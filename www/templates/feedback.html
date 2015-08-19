@@ -1,5 +1,5 @@
 <ion-view class="ionic walkthrough-view">
-    <ion-content>
+    <ion-content style="background: url('../img/bg.jpg') center; background-size: cover;">
 
         <div class="top-content row">
 
@@ -12,9 +12,11 @@
                     </div>
 
                 </div>
-                <a ng-click="sendEmail()">
+                <div ng-controller="EmailCtrl">
+                 <a ng-click="sendEmail()">
                     <button class="button button-fab button-assertive icon ion-email"></button>
-                </a>
+                </a>    
+               
                   <a href="https://www.twitter.com/dekutapp">
                     <button class="button button-fab button-positive icon ion-social-twitter" ></button>
                 </a>
@@ -24,8 +26,13 @@
               <!--  <a href="https://kimathijs.github.io/dekutapppage">
                     <button class="button button-fab button-positive icon ion-ios7-world" data-ink-color="#00000" data-ink-opacity="0.5"></button>
                 </a> -->
+                <a href="https://github.com/DekutApp/dekutapp">
+                    <button class="button button-fab button-energized icon ion-social-github" data-ink-color="#05000" data-ink-opacity="0.5"></button>
+                </a>
+                                    </div>
+
                       <div ng-controller="InviteCtrl">
-        <button class="button button-block button-energized icon ion-person-stalker" ng-click="shareAnywhere()">
+        <button class="button button-block button-balanced icon ion-person-stalker" ng-click="shareAnywhere()">
  Invite A Friend
 </button>
         </div>
@@ -41,6 +48,7 @@
             <a href="sms:+254707769247?body=DekutAppFeedBack">
                 <button class="button button-full button-flat button-positive icon-left ion-ios7-email">Text Us</button>
             </a>
+            <!--
 <div class="text-center">
         <a class="button button-clear button-full button-block button-energized icon ion-social-github" href="https://www.github.com/denzelwamburu/kimathiuniapp.git">
 &nbsp; You A Dev? Fork Us &nbsp;<i class="icon ion-fork-repo"></i>
@@ -50,7 +58,7 @@
 &nbsp; Newsletter &nbsp;<i class="icon ion-fork-repo"></i>
 </a>
         </div>
-            
+            -->
         </div>
 
 

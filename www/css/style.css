@@ -253,3 +253,68 @@ padding: 0px 4px 83px;
     text-align: right;
     padding-right: 2px;
 }
+
+/* CSS for tour page **/
+
+.home-view,
+.login-view,
+.signup-view,
+.forgot-password-view {
+    background-color: black !important;
+}
+
+.home-view ion-content:before,
+.login-view ion-content:before,
+.signup-view ion-content:before,
+.forgot-password-view ion-content:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.6;
+    display: block;
+    background: url("../img/banner.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+
+.home-view .top-content {
+    height: 75%;
+    text-align: center;
+}
+
+.home-view .top-content h1 {
+    color: #fff;
+}
+
+.home-view .bottom-content {
+    height: 25%;
+    padding-top: 5px;
+    margin-top: 0px;
+}
+
+.home-view .bottom-content .button {
+    border: none;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.home-view .bottom-content .login.button {
+    background-color: rgba(104, 159, 247, 0.35);
+}
+
+.home-view .bottom-content .sign-up.button {
+    background-color: rgba(248, 248, 248, 0.2);
+}
+
