@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "c66043b5-bb0e-4c13-8cfb-5fad92cd7287",
-      "lastModifiedDate": 1436432422491,
+      "lastModifiedDate": 1439988777642,
       "creationDate": 1431692504568
     },
     "sourceDirectory": "www",
@@ -36,25 +36,7 @@
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": []
-      }
-       {
-        "id": "nl.x-services.plugins.calendar",
-        "version": "3.0.0",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      }
-      {
-        "id": "de.appplant.cordova.plugin.email-composer",
-        "version": "0.8.2",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      } 
+      },
       {
         "id": "nl.x-services.plugins.socialsharing",
         "version": "4.3.16",
@@ -129,7 +111,8 @@
         "appVersionCode_": "1",
         "crosswalkVersion_": "10",
         "cordovaCLIVersion_": "4.1.2",
-        "appDescription_": ""
+        "appDescription_": "",
+        "appAuthor_": ""
       },
       "Android-Crosswalk": {
         "platform_": "android",

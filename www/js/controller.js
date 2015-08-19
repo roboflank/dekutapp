@@ -123,6 +123,17 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
   }, function(error){
     console.log("Could not get location");
   });
+    //After Map has Loaded
+    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
+ 
+  var marker = new google.maps.Marker({
+      map: $scope.map,
+      animation: google.maps.Animation.DROP,
+      position: latLng
+  });      
+ 
+});
+    
 })
 
 .controller("InviteCtrl", function ($scope, $cordovaSocialSharing) {

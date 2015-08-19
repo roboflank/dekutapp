@@ -17,7 +17,7 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
  }
  });
  })*/
-.run(function(User, $ionicPlatform, $rootScope, $location) {
+.run(function(User, $ionicPlatform, $rootScope, $location, $ionicPopup) {
     //Check if User is authenticated
     if (User.getCachedCurrent() == null) {
         User.getCurrent();
@@ -33,21 +33,23 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
     }
 
     //Replace $ionicPopup function with toast function
-    /**
+
     if (window.Connection) {
-           if (navigator.connection.type == Connection.NONE) {
-               $ionicPopup.confirm({
-                       title: 'No Internet Connection',
-                       content: 'Sorry, no Internet connectivity detected. Please reconnect and try again.'
-                   })
-                   .then(function (result) {
-                       if (!result) {
-                           ionic.Platform.exitApp();
-                       }
-                   });
-           }
-       }
-       **/
+        if (navigator.connection.type == Connection.NONE) {
+            $ionicPopup.confirm({
+                    title: 'No Internet Connection',
+                    content: 'Some Features Require Internet Connection to work. Kindly Enable Internet Connectivity'
+                })
+                .then(function(result) {
+                    if (!result) {
+                        console.log("Enable Internet then continue");
+
+                        //$rootScope.notify("Error Encountered");
+                        //ionic.Platform.exitApp();
+                    }
+                });
+        }
+    }
 
     //Go home func
     $rootScope.goHome = function() {
@@ -55,7 +57,7 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
     };
 
     $ionicPlatform.ready(function() {
-//load cordova local notifications plugin with default settings
+        //load cordova local notifications plugin with default settings
         window.plugin.notification.local.onadd = function(id, state, json) {
             var notification = {
                 id: id,
@@ -66,11 +68,11 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
                 $rootScope.$broadcast("$cordovaLocalNotification:added", notification);
             });
         };
-         if(typeof analytics !== undefined) {
-                analytics.startTrackerWithId("UA-54400853-2");
-            } else {
-                console.log("Google Analytics Unavailable");
-            }
+        if (typeof analytics !== undefined) {
+            analytics.startTrackerWithId("UA-54400853-2");
+        } else {
+            console.log("Google Analytics Unavailable");
+        }
     });
 
 
@@ -236,16 +238,16 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
         })
 
     //news article logics
-.state('articles', {
-    url: '/articles',
-        templateUrl: 'templates/allnews.html',
-        controller: 'ArticlesCtrl'
-  })
-     .state('article', {
-    url: '/articles/:articleId',
-        templateUrl: 'templates/newsitem.html',
-        controller: 'ArticleCtrl'
-  })
+    .state('articles', {
+            url: '/articles',
+            templateUrl: 'templates/allnews.html',
+            controller: 'ArticlesCtrl'
+        })
+        .state('article', {
+            url: '/articles/:articleId',
+            templateUrl: 'templates/newsitem.html',
+            controller: 'ArticleCtrl'
+        })
 
     //Tour Logics
     .state('tour', {
@@ -290,7 +292,7 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
                 }
             }
         })
-          .state('tour.contacts', {
+        .state('tour.contacts', {
             url: '/contacts',
             views: {
                 'tour-contacts': {
