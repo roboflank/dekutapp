@@ -1,6 +1,7 @@
 {
   "name": "DekutApp",
-  "version": "0.9.1",
+  "version": "0.9.0",
+  "codename": "alpha-1",
   "description": "Dedan Kimathi University Mobile Application",
   "dependencies": {
     "cordova": "^4.1.2",
