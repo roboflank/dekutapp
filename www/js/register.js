@@ -1,6 +1,6 @@
 angular.module('dekutapp.register', ['lbServices', 'ionic'])
     .controller('RegisterCtrl', function ($scope, User, Avatar, $ionicPopup, $location, $ionicLoading) {
-       
+
      /*
          * Show loading while data is being processed
          * Then hide loading when feedback is gotten
@@ -8,7 +8,7 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
 
         $scope.show = function(message) {
             $ionicLoading.show({
-                template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Please Wait...</div>'
+                template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Regestering,Please Wait...</div>'
             });
         };
 
