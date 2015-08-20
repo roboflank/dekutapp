@@ -1,6 +1,21 @@
 angular.module('dekutapp.register', ['lbServices', 'ionic'])
     .controller('RegisterCtrl', function ($scope, User, Avatar, $ionicPopup, $location, $ionicLoading) {
-        /**
+       
+     /*
+         * Show loading while data is being processed
+         * Then hide loading when feedback is gotten
+         */
+
+        $scope.show = function(message) {
+            $ionicLoading.show({
+                template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Please Wait...</div>'
+            });
+        };
+
+        $scope.hide = function() {
+            $ionicLoading.hide();
+        };
+    /**
          * Currently you need to initialiate the variables
          * if you want to use them in the controller. This seems to be a bug with
          * ionic creating a child scope for the ion-content directive
@@ -21,6 +36,8 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
          * register a new user and login
          */
         $scope.register = function () {
+                        $scope.show();
+
             $scope.registration.created = new Date().toJSON();
             $scope.registration.avatar = "img/avatar/" + $scope.avatar.id + ".png";
             $scope.avatar = {}; //Reset
@@ -41,7 +58,11 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                                 .$promise
                                 .then(function (res) {
                                     $location.path('tab/home')
+                                                            $scope.hide();
+
                                 }, function (err) {
+                                                        $scope.hide();
+
                                     $scope.loginError = err;
                                     $scope.showAlert(err.statusText, err.data.error.message);
                                 })
@@ -53,20 +74,7 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                     $scope.showAlert(err.statusText, err.data.error.message);
                 });
         };
- /*
-         * Show loading while data is being processed
-         * Then hide loading when feedback is gotten
-         */
 
-        $scope.show = function(message) {
-            $ionicLoading.show({
-                template: 'Please Wait...'
-            });
-        };
-
-        $scope.hide = function() {
-            $ionicLoading.hide();
-        };
         /**
          * @name showAlert()
          * @param {string} title

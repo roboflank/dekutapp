@@ -21,6 +21,7 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
       var usersRef = new Firebase("https//dekutapp.firebaseio.com/users");
       return $firebaseAuth(usersRef);
     })
+
 //Network Info factory
 .factory('ConnectivityMonitor', function($rootScope, $cordovaNetwork){
 
