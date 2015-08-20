@@ -1037,6 +1037,7 @@
   line-height: 48px;
   color: rgba(0, 0, 0, 0.54); }
   .item.item-divider:first-child {
+      text-align: center;
     border: none; }
 
 .item-avatar, .item-avatar .item-content, .item-avatar-left, .item-avatar-left .item-content, .card > .item-avatar {
