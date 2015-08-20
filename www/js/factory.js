@@ -11,6 +11,12 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
         return $resource('http://localhost:3000/api/notices/:noticeId');
     })
 
+//Factory for saving data to firebase
+    .factory("Items", function($firebaseArray) {
+      var itemsRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/items");
+      return $firebaseArray(itemsRef);
+    })
+
 //Network Info factory
 .factory('ConnectivityMonitor', function($rootScope, $cordovaNetwork){
 

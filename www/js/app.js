@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput', 'dekutapp.controller', 'rssappControllers', 'rssappServices', 'dekutapp.factory'])
+angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput', 'dekutapp.controller', 'rssappControllers', 'rssappServices', 'dekutapp.factory'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -205,7 +205,8 @@ angular.module('dekutapp', ['ngResource', 'dekutapp.account', 'dekutapp.dev', 'd
             url: '/reminders',
             views: {
                 'academics-reminders': {
-                    templateUrl: 'templates/academics-reminders.html'
+                    templateUrl: 'templates/academics-reminders.html',
+                    controller: 'ListCtrl'
                 }
             }
         })
