@@ -13,10 +13,14 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
 
 //Factory for saving data to firebase
     .factory("Items", function($firebaseArray) {
-      var itemsRef = new Firebase("https://<YOUR-FIREBASE-APP>.firebaseio.com/items");
+      var itemsRef = new Firebase("https://dekutapp.firebaseio.com/items");
       return $firebaseArray(itemsRef);
     })
-
+//FaceBook auth in firebase
+    .factory("Auth", function($firebaseAuth) {
+      var usersRef = new Firebase("https//dekutapp.firebaseio.com/users");
+      return $firebaseAuth(usersRef);
+    })
 //Network Info factory
 .factory('ConnectivityMonitor', function($rootScope, $cordovaNetwork){
 

@@ -10,6 +10,21 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     $scope.article = Article.get({articleId: $stateParams.articleId});
 })    
 
+//Controller for items todo fb
+    .controller("ListCtrl", function($scope, Items) {
+      $scope.items = Items;
+      $scope.addItem = function() {
+        var name = prompt("What do you need to buy?");
+        if (name) {
+          $scope.items.$add({
+            "name": name
+          });
+        }
+      };
+        $scope.login = function() {
+      Auth.$authWithOAuthRedirect("facebook");
+    };
+    })
 
 //Custom Material Effects in The App
     .controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
