@@ -1,13 +1,16 @@
 <div  class="ionic">
     <ion-view title="Tweet Detail">
-    <ion-content padding="false">
+    <ion-content class="ionic" padding="false">
         <ion-item class="item-avatar-left">
             <img ng-src="{{tweet.avatar}}">
             <h2>{{tweet.ownerUsername}}<p class="date">{{tweet.date | timeDistance}}</p></h2>
-           <div class="item item-body">
+           <div class="card">
+            <div class="item item-text-wrap">
                             {{tweet.content}}
 
             </div>
+            </div>
+            
            
         </ion-item>
 
