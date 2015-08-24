@@ -51,6 +51,7 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                     Avatar.create({url: res.avatar, ownerId: res.id})
                         .$promise
                         .then(function (res) {
+                            $scope.hide();
                             /**
                              * Sign in new user
                              */
@@ -70,6 +71,8 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                             console.log(err);
                         })
                 }, function (err) {
+                  $scope.hide();
+
                     $scope.registerError = err;
                     $scope.showAlert(err.statusText, err.data.error.message);
                 });
