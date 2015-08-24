@@ -1,3 +1,6 @@
+
+# Getting Started
+
 ## Dependencies
 You will need to install some stuff, if you haven't already:
 
@@ -14,7 +17,6 @@ Secondaries(click for further information):
 * [Intel XDK](https://download.xdk.intel.com/xdk/) - For Linux
 * [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora) - Mozilla for Linux
 
-## Getting Started
 Setup Locally:
 ```
 git clone https://github.com/Dekutapp/dekutapp.git && cd dekutapp && bower install && sudo npm install
