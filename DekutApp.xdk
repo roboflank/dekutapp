@@ -36,15 +36,6 @@
         "paramvals": {},
         "dependsOn": [],
         "dependedBy": []
-      },
-      {
-        "id": "nl.x-services.plugins.socialsharing",
-        "version": "4.3.16",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
       }
     ],
     "serviceMethods": [],
@@ -61,7 +52,7 @@
         },
         "isActive_": true,
         "appName_": "DekutApp",
-        "appID_": "not.yet.specified",
+        "appID_": "com.dekutapp.dekutapp",
         "appAccess_": [
           {
             "origin": "*"

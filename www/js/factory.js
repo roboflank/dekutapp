@@ -3,18 +3,23 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
 //Factory for Articles
 
 .factory('Article', function ($resource) {
-  return $resource('http://localhost:3000/api/articles/:articleId');
+    return $resource('http://localhost:3000/api/articles/:articleId');
 })
 
 //Factory for Notices
 .factory('Notice', function ($resource) {
-        return $resource('http://localhost:3000/api/notices/:noticeId');
+        return $resource(' http://localhost:3000/api/notices/:noticeId');
     })
 
 //Factory for saving data to firebase
     .factory("Items", function($firebaseArray) {
       var itemsRef = new Firebase("https://dekutapp.firebaseio.com/items");
       return $firebaseArray(itemsRef);
+    })
+//factory for feedbackform
+  .factory("Feedbacks", function($firebaseArray) {
+      var feedbacksRef = new Firebase("https://dekutapp.firebaseio.com/feedbacks");
+      return $firebaseArray(feedbacksRef);
     })
 //FaceBook auth in firebase
     .factory("Auth", function($firebaseAuth) {

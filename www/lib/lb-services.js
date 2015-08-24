@@ -1,8 +1,8 @@
 (function (window, angular, undefined) {
     'use strict';
 
-  var urlBase = "https://dkutappserver.herokuapp.com/api";
- // var urlBase = "http://localhost:8000/api";
+  // var urlBase = " http://95bb3a45.ngrok.io/api";
+ var urlBase = "http://localhost:8000/api";
 
     var authHeader = 'authorization';
 
