@@ -14,7 +14,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     .controller("ListCtrl", function($scope, Items) {
       $scope.items = Items;
       $scope.addItem = function() {
-        var name = prompt("What do you need to buy?");
+        var name = prompt("Enter Your School To-Do's");
         if (name) {
           $scope.items.$add({
             "name": name

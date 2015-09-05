@@ -34,7 +34,7 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
 
     //Replace $ionicPopup function with toast function
 
-    if (window.Connection) {
+  /*  if (window.Connection) {
         if (navigator.connection.type == Connection.NONE) {
             $ionicPopup.confirm({
                     title: 'No Internet Connection',
@@ -49,7 +49,7 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
                     }
                 });
         }
-    }
+    } */
 
     //Go home func
     $rootScope.goHome = function() {

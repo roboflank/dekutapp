@@ -1,7 +1,7 @@
 (function (window, angular, undefined) {
     'use strict';
 
-  // var urlBase = " http://95bb3a45.ngrok.io/api";
+// var urlBase = "http://104.131.160.166:8000/api";
  var urlBase = "http://localhost:8000/api";
 
     var authHeader = 'authorization';

@@ -5,7 +5,7 @@
 </a>
     </ion-nav-bar>
 
-    <ion-content>
+    <ion-content scroll="true">
         <form novalidate="novalidate" name="registerForm">
             <div class="list list-inset">
                 <label class="item item-input">
@@ -44,6 +44,7 @@
                         <img ng-src="img/avatar/{{i}}.png" ng-click="$parent.avatar.id={{i}}" ng-class="$parent.avatar.id==={{i}} ? 'avatar-active':''"/>
                     </div>
                 </div>
+                <!--
 <div class="item item-checkbox">
                     <label class="checkbox">
                         <input type="checkbox" ng-model="regestration.terms" required>
@@ -52,7 +53,7 @@
                        I read the terms &amp; conditions.
 
                      </a>
-                </div>
+                </div> -->
                 <button ng-disabled="!registerForm.$valid || !avatar.id" ng-click="register()"
                         class="button button-full button-flat button-positive icon-left ion-outlet">
                     Register

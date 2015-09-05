@@ -154,7 +154,7 @@
   opacity: 0.7; }
 
 .bar.bar-header .button + .title {
-  text-align: left;
+  text-align: center;
   left: 35px;
   line-height: 46px; }
 
@@ -1130,13 +1130,16 @@
     stroke: #ffa700; } }
 
 /* Layouts: Login
+/* Layouts: Login
 ==================================*/
 .login {
   background-position: 25% 25%;
   background-size: 180% 180%;
   height: 100%;
   -webkit-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out; }
+  transition: all 1.5s ease-in-out; 
+    background: url("../img/bg.jpg") no-repeat center center fixed;
+}
 
 .login .item {
   margin: 0 12px;
