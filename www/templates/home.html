@@ -23,11 +23,11 @@
                 <div class="btnFeed">
                     <button ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like({{$index}})">
                         {{tweet.likes}}
-                        <i class="ion-ios-star"></i></a>
+                        <i class="ion-ios-star"></i>
                     </button>
                     <button class="button button-small button-balanced button-outline" ng-click="go('/tab/tweet/{{tweet.id}}')">
                         {{tweet.comments}}
-                        <i class="ion-chatboxes"></i></a>
+                        <i class="ion-chatboxes"></i>
                     </button>
                 </div>
             </ion-item>
@@ -40,7 +40,7 @@
        <script id="newtweet.html" type="text/ng-template">
             <ion-modal-view class="ionic">
                 <header class="bar bar-header bar-positive flat">
-      <h1 class="title fab-left">New Twitt</h1>
+      <h1 class="title fab-left">New Tweet</h1>
       <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
    </header>
    <ion-content class="padding has-header">
