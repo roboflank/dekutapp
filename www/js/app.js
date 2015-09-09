@@ -73,6 +73,7 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
         } else {
             console.log("Google Analytics Unavailable");
         }
+        
     });
 
 
