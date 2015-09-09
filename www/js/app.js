@@ -34,22 +34,22 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
 
     //Replace $ionicPopup function with toast function
 
-  /*  if (window.Connection) {
-        if (navigator.connection.type == Connection.NONE) {
-            $ionicPopup.confirm({
-                    title: 'No Internet Connection',
-                    content: 'Some Features Require Internet Connection to work. Kindly Enable Internet Connectivity'
-                })
-                .then(function(result) {
-                    if (!result) {
-                        console.log("Enable Internet then continue");
+    /*  if (window.Connection) {
+          if (navigator.connection.type == Connection.NONE) {
+              $ionicPopup.confirm({
+                      title: 'No Internet Connection',
+                      content: 'Some Features Require Internet Connection to work. Kindly Enable Internet Connectivity'
+                  })
+                  .then(function(result) {
+                      if (!result) {
+                          console.log("Enable Internet then continue");
 
-                        //$rootScope.notify("Error Encountered");
-                        //ionic.Platform.exitApp();
-                    }
-                });
-        }
-    } */
+                          //$rootScope.notify("Error Encountered");
+                          //ionic.Platform.exitApp();
+                      }
+                  });
+          }
+      } */
 
     //Go home func
     $rootScope.goHome = function() {
@@ -201,15 +201,16 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
                 }
             }
         })
-        .state('academics.reminders', {
-            url: '/reminders',
-            views: {
-                'academics-reminders': {
-                    templateUrl: 'templates/academics-reminders.html',
-                    controller: 'ListCtrl'
-                }
+
+    .state('academics.reminders', {
+        url: '/reminders',
+        views: {
+            'academics-reminders': {
+                templateUrl: 'templates/academics-reminders.html',
+                controller: 'ListCtrl'
             }
-        })
+        }
+    })
 
     // Timetable and Academic Logics
     .state('timetables', {
@@ -217,10 +218,15 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
             templateUrl: 'templates/academics-timetables.html',
             controller: 'TimetableNotificationCtrl'
         })
-        .state('resources', {
-            url: '/resources',
-            templateUrl: 'templates/academics-resources.html'
+        .state('pastpapers', {
+            url: '/pastpapers',
+            templateUrl: 'templates/pastpapers.html'
         })
+        /*    .state('resources', {
+         *      url: '/resources',
+         *  templateUrl: 'templates/academics-resources.html'
+         *    })
+         */
         //Eservices Route
         .state('eservices', {
             url: '/eservices',

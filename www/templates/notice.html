@@ -14,11 +14,10 @@
 
     <ion-content class="ionic has-header">
 
-         <div class="list">
+         <div class="list card stable-bg">
             <div class="item">
                <!-- <div class="item-avatar"> <img src="pics/{{session.pic}}"/></div>-->
-                <div class="sessionTitle"><h2>{{notice.title}}</h2>
-                    <p>{{notice.user.displayName|uppercase}}</p>
+                <div class="titled"><h2>{{notice.title}}</h2>
                 </div>
 
         <!--        <p>{{session.room}} | {{session.time}}
@@ -28,8 +27,33 @@
                         Add</i></a></button> 
                 </p> -->
             </div>
-            <div class="item item-body">
-                <p>{{notice.content}}</p>
+
+   <div class="card">
+           <div class="item item-body">
+                                    <p>{{notice.content}}</p>
+
+                </div>
+      
+            </div>
+ <div class="card">
+           <div class="item item-body">
+               Posted By:<p></p>
+                    <small>{{notice.user.displayName|uppercase}}</small>
+
+                </div>
+      
+            </div>
+             <div class="card">
+           <div class="item item-body">
+               Contacts:
+<div class="item item-button-right">
+                    {{notice.contact}}
+                  <a href="tel:{{}}"class="button button-balanced ink">
+                        <i class="icon ion-ios7-telephone"></i>
+                  </a>
+                </div>
+                </div>
+      
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" ng-click="addFavorite()">
@@ -50,6 +74,7 @@
                     <!--Share-->
                 <!--</a>-->
             </div>
+          
         </div>
 
     </ion-content>

@@ -98,12 +98,12 @@
         ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.0.1",
+        "appVersion_": "1.0.0",
         "appVersionCode_": "1",
         "crosswalkVersion_": "10",
         "cordovaCLIVersion_": "4.1.2",
-        "appDescription_": "",
-        "appAuthor_": ""
+        "appDescription_": "Student Companion app for Dedan Kimathi University",
+        "appAuthor_": "denzjoseph@gmail.com + thomasmuhyka@gmail.com"
       },
       "Android-Crosswalk": {
         "platform_": "android",

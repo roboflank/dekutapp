@@ -1,7 +1,7 @@
 /* Map Stuff Here */
-.scroll {
-    height: 100%;
-}
+/* .scroll {
+*    height: 100%;
+* }
 
 #map {
     width: 100%;
@@ -10,6 +10,7 @@
 /* Text Styles */
 .titled {
   color: aliceblue;
+    text-align: center;
 }
 .hellotitled {
     color: black;
