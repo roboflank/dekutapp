@@ -212,6 +212,42 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
         }
     })
 
+     //Elibrary Logics
+    .state('academics', {
+            url: "/academics",
+            abstract: true,
+            templateUrl: "templates/academics.html"
+        })
+        .state('academics.home', {
+            url: '',
+            views: {
+                'academics-home': {
+                    templateUrl: 'templates/academics-home.html'
+
+                }
+            }
+        })
+        .state('academics.notes', {
+            url: '/notes',
+            views: {
+                'academics-notes': {
+                    templateUrl: 'templates/academics-notes.html',
+                    controller: 'ExtensionsCtrl'
+
+                }
+            }
+        })
+
+    .state('academics.reminders', {
+        url: '/reminders',
+        views: {
+            'academics-reminders': {
+                templateUrl: 'templates/academics-reminders.html',
+                controller: 'ListCtrl'
+            }
+        }
+    })
+
     // Timetable and Academic Logics
     .state('timetables', {
             url: '/timetables',

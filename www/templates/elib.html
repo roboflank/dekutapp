@@ -1,33 +1,29 @@
-<ion-view class="ionic" ng-controller="AccountCtrl">
-    <ion-side-menus ng-controller="NavCtrl">
-
+   <ion-side-menus ng-controller="NavCtrl" class="ionic">
+        
         <ion-side-menu-content ng-controller="NavCtrl">
-            <ion-nav-bar class="bar bar-header bar-positive">
-  <button class="button icon ion-navicon" ng-click="showMenu()"></button>
-     <a href="#/feedback" class="button icon ion-more pull-right"></a>
-              
 
-    <ion-nav-back-button class="button-icon ion-arrow-left-c">
-    </ion-nav-back-button>
-</ion-nav-bar>
-<ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-light">
+<ion-tabs class="ionic tabs-positive" ng-controller="NavCtrl">
+    
+<!-- Remove class="ionic" below to disable the fading-in feature in welcome page-->
+   <ion-tab title="Elibrary" icon="ion-home" href="#/elibrary" class="ionic">
+      <ion-nav-view name="elibrary-home"></ion-nav-view>
+   </ion-tab>
+   <ion-tab title="Pastpapers" icon="ion-document-text" href="#/elibray/pastpapers">
+      <ion-nav-view name="pastpapers-notes"></ion-nav-view>
+   </ion-tab>
+    
+<ion-tab title="Checkin" icon="ion-clock" href="#/elibrary/checkin">
+      <ion-nav-view name="elibrary-checkin">
+</ion-nav-view>
+   </ion-tab>
 
-        <ion-tab title="Home" icon="ion-arrow-graph-up-left" href="#/tab/home">
-            <ion-nav-view name="home-tab"></ion-nav-view>
-        </ion-tab>
 
-<!--        <ion-tab title="Dev" icon="ion-ios7-information" href="#/tab/dev">
-            <ion-nav-view name="dev-tab"></ion-nav-view>
-        </ion-tab> -->
 
-        <ion-tab title="Account" icon="ion-person" href="#/tab/account">
-            <ion-nav-view name="account-tab"></ion-nav-view>
-        </ion-tab>
-
-    </ion-tabs>
+  
+</ion-tabs>
      </ion-side-menu-content>
-
-        <ion-side-menu side="left">
+        
+   <ion-side-menu side="left" ng-controller="NavCtrl">
           <ion-header-bar class="bar bar-header bar-positive">
             <h1 class="title">Panel</h1>
           </ion-header-bar>
@@ -43,8 +39,8 @@
                       Home
                 </div>
                 <li>
-
-                <a class="item item-icon-right" menu-close nav-clear href="#/tab/home" >
+                    
+                <a class="item item-icon-right" menu-close nav-clear href="#/tab/home">
                     <i class="icon ion-mic-b"></i>
                    <h2 class="menu-text">What's Happening</h2> </a>
               </li>
@@ -56,7 +52,13 @@
 
                  </a>
               </li>
+               <!--  <li>
+                <a class="item item-icon-right" menu-close href="#/tab/dev">
+        <i class="icon ion-location"></i>
+                   <h2 class="menu-text">Events</h2>
 
+                 </a>
+              </li>-->
                  <li>
                 <a class="item item-icon-right" menu-close href="#/notices">
         <i class="icon ion-clipboard"></i>
@@ -64,11 +66,11 @@
 
                  </a>
               </li>
-                <div class="item item-divider">
+               <div class="item item-divider">
                      Academics
                 </div>
-             <li>
-                <a class="item item-icon-right" nav-clear menu-close href="#/elibrary">
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/elibarary">
                     <i class="icon ion-document-text"></i>
                    <h2 class="menu-text">Elibrary</h2> </a>
               </li> 
@@ -86,9 +88,9 @@
                      E-Learning Portal
                 </div>
                  <li>
-                <a class="item item-icon-right" nav-clear menu-close href="#/tour">
+                <a class="item item-icon-right" nav-clear menu-close href="#/eservices">
                     <i class="icon">
-
+                    
                     <span class="icon badge badge-assertive">Coming Soon</span>
 
                     </i>
@@ -116,17 +118,17 @@
                    <h2 class="menu-text">My Profile</h2> </a>
               </li>
                 <li>
-                <a class="item item-icon-right" menu-close ng-click="logout()">
-                    <i class="icon ion-log-out"></i>
+                <a class="item item-icon-right" menu-close href="#/login">
+                    <i class="icon ion-log-out"></i>                
                  <h2 class="menu-text">Logout</h2> </a>
 
-              </li>
+              </li> 
                  <li>
                 <a class="item item-icon-right" menu-close href="#/feedback">
-                    <i class="icon ion-email"></i>
+                    <i class="icon ion-email"></i>                
                  <h2 class="menu-text">FeedBack</h2> </a>
 
-              </li>
+              </li> 
  <div class="item item-divider">
                 </div>
 
@@ -134,8 +136,7 @@
               </div>
           </ion-content>
         </ion-side-menu>
-
-
+ 
+ 
+        
       </ion-side-menus>
-
-</ion-view>
