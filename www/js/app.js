@@ -213,36 +213,36 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
     })
 
      //Elibrary Logics
-    .state('academics', {
-            url: "/academics",
+    .state('elibrary', {
+            url: "/elibrary",
             abstract: true,
-            templateUrl: "templates/academics.html"
+            templateUrl: "templates/elib.html"
         })
-        .state('academics.home', {
+        .state('elibrary.home', {
             url: '',
             views: {
-                'academics-home': {
-                    templateUrl: 'templates/academics-home.html'
+                'elibrary-home': {
+                    templateUrl: 'templates/elibrary-home.html'
 
                 }
             }
         })
-        .state('academics.notes', {
-            url: '/notes',
+        .state('elibrary.pastpapers', {
+            url: '/pastpapers',
             views: {
-                'academics-notes': {
-                    templateUrl: 'templates/academics-notes.html',
+                'elibrary-pastpapers': {
+                    templateUrl: 'templates/pastpapers.html',
                     controller: 'ExtensionsCtrl'
 
                 }
             }
         })
 
-    .state('academics.reminders', {
-        url: '/reminders',
+    .state('elibrary.checkin', {
+        url: '/checkin',
         views: {
-            'academics-reminders': {
-                templateUrl: 'templates/academics-reminders.html',
+            'elibrary-checkin': {
+                templateUrl: 'templates/checkin.html',
                 controller: 'ListCtrl'
             }
         }
