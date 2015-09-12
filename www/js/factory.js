@@ -26,6 +26,11 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
       var usersRef = new Firebase("https//dekutapp.firebaseio.com/users");
       return $firebaseAuth(usersRef);
     })
+//Factory for Elibrary :Pick the data from firebase:
+.factory("Elibrary", function($firebaseArray) {
+  var elibraryRef = new Firebase("https://dekutapp.firebaseio.com/elibrary");
+  return $firebaseArray(elibraryRef);
+})
 
 //Network Info factory
 .factory('ConnectivityMonitor', function($rootScope, $cordovaNetwork){
