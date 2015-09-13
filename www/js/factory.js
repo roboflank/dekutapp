@@ -3,17 +3,17 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
 //Factory for Articles
 //http://104.131.160.166:3000
 .factory('Article', function ($resource) {
-    return $resource('http://localhost:3000/api/articles/:articleId');
+    return $resource('http://104.131.160.166:3000/api/articles/:articleId');
 })
 
 //Factory for Notices
 .factory('Notice', function ($resource) {
-        return $resource('http://localhost:3000/api/notices/:noticeId');
+        return $resource('http://104.131.160.166:3000/api/notices/:noticeId');
     })
 
 //Factory for saving data to firebase
     .factory("Items", function($firebaseArray) {
-      var itemsRef = new Firebase("https://dekutapp.firebaseio.com/items");
+      var itemsRef = new Firebase("https://dekutapp.firebaseio.com/reminders");
       return $firebaseArray(itemsRef);
     })
 //factory for feedbackform
@@ -30,9 +30,10 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
 .factory("Elibrary", function($firebaseArray) {
   var elibraryRef = new Firebase("https://dekutapp.firebaseio.com/elibrary");
   return $firebaseArray(elibraryRef);
-})
+});
 
 //Network Info factory
+/*
 .factory('ConnectivityMonitor', function($rootScope, $cordovaNetwork){
 
   return {
@@ -75,3 +76,4 @@ angular.module('dekutapp.factory', ['ngResource', 'dekutapp.controller'])
     }
   }
 });
+*/
