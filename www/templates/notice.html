@@ -2,9 +2,9 @@
     <ion-side-menus>
 
         <ion-side-menu-content>
-           
+
 <ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
-       
+
     <a ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></a>
 <h1 class="title" align-title="right">{{notice.title}}</h1>
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
@@ -24,7 +24,7 @@
                    <!-- <button>
                     <a class="tab-item addCal" ng-click="addToCalendar()">
                     <i class="icon ion-calendar" style="font-size: 16px">
-                        Add</i></a></button> 
+                        Add</i></a></button>
                 </p> -->
             </div>
 
@@ -33,7 +33,7 @@
                                     <p>{{notice.content}}</p>
 
                 </div>
-      
+
             </div>
  <div class="card">
            <div class="item item-body">
@@ -41,7 +41,7 @@
                     <small>{{notice.user.displayName|uppercase}}</small>
 
                 </div>
-      
+
             </div>
              <div class="card">
            <div class="item item-body">
@@ -53,7 +53,7 @@
                   </a>
                 </div>
                 </div>
-      
+
             </div>
             <div class="item tabs tabs-secondary tabs-icon-left">
                 <a class="tab-item" ng-click="addFavorite()">
@@ -74,7 +74,7 @@
                     <!--Share-->
                 <!--</a>-->
             </div>
-          
+
         </div>
 
     </ion-content>
@@ -134,11 +134,11 @@ Want To post a Notice here? Send an email to dkutapp@gmail.com and we will get b
                 <div class="item item-divider">
                      Academics
                 </div>
-            <!--  <li>
-                <a class="item item-icon-right" nav-clear menu-close href="#/academics/notes">
-                    <i class="icon ion-document-text"></i>
-                   <h2 class="menu-text">My Notes</h2> </a>
-              </li> -->
+                <li>
+                    <a class="item item-icon-right" nav-clear menu-close href="#/elibrary">
+                        <i class="icon ion-document-text"></i>
+                       <h2 class="menu-text">Elibrary</h2> </a>
+                  </li>
                 <li>
                 <a class="item item-icon-right" nav-clear menu-close href="#/academics/reminders">
                     <i class="icon ion-clock"></i>
@@ -204,5 +204,5 @@ Want To post a Notice here? Send an email to dkutapp@gmail.com and we will get b
 
 
       </ion-side-menus>
-    
+
 </ion-view>

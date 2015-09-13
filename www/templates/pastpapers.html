@@ -1,14 +1,130 @@
-<ion-view>
-        <ion-nav-bar ng-controller="NavCtrl" class="ionic bar bar-header bar-positive" style="position: static;">
-  <button class="button icon ion-navicon" ng-click="showMenu()"></button>
- <button class="button icon pull-right ion-plus" ng-click="addItem()">
+<ion-view class="ionic">
+    <ion-side-menus>
 
-          </button>
-    <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
-    </ion-nav-back-button>
-    
-</ion-nav-bar>
-<ion-content>
-    Here
+        <ion-side-menu-content>
+
+<ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
+        <button ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></button>
+
+        <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+
+    </ion-header-bar>
+
+    <ion-content class="ionic">
+Here
     </ion-content>
+     </ion-side-menu-content>
+
+        <ion-side-menu side="left" ng-controller="HomeTabCtrl">
+          <ion-header-bar class="bar bar-header bar-positive">
+            <h1 class="title">Panel</h1>
+          </ion-header-bar>
+          <ion-content has-header="true" class="ionic">
+              <div class="list ionic">
+              <a class="item item-avatar">
+                    <img ng-src="{{currentUser.avatar}}">
+                    <h2>Hi @<b>{{currentUser.username}}</b></h2>
+                    <p>Welcome Back</p>
+                </a>
+            <ul class="ionic">
+                <div class="item item-divider">
+                      Home
+                </div>
+                <li>
+
+                <a class="item item-icon-right" menu-close nav-clear href="#/tab/home" >
+                    <i class="icon ion-mic-b"></i>
+                   <h2 class="menu-text">What's Happening</h2> </a>
+              </li>
+
+              <li>
+                <a class="item item-icon-right" menu-close href="#/articles">
+        <i class="icon ion-radio-waves"></i>
+                   <h2 class="menu-text">News</h2>
+
+                 </a>
+              </li>
+
+                 <li>
+                <a class="item item-icon-right" menu-close href="#/notices">
+        <i class="icon ion-clipboard"></i>
+                   <h2 class="menu-text">Notices</h2>
+
+                 </a>
+              </li>
+                <div class="item item-divider">
+                     Academics
+                </div>
+            <!--  <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/academics/notes">
+                    <i class="icon ion-document-text"></i>
+                   <h2 class="menu-text">My Notes</h2> </a>
+              </li> -->
+                <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/academics/reminders">
+                    <i class="icon ion-clock"></i>
+                   <h2 class="menu-text">Reminders</h2> </a>
+              </li>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/academics">
+                    <i class="icon ion-more"></i>
+                   <h2 class="menu-text">More...</h2> </a>
+              </li>
+                <div class="item item-divider">
+                     E-Learning Portal
+                </div>
+                 <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/tour">
+                    <i class="icon">
+
+                    <span class="icon badge badge-assertive">Coming Soon</span>
+
+                    </i>
+                     </a>
+              </li>
+                <div class="item item-divider">
+                     School
+                </div>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/tour">
+                    <i class="icon ion-map"></i>
+                   <h2 class="menu-text">Take A Tour</h2> </a>
+              </li>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/eservices">
+                    <i class="icon ion-help-buoy"></i>
+                   <h2 class="menu-text">E-Services</h2> </a>
+              </li>
+                <div class="item item-divider">
+                      Account
+                </div>
+                <li>
+                <a class="item item-icon-right" menu-close href="#/tab/account">
+                  <i class="icon ion-person"></i>
+                   <h2 class="menu-text">My Profile</h2> </a>
+              </li>
+                <li>
+                <a class="item item-icon-right" menu-close ng-click="logout()">
+                    <i class="icon ion-log-out"></i>
+                 <h2 class="menu-text">Logout</h2> </a>
+
+              </li>
+                 <li>
+                <a class="item item-icon-right" menu-close href="#/feedback">
+                    <i class="icon ion-email"></i>
+                 <h2 class="menu-text">FeedBack</h2> </a>
+
+              </li>
+ <div class="item item-divider">
+                </div>
+
+            </ul>
+              </div>
+          </ion-content>
+        </ion-side-menu>
+
+
+      </ion-side-menus>
+
 </ion-view>

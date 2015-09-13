@@ -3,9 +3,9 @@
     <ion-side-menus>
 
         <ion-side-menu-content>
-           
+
 <ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
-       
+
     <a ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></a>
         <h1 class="title">{{article.title}}</h1>
       <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
@@ -27,7 +27,7 @@
                      By   <a class="subdued">
                   {{article.user.displayName|uppercase}}
 </a>
-                      
+
                     </p>
               <!--    <a href="{{article.newsurl}}">
       <button class="button button-full button-flat button-positive icon-left ion-outlet">View in Site</button>
@@ -111,11 +111,11 @@ Want To post a Notice here? Send an email to dkutapp@gmail.com and we will get b
                 <div class="item item-divider">
                      Academics
                 </div>
-            <!--  <li>
-                <a class="item item-icon-right" nav-clear menu-close href="#/academics/notes">
-                    <i class="icon ion-document-text"></i>
-                   <h2 class="menu-text">My Notes</h2> </a>
-              </li> -->
+                <li>
+                    <a class="item item-icon-right" nav-clear menu-close href="#/elibrary">
+                        <i class="icon ion-document-text"></i>
+                       <h2 class="menu-text">Elibrary</h2> </a>
+                  </li>
                 <li>
                 <a class="item item-icon-right" nav-clear menu-close href="#/academics/reminders">
                     <i class="icon ion-clock"></i>
@@ -181,5 +181,5 @@ Want To post a Notice here? Send an email to dkutapp@gmail.com and we will get b
 
 
       </ion-side-menus>
-    
+
 </ion-view>
