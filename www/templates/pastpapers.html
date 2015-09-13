@@ -5,13 +5,33 @@
 
 <ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
         <button ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></button>
+<button class="button icon pull-right ion-plus" ng-click="addItem()">
 
+          </button>
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
         </ion-nav-back-button>
 
     </ion-header-bar>
+<!--
+     <ion-content class="padding has-header">
+       <form name="PastpaperForm">
+         <label class="item item-input item-floating-label">
+                    <span class="input-label">Your Full Names:</span>
+                    <input type="text" name="studentname" placeholder="Item Name" ng-model="data.studentname" required>
+                </label>
+           <label class="item item-input item-floating-label">
+                    <span class="input-label">Quantity: </span>
+                    <input type="text" name="itemquantity" placeholder="Quantity in Stock" ng-model="data.quantity" required>
+                </label>
 
-     <ion-content ng-controller="SMSController">
+  <button ng-disabled="StockForm.$invalid" class="button button-full button-positive icon-left ion-checkmark"
+                        ng-click="createNew()">
+                    Submit
+                </button>
+       </form>
+
+   </ion-content> -->
+            <ion-content ng-controller="SMSController">
         <div class="list">
           <label class="item item-input">
             <span class="input-label">Number</span>
@@ -24,8 +44,9 @@
           <button class="button button-full button-positive" ng-click="sendSMS()">
             Send SMS
           </button>
-        </div>      
+        </div>
       </ion-content>
+
      </ion-side-menu-content>
 
         <ion-side-menu side="left" ng-controller="HomeTabCtrl">

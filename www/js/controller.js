@@ -27,12 +27,20 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
             Auth.$authWithOAuthRedirect("facebook");
         };
     })
+
     //Elibrary Controller
-    /* User sends text to the libary number from the app */
-    .controller('SMSController', function($scope, $cordovaSms) {
+    /* User sends text to the libary number from the app
+    * Use this incase the online one is ineffective
+    */
+  .controller('SMSController', function($scope, $cordovaSms) {
         $scope.sms = {
             number: '0959052082',
-            message: 'This is some dummy text'
+            message: 'This is some dummy text',
+            unitcode: '',
+            email: '',
+            name: '',
+            number: '',
+
         };
 
         document.addEventListener("deviceready", function() {
@@ -60,7 +68,6 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
             }
         });
     })
-
 
 //Custom Material Effects in The App
 .controller('ExtensionsCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
