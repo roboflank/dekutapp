@@ -61,6 +61,8 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
                     .send('0721112312', 'Requesting pastpapers', options)
                     .then(function() {
                         alert('Success');
+                        $location.path('#/elibrary');
+
                         // Success! SMS was sent
                     }, function(error) {
                         alert('Error');
