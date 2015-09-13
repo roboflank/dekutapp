@@ -34,9 +34,10 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     */
   .controller('SMSController', function($scope, $cordovaSms) {
         $scope.sms = {
-            number: '0959052082',
+            number: '0721112312',
             message: 'This is some dummy text',
             unitcode: '',
+            unittitle: '',
             email: '',
             name: '',
             number: '',
@@ -57,7 +58,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
             $scope.sendSMS = function() {
 
                 $cordovaSms
-                    .send('0959052082', 'This is some dummy text', options)
+                    .send('0721112312', 'Requesting pastpapers', options)
                     .then(function() {
                         alert('Success');
                         // Success! SMS was sent

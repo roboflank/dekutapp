@@ -5,8 +5,7 @@
 
 <ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
         <button ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></button>
-<button class="button icon pull-right ion-plus" ng-click="addItem()">
-
+<h1 class="title">PastPapers</h1>
           </button>
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
         </ion-nav-back-button>
@@ -33,16 +32,28 @@
    </ion-content> -->
             <ion-content ng-controller="SMSController">
         <div class="list">
-          <label class="item item-input">
+          <!--<label class="item item-input">
             <span class="input-label">Number</span>
             <input type="text" ng-model="sms.number">
+          </label> -->
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Your Name</span>
+            <input type="text" placeholder="Your Full Names" ng-model="sms.name">
           </label>
           <label class="item item-input item-floating-label">
-            <span class="input-label">Message</span>
-            <input type="text" placeholder="Message" ng-model="sms.message">
+            <span class="input-label">Your Email</span>
+            <input type="text" placeholder="Your Email" ng-model="sms.email">
           </label>
-          <button class="button button-full button-positive" ng-click="sendSMS()">
-            Send SMS
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Unit Title</span>
+            <input type="text" placeholder="Unit Title" ng-model="sms.unittitle">
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Unit Code</span>
+            <input type="text" placeholder="Unit Code" ng-model="sms.unitcode">
+          </label>
+          <button class="button button-full button-energized" ng-click="sendSMS()">
+            Request PastPaper
           </button>
         </div>
       </ion-content>
