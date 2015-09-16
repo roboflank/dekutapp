@@ -5,6 +5,8 @@
 <intelxdk:version value="1.0"/>
 <intelxdk:cordova-cli version="4.1.2"/>
 <name>DekutApp</name>
+<description>Student Companion app for Dedan Kimathi University</description>
+<author>denzjoseph@gmail.com + thomasmuhyka@gmail.com</author>
 <content src="index.html"/>
 <access origin="*"/>
 <icon platform="android" src="img/resources/icons/72.png" density="hdpi" width="72" height="72"/>
