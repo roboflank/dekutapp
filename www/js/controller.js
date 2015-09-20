@@ -30,6 +30,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
     //Elibrary Controller
     /* Firebase sync. Monopoly is good */
+    /*
     .controller("PastPapersCtrl", function($scope, PastPapers) {
             $scope.pastpapers = PastPapers;
             $scope.addPastPaper = function() {
@@ -41,14 +42,14 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
                 }
             };
         })
-
+       */
         // another code-wrapper
 
-        .controller('myListCtrl', function($rootScope, $scope, $window, $ionicModal, $firebase) {
+        .controller('PastPapersCtrl', function($rootScope, $scope, $window, $ionicModal, $firebase) {
             $rootScope.show("Please wait... Processing");
             $scope.list = [];
-            var bucketListRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
-            bucketListRef.on('value', function(snapshot) {
+            var PastPapersRef = new Firebase($rootScope.baseUrl);
+            PastPapersRef.on('value', function(snapshot) {
                 var data = snapshot.val();
                 $scope.list = [];
                 for (var key in data) {
@@ -96,7 +97,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
             $scope.deleteItem = function(key) {
                 $rootScope.show("Please wait... Deleting from List");
                 var itemRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
-                bucketListRef.child(key).remove(function(error) {
+                PastPapersRef.child(key).remove(function(error) {
                     if (error) {
                         $rootScope.hide();
                         $rootScope.notify('Oops! something went wrong. Try again later');
@@ -135,8 +136,8 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
                     updated: Date.now()
                 };
 
-                var bucketListRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
-                $firebase(bucketListRef).$add(form);
+                var PastPapersRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
+                $firebase(PastPapersRef).$add(form);
                 $rootScope.hide();
 
             };

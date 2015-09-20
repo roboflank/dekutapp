@@ -5,6 +5,7 @@
 
 <ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
         <button ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></button>
+
 <h1 class="title">PastPapers</h1>
           </button>
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
@@ -56,7 +57,9 @@
             Request PastPaper
           </button>
         </div>
+
       </ion-content>
+      <button class="button button-fab button-fab-bottom-right button-assertive icon ion-edit waves-effect waves-button waves-light" ng-click="newTask()"></button>
 
      </ion-side-menu-content>
 
@@ -165,6 +168,7 @@
 
             </ul>
               </div>
+
           </ion-content>
         </ion-side-menu>
 
