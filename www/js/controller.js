@@ -68,15 +68,32 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
                 }
                 $rootScope.hide();
             });
+//Modal goes here
+$ionicModal.fromTemplateUrl('orderpastpapers.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
 
+    $scope.openModal = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    })
 
-            $ionicModal.fromTemplateUrl('templates/newItem.html', function(modal) {
+        /*    $ionicModal.fromTemplateUrl('templates/orderpastpaper.html', function(modal) {
                 $scope.newTemplate = modal;
             });
 
             $scope.newTask = function() {
                 $scope.newTemplate.show();
-            };
+            }; */
 
             $scope.markCompleted = function(key) {
                 $rootScope.show("Please wait... Updating List");

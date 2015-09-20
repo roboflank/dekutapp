@@ -58,7 +58,7 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
 
     $ionicPlatform.ready(function() {
       //pushbots initialize
-      
+
 if (PushbotsPlugin.isAndroid()) {
 PushbotsPlugin.initializeAndroid('55ed935e177959a0098b4567', 'AIzaSyBWyJaqD6xXP2DroyQMmebJEztVhZstHa4');
 } else if (PushbotsPlugin.isiOS()) {
