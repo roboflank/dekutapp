@@ -414,7 +414,8 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
                 url: '/feedback',
                 views: {
                     'about-feedback': {
-                        templateUrl: 'templates/feedback.html'
+                        templateUrl: 'templates/feedback.html',
+                        contoller: 'FeedBackController'
 
                     }
                 }

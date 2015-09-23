@@ -29,7 +29,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     })
 
     //Elibrary Controller
-//start parse controller
+//start parse controller to send PastPapers request data
     .controller('PastPapersListController',['$scope','PastPapers',function($scope,PastPapers){
 
     PastPapers.getAll().success(function(data){
@@ -114,6 +114,47 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
             }
         });
     })
+
+//Controller For Submitting feedback via a form
+.controller('FeedBackListController',['$scope','FeedBack',function($scope,FeedBack){
+
+FeedBack.getAll().success(function(data){
+    $scope.items=data.results;
+});
+
+$scope.onItemDelete=function(item){
+    PastPapers.delete(item.objectId);
+    $scope.items.splice($scope.items.indexOf(item),1);
+}
+
+}])
+.controller('FeedBackController',['$scope','FeedBack','$state',function($scope,FeedBack,$state){
+
+$scope.feedback={};
+
+$scope.submit=function(){
+    FeedBack.create({
+        type:$scope.feedback.type,
+        email:$scope.feedback.email,
+        content:$scope.feedback.content,
+    }).success(function(data){
+        $state.go('about.home');
+    });
+}
+
+
+}])
+.controller('FeedBackEditController',['$scope','FeedBack','$state','$stateParams',function($scope,FeedBack,$state,$stateParams){
+
+$scope.feedback={id:$stateParams.id,content:$stateParams.content};
+
+$scope.edit=function(){
+    FeedBack.edit($scope.feedback.id,{content:$scope.feedback.content}).success(function(data){
+        $state.go('about.home');
+    });
+}
+
+}])
 
 //Custom Material Effects in The App
 .controller('ExtensionsCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
