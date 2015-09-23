@@ -30,37 +30,37 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
     //Elibrary Controller
 //start parse controller
-    .controller('PastPaersListController',['$scope','Todo',function($scope,Todo){
+    .controller('PastPaersListController',['$scope','PastPapers',function($scope,PastPapers){
 
-    Todo.getAll().success(function(data){
+    PastPapers.getAll().success(function(data){
         $scope.items=data.results;
     });
 
     $scope.onItemDelete=function(item){
-        Todo.delete(item.objectId);
+        PastPapers.delete(item.objectId);
         $scope.items.splice($scope.items.indexOf(item),1);
     }
 
 }])
-    .controller('PastPapersController',['$scope','Todo','$state',function($scope,Todo,$state){
+    .controller('PastPapersController',['$scope','PastPapers','$state',function($scope,PastPapers,$state){
 
-    $scope.todo={};
+    $scope.pastpapers={};
 
     $scope.create=function(){
-        Todo.create({content:$scope.todo.content}).success(function(data){
-            $state.go('todos');
+        PastPapers.create({content:$scope.pastpapers.content}).success(function(data){
+            $state.go('pastpapers');
         });
     }
 
 
 }])
-    .controller('PastPapersEditController',['$scope','Todo','$state','$stateParams',function($scope,Todo,$state,$stateParams){
+    .controller('PastPapersEditController',['$scope','PastPapers','$state','$stateParams',function($scope,PastPapers,$state,$stateParams){
 
-    $scope.todo={id:$stateParams.id,content:$stateParams.content};
+    $scope.pastpapers={id:$stateParams.id,content:$stateParams.content};
 
     $scope.edit=function(){
-        Todo.edit($scope.todo.id,{content:$scope.todo.content}).success(function(data){
-            $state.go('todos');
+        PastPapers.edit($scope.pastpapers.id,{content:$scope.pastpapers.content}).success(function(data){
+            $state.go('pastpapers');
         });
     }
 

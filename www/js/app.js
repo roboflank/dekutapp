@@ -264,7 +264,8 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
         })
         .state('pastpapers', {
             url: '/pastpapers',
-            templateUrl: 'templates/pastpapers.html'
+            templateUrl: 'templates/pastpapers.html',
+        controller: 'PastPapersController'
         })
         /*    .state('resources', {
          *      url: '/resources',

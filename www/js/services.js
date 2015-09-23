@@ -2,7 +2,7 @@ angular.module('dekutapp.services',[])
     .factory('PastPapers',['$http','PARSE_CREDENTIALS',function($http,PARSE_CREDENTIALS){
     return {
         getAll:function(){
-            return $http.get('https://api.parse.com/1/classes/Todo',{
+            return $http.get('https://api.parse.com/1/classes/pastpapers',{
                 headers:{
                     'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
                     'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
@@ -10,7 +10,7 @@ angular.module('dekutapp.services',[])
             });
         },
         get:function(id){
-            return $http.get('https://api.parse.com/1/classes/Todo/'+id,{
+            return $http.get('https://api.parse.com/1/classes/pastpapers/'+id,{
                 headers:{
                     'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
                     'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
@@ -18,7 +18,7 @@ angular.module('dekutapp.services',[])
             });
         },
         create:function(data){
-            return $http.post('https://api.parse.com/1/classes/Todo',data,{
+            return $http.post('https://api.parse.com/1/classes/pastpapers',data,{
                 headers:{
                     'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
                     'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
@@ -27,7 +27,7 @@ angular.module('dekutapp.services',[])
             });
         },
         edit:function(id,data){
-            return $http.put('https://api.parse.com/1/classes/Todo/'+id,data,{
+            return $http.put('https://api.parse.com/1/classes/pastpapers/'+id,data,{
                 headers:{
                     'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
                     'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
@@ -36,7 +36,7 @@ angular.module('dekutapp.services',[])
             });
         },
         delete:function(id){
-            return $http.delete('https://api.parse.com/1/classes/Todo/'+id,{
+            return $http.delete('https://api.parse.com/1/classes/pastpapers/'+id,{
                 headers:{
                     'X-Parse-Application-Id': PARSE_CREDENTIALS.APP_ID,
                     'X-Parse-REST-API-Key':PARSE_CREDENTIALS.REST_API_KEY,
