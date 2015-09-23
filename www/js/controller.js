@@ -76,7 +76,7 @@ $ionicModal.fromTemplateUrl('orderpastpapers.html', {
         $scope.modal = modal;
     });
 
-    $scope.openModal = function () {
+    $scope.newTask = function () {
         $scope.modal.show();
         $timeout(function () {
             $scope.modal.hide();
