@@ -29,137 +29,43 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     })
 
     //Elibrary Controller
-    /* Firebase sync. Monopoly is good */
-    /*
-    .controller("PastPapersCtrl", function($scope, PastPapers) {
-            $scope.pastpapers = PastPapers;
-            $scope.addPastPaper = function() {
-                var name = prompt("Enter Your Full Name");
-                if (name) {
-                    $scope.pastpapers.$add({
-                        "name": name
-                    });
-                }
-            };
-        })
-       */
-        // another code-wrapper
+//start parse controller
+    .controller('PastPaersListController',['$scope','Todo',function($scope,Todo){
 
-        .controller('PastPapersCtrl', function($rootScope, $scope, $window, $ionicModal, $firebase) {
-            $rootScope.show("Please wait... Processing");
-            $scope.list = [];
-            var PastPapersRef = new Firebase($rootScope.baseUrl);
-            PastPapersRef.on('value', function(snapshot) {
-                var data = snapshot.val();
-                $scope.list = [];
-                for (var key in data) {
-                    if (data.hasOwnProperty(key)) {
-                        if (data[key].isCompleted == false) {
-                            data[key].key = key;
-                            $scope.list.push(data[key]);
-                        }
-                    }
-                }
-
-                if ($scope.list.length == 0) {
-                    $scope.noData = true;
-                } else {
-                    $scope.noData = false;
-                }
-                $rootScope.hide();
-            });
-//Modal goes here
-$ionicModal.fromTemplateUrl('orderpastpapers.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function (modal) {
-        $scope.modal = modal;
+    Todo.getAll().success(function(data){
+        $scope.items=data.results;
     });
 
-    $scope.newTask = function () {
-        $scope.modal.show();
-        $timeout(function () {
-            $scope.modal.hide();
-        }, 2000);
-    };
-    // Cleanup the modal when we're done with it
-    $scope.$on('$destroy', function () {
-        $scope.modal.remove();
-    })
+    $scope.onItemDelete=function(item){
+        Todo.delete(item.objectId);
+        $scope.items.splice($scope.items.indexOf(item),1);
+    }
 
-        /*    $ionicModal.fromTemplateUrl('templates/orderpastpaper.html', function(modal) {
-                $scope.newTemplate = modal;
-            });
+}])
+    .controller('PastPapersController',['$scope','Todo','$state',function($scope,Todo,$state){
 
-            $scope.newTask = function() {
-                $scope.newTemplate.show();
-            }; */
+    $scope.todo={};
 
-            $scope.markCompleted = function(key) {
-                $rootScope.show("Please wait... Updating List");
-                var itemRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail) + '/' + key);
-                itemRef.update({
-                    isCompleted: true
-                }, function(error) {
-                    if (error) {
-                        $rootScope.hide();
-                        $rootScope.notify('Oops! something went wrong. Try again later');
-                    } else {
-                        $rootScope.hide();
-                        $rootScope.notify('Successfully updated');
-                    }
-                });
-            };
+    $scope.create=function(){
+        Todo.create({content:$scope.todo.content}).success(function(data){
+            $state.go('todos');
+        });
+    }
 
-            $scope.deleteItem = function(key) {
-                $rootScope.show("Please wait... Deleting from List");
-                var itemRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
-                PastPapersRef.child(key).remove(function(error) {
-                    if (error) {
-                        $rootScope.hide();
-                        $rootScope.notify('Oops! something went wrong. Try again later');
-                    } else {
-                        $rootScope.hide();
-                        $rootScope.notify('Successfully deleted');
-                    }
-                });
-            };
-        })
 
-        .controller('newCtrl', function($rootScope, $scope, $window, $firebase) {
-            $scope.data = {
-                item: "",
-                quantity: ""
-            };
+}])
+    .controller('PastPapersEditController',['$scope','Todo','$state','$stateParams',function($scope,Todo,$state,$stateParams){
 
-            $scope.close = function() {
-                $scope.modal.hide();
-            };
+    $scope.todo={id:$stateParams.id,content:$stateParams.content};
 
-            $scope.createNew = function() {
-                var item = this.data.item;
-                var quantity = this.data.quantity;
-                if (!item) return;
-                $scope.modal.hide();
-                $rootScope.show();
+    $scope.edit=function(){
+        Todo.edit($scope.todo.id,{content:$scope.todo.content}).success(function(data){
+            $state.go('todos');
+        });
+    }
 
-                $rootScope.show("Please wait... Creating new");
-
-                var form = {
-                    item: item,
-                    quantity: quantity,
-                    isCompleted: false,
-                    created: Date.now(),
-                    updated: Date.now()
-                };
-
-                var PastPapersRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
-                $firebase(PastPapersRef).$add(form);
-                $rootScope.hide();
-
-            };
-        })
-
+}])
+// End of parse controller
 
     /* User sends text to the libary number from the app
     * Use this incase the online one is ineffective
