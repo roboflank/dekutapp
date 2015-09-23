@@ -405,7 +405,7 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
                 url: '/home',
                 views: {
                     'about-home': {
-                        templateUrl: 'templates/tour-home.html'
+                        templateUrl: 'templates/about-home.html'
 
                     }
                 }
