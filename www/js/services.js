@@ -1,5 +1,5 @@
 angular.module('dekutapp.services',[])
-    .factory('Todo',['$http','PARSE_CREDENTIALS',function($http,PARSE_CREDENTIALS){
+    .factory('PastPapers',['$http','PARSE_CREDENTIALS',function($http,PARSE_CREDENTIALS){
     return {
         getAll:function(){
             return $http.get('https://api.parse.com/1/classes/Todo',{
@@ -46,6 +46,6 @@ angular.module('dekutapp.services',[])
         }
     }
 }]).value('PARSE_CREDENTIALS',{
-    APP_ID: 'xhTpJiNedJ7mmDj3LTTBUePqSVegcJHzEbh70Y0Q',
-    REST_API_KEY:'XCfQDPODgNB1HqmaCQgKLPWGxQ0lCUxqffzzURJY'
+    APP_ID: 'CaB2kjiHJoaqEG1LSeEPYJtx2Geuend5HaVZ34jU',
+    REST_API_KEY:'IO1sjED77XZBwHdzRRHupTqNPAP5uXtNLFUjoTzs'
 });
