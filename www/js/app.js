@@ -399,13 +399,14 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
         .state('about', {
                 url: '/about',
                 abstract: true,
-                templateUrl: 'templates/about.html'
+                templateUrl: "templates/about.html"
             })
             .state('about.home', {
-                url: '/home',
+                url: '',
                 views: {
-                    'about-about': {
-                        templateUrl: 'templates/about-home.html'
+                    'about-home': {
+                        templateUrl: 'templates/tour-home.html'
+
                     }
                 }
             })
@@ -413,7 +414,8 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
                 url: '/feedback',
                 views: {
                     'about-feedback': {
-                        templateUrl: 'templates/feedback.html',
+                        templateUrl: 'templates/feedback.html'
+
                     }
                 }
             })
