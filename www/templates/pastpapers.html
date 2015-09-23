@@ -12,14 +12,29 @@
 
     </ion-header-bar>
             <ion-content>
+                
+
         <div>
-        <ion-list>
-            <li class="item item-input item-stacked-label">
-                <textarea type="text" placeholder="Start typing..." name="content" rows="10" ng-model="pastpapers.content" required></textarea>
-            </li>
-            <ion-button class="button button-block button-positive" ng-click="create()">
-                Add
-            </ion-button>
+        <ion-list class="has-header">
+             <label class="item item-input item-floating-label">
+                         <span class="input-label">Unit Code</span>
+  <input type="text" placeholder="Unit Code" name="content"  ng-model="pastpapers.content">
+            </label>
+             <label class="item item-input item-floating-label">
+           <span class="input-label">Your Email</span>
+            <input type="email" placeholder="Your Email" ng-model="pastpapers.email"/>
+          </label>
+              <label class="item item-input item-floating-label">
+           <span class="input-label">Your Phone Number</span>
+            <input type="number" placeholder="Your PhoneNumber" ng-model="pastpapers.Number"/>
+          </label>
+            <label class="item item-input item-floating-label">
+           <span class="input-label">Full Names</span>
+            <input type="text" placeholder="Your Awesome Names" ng-model="pastpapers.Names"/>
+          </label>
+            <button class="button button-full button-energized" ng-click="create()">
+               Request
+            </button>
         </ion-list>
     </div>
         <script id="newtweet.html" type="text/ng-template">

@@ -30,7 +30,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
     //Elibrary Controller
 //start parse controller
-    .controller('PastPaersListController',['$scope','PastPapers',function($scope,PastPapers){
+    .controller('PastPapersListController',['$scope','PastPapers',function($scope,PastPapers){
 
     PastPapers.getAll().success(function(data){
         $scope.items=data.results;
@@ -47,8 +47,13 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     $scope.pastpapers={};
 
     $scope.create=function(){
-        PastPapers.create({content:$scope.pastpapers.content}).success(function(data){
-            $state.go('pastpapers');
+        PastPapers.create({
+            content:$scope.pastpapers.content,
+            email:$scope.pastpapers.email,
+            Names:$scope.pastpapers.Names,
+            Number:$scope.pastpapers.Number
+        }).success(function(data){
+            $state.go('tabs.home');
         });
     }
 
@@ -60,7 +65,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
     $scope.edit=function(){
         PastPapers.edit($scope.pastpapers.id,{content:$scope.pastpapers.content}).success(function(data){
-            $state.go('pastpapers');
+            $state.go('tabs.home');
         });
     }
 
