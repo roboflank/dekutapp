@@ -12,7 +12,7 @@
 
     </ion-header-bar>
             <ion-content>
-                
+
 
         <div>
         <ion-list class="has-header">
@@ -37,46 +37,7 @@
             </button>
         </ion-list>
     </div>
-        <script id="newtweet.html" type="text/ng-template">
-             <ion-modal-view class="ionic">
-             <div class="ionic modal slide-in-up" ng-controller="newCtrl">
-                <header class="bar bar-header bar-positive flat">
-                   <h1 class="title fab-left">New Item</h1>
-                   <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
-                </header>
-                <ion-content class="padding has-header">
-                    <form name="StockForm">
-                      <label class="item item-input item-floating-label">
-                                 <span class="input-label">Item Name:</span>
-                                 <input type="text" name="itemname" placeholder="Item Name" ng-model="data.item" required>
-                             </label>
-                        <label class="item item-input item-floating-label">
-                                 <span class="input-label">Quantity: </span>
-                                 <input type="text" name="itemquantity" placeholder="Quantity in Stock" ng-model="data.quantity" required>
-                             </label>
-                   <div class="item item-checkbox">
-                                 <label class="checkbox">
-                                     <input type="checkbox">
-                                 </label>
-
-             Notify Me When Item Stock is running Low
-                    </div>
-                    <div ng-controller="dateCtrl">
-                      <ionic-datepicker idate="currentDate" disablepreviousdates="true"  disablefuturedates="false" callback="datePickerCallback" disableddates="disabledDates" title="title" mondayfirst="true">
-                    <button class="button button-block button-positive"> {{ currentDate | date:'dd - MMMM - yyyy' }} </button>
-                    </ionic-datepicker>
-                    </div>
-               <button ng-disabled="StockForm.$invalid" class="button button-full button-positive icon-left ion-checkmark"
-                                     ng-click="createNew()">
-                                 Submit
-                             </button>
-                    </form>
-
-                </ion-content>
-             </div>
-
-             </ion-modal-view>
-         </script>
+       
 
       </ion-content>
 
@@ -177,7 +138,7 @@
 
               </li>
                  <li>
-                <a class="item item-icon-right" menu-close href="#/feedback">
+                <a class="item item-icon-right" menu-close href="#/about/feedback">
                     <i class="icon ion-email"></i>
                  <h2 class="menu-text">FeedBack</h2> </a>
 

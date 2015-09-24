@@ -1,6 +1,6 @@
 <ion-view class="ionic walkthrough-view">
-    <ion-content style="background: url('../img/bg.jpg') center; background-size: cover;">
-
+    <ion-content>
+<!--
         <div class="top-content row">
 
             <div class="col col-center">
@@ -15,8 +15,8 @@
                 <div ng-controller="EmailCtrl">
                  <a ng-click="sendEmail()">
                     <button class="button button-fab button-assertive icon ion-email"></button>
-                </a>    
-               
+                </a>
+
                   <a href="https://twitter.com/dekutapp">
                     <button class="button button-fab button-positive icon ion-social-twitter" ></button>
                 </a>
@@ -31,7 +31,7 @@
                 </a> -->
                                     </div>
 
-                      <div ng-controller="InviteCtrl">
+    <!--                  <div ng-controller="InviteCtrl">
         <button class="button button-block button-balanced icon ion-person-stalker" ng-click="shareAnywhere()">
  Invite A Friend
 </button>
@@ -60,6 +60,28 @@
         </div>
             -->
         </div>
+
+
+
+              <div>
+              <ion-list class="has-header">
+                   <label class="item item-input item-floating-label">
+                               <span class="input-label">Type</span>
+        <input type="text" placeholder="Type" name="type"  ng-model="feedback.type">
+                  </label>
+                   <label class="item item-input item-floating-label">
+                 <span class="input-label">Your Email</span>
+                  <input type="email" placeholder="Your Email" ng-model="feedback.email"/>
+                </label>
+                  <label class="item item-input item-floating-label">
+                 <span class="input-label">Content</span>
+                  <input type="text" placeholder="Your FeedBack" ng-model="feedback.contact"/>
+                </label>
+                  <button class="button button-full button-energized" ng-click="submit()">
+                     Submit Feedback
+                  </button>
+              </ion-list>
+          </div>
 
 
     </ion-content>
