@@ -79,7 +79,7 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
         $scope.goToRegister = function() {
             $location.path('register');
         };
-
+/**
         // Set the default value of inputType
         $scope.inputType = 'password';
 
@@ -90,5 +90,5 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
           else
             $scope.inputType = 'password';
         };
-
+**/
     });
