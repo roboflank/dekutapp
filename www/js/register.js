@@ -20,6 +20,18 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
          * if you want to use them in the controller. This seems to be a bug with
          * ionic creating a child scope for the ion-content directive
          */
+         // Set the default value of inputType
+         $scope.inputType = 'password';
+
+         // Hide & show password function
+         $scope.hideShowPassword = function(){
+           if ($scope.inputType == 'password')
+             $scope.inputType = 'text';
+           else
+             $scope.inputType = 'password';
+         };
+
+
         $scope.registration = {};
         $scope.avatar = {};
 
