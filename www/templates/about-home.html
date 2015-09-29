@@ -42,7 +42,7 @@ Contacts
 
       <a href="https://www.twitter.com/DekutApp" class="item item-icon-left">
         <i class="icon ion-social-twitter"></i>
-        DekutApp
+        @dekutapp
       </a>
 </div>
 <div class="card">
@@ -52,10 +52,10 @@ Contacts
         FeedBack
       </a>
 </div>
-<div class="card">
+<div class="card" ng-controller="ExtensionsCtrl">
 
-      <a href="#/about/feedback" class="item item-icon-left">
-        <i class="icon ion-aler"></i>
+      <a href="#/about/feedback" class="item item-icon-left" ng-click="showPopup()">
+        <i class="icon ion-alert"></i>
         Disclaimer
       </a>
 </div>

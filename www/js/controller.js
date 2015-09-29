@@ -230,8 +230,8 @@ $scope.edit=function(){
     // Confirm
     $scope.showPopup = function() {
         var alertPopup = $ionicPopup.alert({
-            title: 'You are now my subscribed to Cat Facts',
-            template: 'You will meow receive fun daily facts about CATS!'
+            title: 'DISCLAIMER',
+            template: 'The School does not like us. Therefore we do not own any content displayed in the App. <br/>All credits are provided below.<br><p><strong>CREDITS</strong><p>Timothy Maina<p>Sam Kairu'
         });
 
 
