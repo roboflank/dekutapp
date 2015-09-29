@@ -29,7 +29,8 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
     }
 
     if (window.StatusBar) {
-        StatusBar.styleLightContent(); //status bar will have white text and icons
+        StatusBar.styleDefault();
+    //    StatusBar.styleLightContent(); //status bar will have white text and icons
     }
 
     //Replace $ionicPopup function with toast function
