@@ -11,18 +11,8 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
         $scope.credentials = {};
 
     /** Show passwod/hide password */
-  
-  // Set the default value of inputType
-  $scope.inputType = 'password';
-  
-  // Hide & show password function
-  $scope.hideShowPassword = function(){
-    if ($scope.inputType == 'password')
-      $scope.inputType = 'text';
-    else
-      $scope.inputType = 'password';
-  };
-  
+
+
 
 
                 //hide password ends here
@@ -90,5 +80,15 @@ angular.module('dekutapp.login', ['lbServices', 'ionic'])
             $location.path('register');
         };
 
+        // Set the default value of inputType
+        $scope.inputType = 'password';
+
+        // Hide & show password function
+        $scope.hideShowPassword = function(){
+          if ($scope.inputType == 'password')
+            $scope.inputType = 'text';
+          else
+            $scope.inputType = 'password';
+        };
 
     });
