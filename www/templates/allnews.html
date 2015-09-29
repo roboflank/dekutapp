@@ -82,7 +82,7 @@
       </div>
     </ion-header-bar>
 
-    <ion-content class="ionic">
+    <ion-content class="ionic" scroll="true">
 
 <label class="item item-input item-select">
               <div class="input-label pull-right">
@@ -143,7 +143,7 @@
           <ion-content has-header="true" class="ionic">
               <div class="list ionic">
               <a class="item item-avatar">
-                    <img ng-src="{{currentUser.avatar}}">
+                    <img ng-src="{{currentUser.avatar}}" href="#/tab/account">
                     <h2>Hi @<b>{{currentUser.username}}</b></h2>
                     <p>Welcome Back</p>
                 </a>
