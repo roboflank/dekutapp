@@ -8,7 +8,7 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
 
         $scope.show = function(message) {
             $ionicLoading.show({
-                template: '<div class="ionic loader"><svg class="path"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Regestering,Please Wait...</div>'
+                template: '<div class="ionic loader"><svg class="path"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Registering,Please Wait...</div>'
             });
         };
 
