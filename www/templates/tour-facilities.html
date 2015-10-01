@@ -8,10 +8,10 @@
 </ion-nav-bar>
 <ion-content class="ionic content has-header" scroll="true">
             <div class="list no-padding">
-                <div class="card dark-bg">
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" href="#/tour/facilities">
+                <div class="card dark-bg"  ng-controller="ExtensionsCtrl">
+                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLibrary()">
                         <h2>Library</h2>
-<p>View The School's Libarary</p>                        
+<p>View The School's Library</p>                        
                     </a>
                 </div>
                 <div class="card energized-bg">
@@ -37,5 +37,18 @@
      
 
 </ion-content>
+       <script id="library.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
+                    <p> Login to this site (<a href="http://104.131.160.166:3000/notices/create">DekutApp Site</a> and create your notice which will appear automatically here in the Notice Board section.
 
+                </ion-content>
+            </ion-modal-view>
+        </script>
 </ion-view>
