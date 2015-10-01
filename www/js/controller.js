@@ -218,24 +218,6 @@ $scope.edit=function(){
         $scope.modal.remove();
     });
     
-    //Library modal
-     $ionicModal.fromTemplateUrl('library.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.openLibrary = function() {
-        $scope.modal.show();
-        $timeout(function() {
-            $scope.modal.hide();
-        }, 2000);
-    };
-    // Cleanup the modal when we're done with it
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
     
     //Conservancy modal
     //Library modal
@@ -327,6 +309,27 @@ $scope.edit=function(){
     }
 })
 
+.controller('FacilitiesCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+//Library modal
+     $ionicModal.fromTemplateUrl('library.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openLibrary = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 42000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+
+})
 //Map Controller
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
     var options = {
