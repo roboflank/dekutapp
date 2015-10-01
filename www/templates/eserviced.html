@@ -6,7 +6,7 @@
 <ion-header-bar class="ionic bar bar-header bar-positive" style="position: static;">
         <button ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></button>
 
-<h1 class="title">PastPapers</h1>
+<h1 class="title">Request For An E-service</h1>
         <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
         </ion-nav-back-button>
 
@@ -15,11 +15,23 @@
 
 
         <div>
-        <ion-list class="has-header">
-             <label class="item item-input item-floating-label">
-                         <span class="input-label">Unit Code</span>
-  <input type="text" placeholder="Unit Code" name="content"  ng-model="eserviced.content">
-            </label>
+        <ion-list class="has-header list">
+               <label class="item item-input item-select">
+                    <div class="input-label">
+                        Type of Service
+                    </div>
+                    <select ng-model="eservice.type">
+                        <option selected>Enquiry</option>
+                        <option>Complaints</option>
+                        <option>Lecturer Review</option>
+                        <option>Libary</option>
+                        <option>Suggestion Box</option>
+                    </select>
+                </label>
+            <label class="item item-input item-floating-label">
+           <span class="input-label">Your Content</span>
+            <input type="text" placeholder="Your Content" ng-model="eserviced.content"/>
+          </label>
              <label class="item item-input item-floating-label">
            <span class="input-label">Your Email</span>
             <input type="email" placeholder="Your Email" ng-model="eserviced.email"/>
@@ -30,9 +42,9 @@
           </label>
             <label class="item item-input item-floating-label">
            <span class="input-label">Full Names</span>
-            <input type="text" placeholder="Your Awesome Names" ng-model="eserviced.Names"/>
+            <input type="text" placeholder="Your Awesome Names(ignore for anonymous)" ng-model="eserviced.Names"/>
           </label>
-            <button class="button button-full button-energized" ng-click="create()">
+            <button class="button button-raised button-full button-royal" ng-click="create()">
                Request Service
             </button>
         </ion-list>
