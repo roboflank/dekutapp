@@ -12,6 +12,14 @@
   color: aliceblue;
     text-align: center;
 }
+.smalltitled {
+  color: aliceblue;
+    text-align: center;
+    font-style: oblique;
+}
+.tourhellotitled {
+    color: #11A718;
+}
 .hellotitled {
     color: black;
 }

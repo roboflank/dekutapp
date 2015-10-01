@@ -1,100 +1,94 @@
 <ion-view class="ionic walkthrough-view" ng-controller="NavCtrl">
-            <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
-  <button class="button icon ion-navicon" ng-click="showMenu()"></button>
+    <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
+        <button class="button icon ion-navicon" ng-click="showMenu()"></button>
 
-    <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
-    </ion-nav-back-button>
-    
-</ion-nav-bar>
-<ion-content class="ionic content has-header" scroll="true">
-            <div class="list no-padding">
-                <div class="card dark-bg"   ng-controller="LibraryCtrl"
->
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLibrary()">
-                        <h2>Library</h2>
-<p>View The School's Library</p>                        
-                    </a>
-                </div>
-                <div class="card energized-bg"   ng-controller="ConservancyCtrl"
->
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openConservancy()">
-                        <h2>Conservancy</h2>
-                        <p>Animal & Wildlife Conservancy</p>
-                    </a>
-                </div>
-                <div class="card assertive-bg"   ng-controller="LabsCtrl"
->
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLab()">
-                        <h2>Labaratories</h2>
-                        <p>Ultra-Modern Science and Engineering Labs</p>
-                    </a>
-                </div>
-                <div class="card balanced-bg"   ng-controller="FarmCtrl"
->
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openFarm()">
-                        <h2>School Farm</h2>
-                        <p>The Institution has a large farm which yields high produce. </p>
-                    </a>
-                </div>
-               
+        <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+
+    </ion-nav-bar>
+    <ion-content class="ionic content has-header" scroll="true">
+        <div class="list no-padding">
+            <div class="card dark-bg" ng-controller="LibraryCtrl">
+                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLibrary()">
+                    <h2>Library</h2>
+                    <p>View The School's Library</p>
+                </a>
             </div>
-     
+            <div class="card energized-bg" ng-controller="ConservancyCtrl">
+                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openConservancy()">
+                    <h2>Conservancy</h2>
+                    <p>Animal & Wildlife Conservancy</p>
+                </a>
+            </div>
+            <div class="card assertive-bg" ng-controller="LabsCtrl">
+                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLab()">
+                    <h2>Labaratories</h2>
+                    <p>Ultra-Modern Science and Engineering Labs</p>
+                </a>
+            </div>
+            <div class="card balanced-bg" ng-controller="FarmCtrl">
+                <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openFarm()">
+                    <h2>School Farm</h2>
+                    <p>The Institution has a large farm which yields high produce. </p>
+                </a>
+            </div>
 
-</ion-content>
-       <script id="library.html" type="text/ng-template">
-            <ion-modal-view class="ionic">
-                <ion-header-bar>
-                    <h1 class="title">School Library</h1>
-                </ion-header-bar>
-                <ion-content class="padding">
-                The Library is located on the third floor of the New Ultra modern resource Centre next to Munyeni house. The library is rapidly growing as a centre for global information access and dissemination. Its primary role is to assist its users in the process of transforming information to Knowledge. The Library has a sitting capacity of about 400 students, fully furnished with ultra modern facilities and equipments. <p/>
-The Library is a service which every student is likely to visit frequently and regularly. It is a place for study, providing books and other information sources which supplement lectures with a quite environment. <p/>
-The Library is accessable to readers. Who can freely sample books in shelves. However, users are not allowed to enter staff working areas. The purpose of the library is to provide accurate, up to date information sources and resources which support teaching, learning and research activities of the University.<p/>
-                   <strong>WORKING HOURS</strong> <br/>
-The library is open to users as follows:<br/>
-Weekdays: 8am-9pm <br/>
-Saturdays: 8am-4pm <br/>
-Sundays and Public Holidays: Closed <br/>
-                </ion-content>
-            </ion-modal-view>
-        </script>
-     <script id="conservancy.html" type="text/ng-template">
-            <ion-modal-view class="ionic">
-                <ion-header-bar>
-                    <h1 class="title">Notice Board Instructions</h1>
-                </ion-header-bar>
-                <ion-content class="padding">
-                Click on a Notice to view More Content.
-                    <p></p>
-                    Post A Notice Here.
-                    <p> Login to this site (<a href="http://104.131.160.166:3000/notices/create">DekutApp Site</a> and create your notice which will appear automatically here in the Notice Board section.
+        </div>
 
-                </ion-content>
-            </ion-modal-view>
-        </script>
+
+    </ion-content>
+    <script id="library.html" type="text/ng-template">
+        <ion-modal-view class="ionic">
+            <ion-header-bar>
+                <h1 class="title">School Library</h1>
+            </ion-header-bar>
+            <ion-content class="padding">
+                The Library is located on the third floor of the New Ultra modern resource Centre next to Munyeni house. The library is rapidly growing as a centre for global information access and dissemination. Its primary role is to assist its users in the process of transforming information to Knowledge. The Library has a sitting capacity of about 400 students, fully furnished with ultra modern facilities and equipments.
+                <p/> The Library is a service which every student is likely to visit frequently and regularly. It is a place for study, providing books and other information sources which supplement lectures with a quite environment.
+                <p/> The Library is accessable to readers. Who can freely sample books in shelves. However, users are not allowed to enter staff working areas. The purpose of the library is to provide accurate, up to date information sources and resources which support teaching, learning and research activities of the University.
+                <p/>
+                <strong>WORKING HOURS</strong>
+                <br/> The library is open to users as follows:
+                <br/> Weekdays: 8am-9pm
+                <br/> Saturdays: 8am-4pm
+                <br/> Sundays and Public Holidays: Closed
+                <br/>
+            </ion-content>
+        </ion-modal-view>
+    </script>
+    <script id="conservancy.html" type="text/ng-template">
+        <ion-modal-view class="ionic">
+            <ion-header-bar>
+                <h1 class="title">Animal & Wildlife Conservancy </h1>
+            </ion-header-bar>
+            <ion-content class="padding">
+              We are coming here soon
+            </ion-content>
+        </ion-modal-view>
+    </script>
     <script id="lab.html" type="text/ng-template">
-            <ion-modal-view class="ionic">
-                <ion-header-bar>
-                    <h1 class="title">The Labs</h1>
-                </ion-header-bar>
-                <ion-content class="padding">
-               <strong>  ADMAT </strong> <p/>
-This lab has been improved over the years new technology are available for machinery. It is located at the engineering block.
-<strong>Computer labs </strong> <p/>
-Computers are available at the engineering block and the school of business.
-                </ion-content>
-            </ion-modal-view>
-        </script>
+        <ion-modal-view class="ionic">
+            <ion-header-bar>
+                <h1 class="title">The Labs</h1>
+            </ion-header-bar>
+            <ion-content class="padding">
+                <strong>  ADMAT </strong>
+                <p/> This lab has been improved over the years new technology are available for machinery. It is located at the engineering block. <p/>
+                <strong>Computer labs </strong>
+                <p/> Computers are available at the engineering block and the school of business.
+            </ion-content>
+        </ion-modal-view>
+    </script>
     <script id="farm.html" type="text/ng-template">
-            <ion-modal-view class="ionic">
-                <ion-header-bar>
-                    <h1 class="title">The Farm</h1>
-                </ion-header-bar>
-                <ion-content class="padding">
-                Dedan Kimathi University farm dates back to the early 1900s and was initially established as a plantations farm but has evolved over time to adopt the role of income generation in addition to providing high quality facilities, resources and opportunities for research in crops and animals. The farm has the ultimate objective of playing a central educational role by providing a suitable environment for effective training of students in biosciences, crop science, modern techniques in biotechnology, plant and animal genetics, general animal production and veterinary science. The farm is run commercially to be self-financing while at the same time fulfilling its role as a teaching and research resource.<p/>
-                    
-The farm is a 648 acre mixed farm, with an emphasis on coffee, dairy and arable production. The dairy herd consists of 31 lactating cows, several pigs, poultry and indigenous goats. 302 acres are devoted to coffee production and the rest to arable crops including vegetables, cereals, fodder crops and grazing paddocks. 20 acres will be converted to organic production in three years’ time. <p/>
-                </ion-content>
-            </ion-modal-view>
-        </script>
+        <ion-modal-view class="ionic">
+            <ion-header-bar>
+                <h1 class="title">The Farm</h1>
+            </ion-header-bar>
+            <ion-content class="padding">
+                Dedan Kimathi University farm dates back to the early 1900s and was initially established as a plantations farm but has evolved over time to adopt the role of income generation in addition to providing high quality facilities, resources and opportunities for research in crops and animals. The farm has the ultimate objective of playing a central educational role by providing a suitable environment for effective training of students in biosciences, crop science, modern techniques in biotechnology, plant and animal genetics, general animal production and veterinary science. The farm is run commercially to be self-financing while at the same time fulfilling its role as a teaching and research resource.
+                <p/> The farm is a 648 acre mixed farm, with an emphasis on coffee, dairy and arable production. The dairy herd consists of 31 lactating cows, several pigs, poultry and indigenous goats. 302 acres are devoted to coffee production and the rest to arable crops including vegetables, cereals, fodder crops and grazing paddocks. 20 acres will be converted to organic production in three years’ time.
+                <p/>
+            </ion-content>
+        </ion-modal-view>
+    </script>
 </ion-view>
