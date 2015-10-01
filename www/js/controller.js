@@ -236,6 +236,65 @@ $scope.edit=function(){
     $scope.$on('$destroy', function() {
         $scope.modal.remove();
     });
+    
+    //Conservancy modal
+    //Library modal
+     $ionicModal.fromTemplateUrl('conservancy.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openConservancy = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    
+    //Modal for Lab
+    //Library modal
+     $ionicModal.fromTemplateUrl('lab.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openLab = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    
+    //Farm modal
+     $ionicModal.fromTemplateUrl('farm.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openFarm = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
 
     // Popover
     $scope.popover = function() {

@@ -6,28 +6,28 @@
     </ion-nav-back-button>
     
 </ion-nav-bar>
-<ion-content class="ionic content has-header" scroll="true">
+<ion-content class="ionic content has-header" scroll="true"  ng-controller="ExtensionsCtrl">
             <div class="list no-padding">
-                <div class="card dark-bg"  ng-controller="ExtensionsCtrl">
+                <div class="card dark-bg">
                     <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLibrary()">
                         <h2>Library</h2>
 <p>View The School's Library</p>                        
                     </a>
                 </div>
                 <div class="card energized-bg">
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" href="#/tour/facilities">
+                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openConservancy()">
                         <h2>Conservancy</h2>
                         <p>Animal & Wildlife Conservancy</p>
                     </a>
                 </div>
                 <div class="card assertive-bg">
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" href="#/tour/facilities">
+                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openLab()">
                         <h2>Labaratories</h2>
                         <p>Ultra-Modern Science and Engineering Labs</p>
                     </a>
                 </div>
                 <div class="card balanced-bg">
-                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" href="#/tour/facilities">
+                    <a class="item clear-bg item-bg-image waves-effect waves-button waves-light has-mask-reverse" ng-click="openFarm()">
                         <h2>School Farm</h2>
                         <p>The Institution has a large farm which yields high produce. </p>
                     </a>
@@ -38,6 +38,48 @@
 
 </ion-content>
        <script id="library.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
+                    <p> Login to this site (<a href="http://104.131.160.166:3000/notices/create">DekutApp Site</a> and create your notice which will appear automatically here in the Notice Board section.
+
+                </ion-content>
+            </ion-modal-view>
+        </script>
+     <script id="conservancy.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
+                    <p> Login to this site (<a href="http://104.131.160.166:3000/notices/create">DekutApp Site</a> and create your notice which will appear automatically here in the Notice Board section.
+
+                </ion-content>
+            </ion-modal-view>
+        </script>
+    <script id="lab.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
+                    <p> Login to this site (<a href="http://104.131.160.166:3000/notices/create">DekutApp Site</a> and create your notice which will appear automatically here in the Notice Board section.
+
+                </ion-content>
+            </ion-modal-view>
+        </script>
+    <script id="farm.html" type="text/ng-template">
             <ion-modal-view class="ionic">
                 <ion-header-bar>
                     <h1 class="title">Notice Board Instructions</h1>
