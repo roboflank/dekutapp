@@ -3,7 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput', 'dekutapp.controller', 'dekutapp.factory', 'dekutapp.services'])
+angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account',
+'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet',
+ 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput',
+ 'dekutapp.controller', 'dekutapp.factory', 'dekutapp.services'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -65,7 +68,7 @@ PushbotsPlugin.initializeAndroid('55ed935e177959a0098b4567', 'AIzaSyBWyJaqD6xXP2
 } else if (PushbotsPlugin.isiOS()) {
 PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
 }
-       //Onesignal starts here 
+       //Onesignal starts here
     var notificationOpenedCallback = function(jsonData) {
       alert("Notification received:\n" + JSON.stringify(jsonData));
       console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));

@@ -1,4 +1,4 @@
-angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'dekutapp.factory'])
+angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'dekutapp.factory' , 'ionic-toast'])
 
 
 //Contoller for getting posts
