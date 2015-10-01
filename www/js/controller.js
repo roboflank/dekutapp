@@ -168,7 +168,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
 //Eservices controllers
 //Controller For Submitting eservice request via a form
-.controller('EserviceListController', ['$scope', 'Eservice', function ($scope, Eservice) {
+.controller('EserviceListController', ['$scope', 'Eservice', 'ionic-toast', function ($scope, Eservice, ionicToast) {
 
         Eservice.getAll().success(function (data) {
             $scope.items = data.results;
@@ -180,8 +180,12 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
         }
 
 }])
-    .controller('EserviceController', ['$scope', 'Eservice', '$state', function ($scope, Eservice, $state) {
+    .controller('EserviceController', ['$scope', 'Eservice', '$state', 'ionic-toast', function ($scope, Eservice, $state, ionicToast) {
 
+        $scope.showToast = function(){
+        // ionicToast.show(message, position, stick, time);
+          ionicToast.show('This is a toast at the top.', 'top', true, 2500);
+        };
         $scope.eservice = {};
 
         $scope.request = function () {
@@ -191,7 +195,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
                 content: $scope.eservice.content,
                 Number: $scope.eservice.Number,
                 names: $scope.eservice.names,
-
+           
             }).success(function (data) {
                 $state.go('eservices');
             });
