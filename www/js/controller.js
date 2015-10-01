@@ -219,64 +219,7 @@ $scope.edit=function(){
     });
     
     
-    //Conservancy modal
-    //Library modal
-     $ionicModal.fromTemplateUrl('conservancy.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.openConservancy = function() {
-        $scope.modal.show();
-        $timeout(function() {
-            $scope.modal.hide();
-        }, 2000);
-    };
-    // Cleanup the modal when we're done with it
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
     
-    //Modal for Lab
-    //Library modal
-     $ionicModal.fromTemplateUrl('lab.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.openLab = function() {
-        $scope.modal.show();
-        $timeout(function() {
-            $scope.modal.hide();
-        }, 2000);
-    };
-    // Cleanup the modal when we're done with it
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
-    
-    //Farm modal
-     $ionicModal.fromTemplateUrl('farm.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.openFarm = function() {
-        $scope.modal.show();
-        $timeout(function() {
-            $scope.modal.hide();
-        }, 2000);
-    };
-    // Cleanup the modal when we're done with it
-    $scope.$on('$destroy', function() {
-        $scope.modal.remove();
-    });
 
     // Popover
     $scope.popover = function() {
@@ -309,7 +252,7 @@ $scope.edit=function(){
     }
 })
 
-.controller('FacilitiesCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+.controller('LibraryCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
 //Library modal
      $ionicModal.fromTemplateUrl('library.html', {
         scope: $scope,
@@ -322,7 +265,55 @@ $scope.edit=function(){
         $scope.modal.show();
         $timeout(function() {
             $scope.modal.hide();
-        }, 42000);
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    
+    
+    
+
+})
+
+//Controller for labs
+.controller('LabsCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+     $ionicModal.fromTemplateUrl('lab.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openLab = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+    
+})
+
+//controller for farm
+.controller('FarmCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+     //Farm modal
+     $ionicModal.fromTemplateUrl('farm.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openFarm = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 2000);
     };
     // Cleanup the modal when we're done with it
     $scope.$on('$destroy', function() {
@@ -330,6 +321,30 @@ $scope.edit=function(){
     });
 
 })
+
+//controller for conservancy
+//controller for farm
+.controller('ConservancyCtrl', function($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+     $ionicModal.fromTemplateUrl('conservancy.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openConservancy = function() {
+        $scope.modal.show();
+        $timeout(function() {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function() {
+        $scope.modal.remove();
+    });
+})
+
+
 //Map Controller
 .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
     var options = {
