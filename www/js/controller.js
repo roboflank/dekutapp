@@ -180,22 +180,26 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
         }
 
 }])
-    .controller('EserviceController', ['$scope', 'Eservice', '$state', 'ionic-toast', function ($scope, Eservice, $state, ionicToast) {
+    .controller('EserviceController', ['$scope', 'Eservice', '$state', 'ionicToast', function ($scope, Eservice, $state, ionicToast) {
 
         $scope.showToast = function(){
         // ionicToast.show(message, position, stick, time);
           ionicToast.show('This is a toast at the top.', 'top', true, 2500);
         };
+        $scope.hideToast = function(){
+          ionicToast.hide();
+        };
         $scope.eservice = {};
 
         $scope.request = function () {
+            $scope.showToast();
             Eservice.create({
                 type: $scope.eservice.type,
                 email: $scope.eservice.email,
                 content: $scope.eservice.content,
                 Number: $scope.eservice.Number,
                 names: $scope.eservice.names,
-           
+
             }).success(function (data) {
                 $state.go('eservices');
             });

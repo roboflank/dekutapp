@@ -90,6 +90,3 @@ angular.module('ionic-toast', ['ionic'])
       }
     ];
   });
-
-
-
