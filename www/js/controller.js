@@ -184,12 +184,14 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
         $scope.eservice = {};
 
-        $scope.submit = function () {
+        $scope.request = function () {
             Eservice.create({
                 type: $scope.eservice.type,
                 email: $scope.eservice.email,
                 content: $scope.eservice.content,
-                Number: $scope.eservice.number,
+                Number: $scope.eservice.Number,
+                names: $scope.eservice.names,
+
             }).success(function (data) {
                 $state.go('eservices');
             });

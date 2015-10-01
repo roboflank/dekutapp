@@ -291,7 +291,8 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
         //eservices form
     .state('eserviced', {
             url: '/eserviced',
-            templateUrl: 'templates/eserviced.html'
+            templateUrl: 'templates/eserviced.html',
+        controller: 'EserviceController'
         })
         //Notice Board Logics
         .state('notices', {
