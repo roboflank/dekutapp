@@ -14,14 +14,12 @@
                autocorrect="off" ng-change="setFilter()">
       </div>
     </ion-header-bar>
-
-    <ion-content class="ionic" scroll="true">
-
-<label class="item item-input item-select">
-              <div class="input-label pull-right">
-                  <strong>Sort By</strong>
+<label class="ionic bar bar-subheader bar-positive" style="position: static;">
+              <div class="pull-left">
+                  <em>Sort By</em>
               </div>
-              <select ng-model="field">
+    <div class="pull-right">
+    <select ng-model="field">
                   <option value="all" ng-selected="true" selected>All</option>
                   <option value="title">Title</option>
                 <option value="type">Type</option>
@@ -30,7 +28,12 @@
                   <option value="date">Date</option>
 
               </select>
+    </div>
+              
           </label>
+    <ion-content class="ionic has-subheader" scroll="true">
+
+
         <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{notice._id}}">
 
             <p class="item item-divider title">{{notice.title}}</p>
