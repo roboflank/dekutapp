@@ -65,6 +65,16 @@ PushbotsPlugin.initializeAndroid('55ed935e177959a0098b4567', 'AIzaSyBWyJaqD6xXP2
 } else if (PushbotsPlugin.isiOS()) {
 PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
 }
+       //Onesignal starts here 
+    var notificationOpenedCallback = function(jsonData) {
+      alert("Notification received:\n" + JSON.stringify(jsonData));
+      console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+    };
+
+    // OneSignal AppId and googleProjectNumber before running.
+    window.plugins.OneSignal.init("02782c08-6811-11e5-bd58-4bd93de4f2df",
+                                   {googleProjectNumber: "1006084432056"},
+                                   notificationOpenedCallback);
 
         //load cordova local notifications plugin with default settings
         window.plugin.notification.local.onadd = function(id, state, json) {
