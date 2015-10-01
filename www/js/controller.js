@@ -184,7 +184,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
         $scope.showToast = function(){
         // ionicToast.show(message, position, stick, time);
-          ionicToast.show('This is a toast at the top.', 'top', true, 2500);
+          ionicToast.show('Kindly Hold on. We are processing your request....', 'bottom', true, 2500);
         };
         $scope.hideToast = function(){
           ionicToast.hide();
@@ -201,6 +201,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
                 names: $scope.eservice.names,
 
             }).success(function (data) {
+                $scope.hideToast();
                 $state.go('eservices');
             });
         }
