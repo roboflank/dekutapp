@@ -1,4 +1,4 @@
-<ion-view title="Register For DekutApp" class="ionic list">
+<ion-view title="Register For DekutApp" class="ionic">
  <ion-nav-bar class="bar bar-header bar-dark" style="position: static; margin-bottom: 25px;">
    <a href="#/login">
    <button class="button icon ion-locked" href="#/login"></button>
@@ -18,14 +18,15 @@
                 </label>
                 <label class="item item-input">
                     <i class="icon ion-ios-locked"></i>
-                    <input type="password" placeholder="Password" name="password" ng-model="registration.password"
+                    <input type="{{inputType}}" placeholder="Password" name="password" ng-model="registration.password"
                            required>
+
                 </label>
-            <!--    <div>
-                      <input type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()" />
-        <label for="checkbox" ng-if="passwordCheckbox">Hide password</label>
-        <label for="checkbox" ng-if="!passwordCheckbox">Show password</label>
-     </div> -->
+                <ion-toggle ng-model="passwordCheckbox" toggle-class="toggle-calm" ng-click="hideShowPassword()" >Show password</ion-toggle>
+
+             <div>
+
+     </div>
             </div>
             <div class="padding">
                 <h3>Choose your avatar<small>&nbsp;(Custom Avatars coming soon)</small></h3>

@@ -33,7 +33,8 @@
     {
       "locator": "https://github.com/cordova-sms/cordova-sms-plugin.git",
       "id": "com.cordova.plugins.sms"
-    }
+    },
+    "cordova-plugin-console"
   ],
   "cordovaPlatforms": [
     "android"
