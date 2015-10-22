@@ -16,7 +16,7 @@
     </ion-header-bar>
 <label class="ionic bar bar-subheader bar-positive" style="position: static;">
               <div class="pull-left">
-                  <em>Sort By</em>
+                  <em class="title">Sort By</em>
               </div>
     <div class="pull-right">
     <select ng-model="field">
@@ -36,7 +36,7 @@
 
         <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{notice._id}}">
 
-            <p class="item item-divider title">{{notice.title}}</p>
+            <p class="item item-divinder title">{{notice.title}}</p>
             <div class="item item-body">
                 {{notice.content}}
                 <h4>By {{notice.user.displayName}}</h4>

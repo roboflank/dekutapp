@@ -5,7 +5,17 @@
             <ion-nav-bar class="bar bar-header bar-positive">
   <button class="button icon ion-navicon" ng-click="showMenu()"></button>
      <a href="#/about/home" class="button icon ion-more pull-right"></a>
+    <!-- <ion-nav-buttons side="left">
+         <button class="button button-icon button-clear  ion-navicon" ng-click="showMenu()">
+         </button>
+     </ion-nav-buttons>
+     <ion-nav-buttons side="right">
+       <a href="#/about/home">
 
+         <button class="button button-icon button-clear ion-information">
+         </button>
+         </a>
+     </ion-nav-buttons>  -->
 
     <ion-nav-back-button class="button-icon ion-arrow-left-c">
     </ion-nav-back-button>
@@ -20,10 +30,12 @@
             <ion-nav-view name="dev-tab"></ion-nav-view>
         </ion-tab> -->
 
-        <ion-tab title="Account" icon="ion-person" href="#/tab/account">
+      <!--  <ion-tab title="Account" icon="ion-person" href="#/tab/account">
             <ion-nav-view name="account-tab"></ion-nav-view>
+        </ion-tab> -->
+ <ion-tab title="Notices" icon="ion-clipboard" href="#/tab/not">
+            <ion-nav-view name="not-tab"></ion-nav-view>
         </ion-tab>
-
     </ion-tabs>
      </ion-side-menu-content>
 
