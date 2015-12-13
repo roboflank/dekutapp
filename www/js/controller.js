@@ -217,7 +217,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 
         $scope.edit = function () {
             Eservice.edit($scope.eservice.id, {
-                content: $scope.eserv.content
+                content: $scope.eservice.content
             }).success(function (data) {
                 $state.go('eservices');
             });
