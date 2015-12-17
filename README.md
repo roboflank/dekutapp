@@ -1,3 +1,6 @@
+
+# Getting Started
+
 ## Dependencies
 You will need to install some stuff, if you haven't already:
 
@@ -14,7 +17,6 @@ Secondaries(click for further information):
 * [Intel XDK](https://download.xdk.intel.com/xdk/) - For Linux
 * [Developer Friendly Browser](https://download-installer.cdn.mozilla.net/pub/firefox/nightly/latest-mozilla-aurora) - Mozilla for Linux
 
-## Getting Started
 Setup Locally:
 ```
 git clone https://github.com/Dekutapp/dekutapp.git && cd dekutapp && bower install && sudo npm install
@@ -28,24 +30,24 @@ Configure the server to work with the app
 
 ##ToDo
 * Replace Profile Avatar with Custom User images (Using Gravatar)
-* Social Sharing
+* ~~Social Sharing~~
 * Adding TimeTable && School Cirriculum for each School/course
-* Feedback page
+* ~~Feedback page~~
 * Liking,Favoriting and sharing a news Item.
 * ChatRoom
 * Add Hashtag and @ mentions, configure trends
-* Notices & Events Happening
-* Loading bar when Http request is being processed: In SignUp & Login, Commenting.
-* Offline Detector - Give error message when phone is offline.
+* ~~Notices & Events Happening~~
+* ~~Loading bar when Http request is being processed: In SignUp & Login, Commenting.~~
+* ~~Offline Detector - Give error message when phone is offline.~~
 * Update Profile Feature -Add Status Update -  Update username, avatar and Password
-* Semester Counter, Count Weeks, Days left for the semester
+* ~~Semester Counter, Count Weeks, Days left for the semester~~
 * Add Header shrinker for large contents (ionic.ion.shinkHeader)
 
 ##Bugs
-* SignUp Button not showing when screen oriented.
-* Map not loading.
+* ~~SignUp Button not showing when screen oriented.~~
+* ~~Map not loading.~~~
 * Tweets not showing while using MongoDb.
-* No redirect after SignUp
+* ~~No redirect after SignUp~~
 
 
 

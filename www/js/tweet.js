@@ -1,8 +1,8 @@
 angular.module('dekutapp.tweet', ['lbServices', 'ionic'])
     .controller('TweetCtrl', function($scope, $location, User, $stateParams, Tweet, Avatar, $ionicModal) {
-     
-   
-    
+
+
+
     $scope.currentUser = User.getCurrent();
         $scope.tweet = {};
         $scope.comments = {};

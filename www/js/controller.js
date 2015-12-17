@@ -1,154 +1,452 @@
-angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'dekutapp.factory'])
+angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'dekutapp.factory' , 'ionic-toast'])
 
 
 //Contoller for getting posts
-.controller('ArticlesCtrl', function($scope, Article) {
-    $scope.articles = Article.query();
-})
-//Controller for Articles(plural)
-.controller('ArticleCtrl', function($scope, $stateParams, Article) {
-    $scope.article = Article.get({articleId: $stateParams.articleId});
-})    
+.controller('ArticlesCtrl', function ($scope, Article) {
+        $scope.articles = Article.query();
+    })
+    //Controller for Articles(plural)
+    .controller('ArticleCtrl', function ($scope, $stateParams, Article) {
+        $scope.article = Article.get({
+            articleId: $stateParams.articleId
+        });
+    })
 
 //Controller for items todo fb
-    .controller("ListCtrl", function($scope, Items) {
-      $scope.items = Items;
-      $scope.addItem = function() {
-        var name = prompt("What do you need to buy?");
+.controller("ListCtrl", function ($scope, Items) {
+    $scope.items = Items;
+    $scope.addItem = function () {
+        var name = prompt("Enter Your School To-Do's");
         if (name) {
-          $scope.items.$add({
-            "name": name
-          });
+            $scope.items.$add({
+                "name": name
+            });
         }
-      };
-        $scope.login = function() {
-      Auth.$authWithOAuthRedirect("facebook");
     };
-    })
+    $scope.login = function () {
+        Auth.$authWithOAuthRedirect("facebook");
+    };
+})
+
+//Elibrary Controller
+//start parse controller to send PastPapers request data
+.controller('PastPapersListController', ['$scope', 'PastPapers', function ($scope, PastPapers) {
+
+        PastPapers.getAll().success(function (data) {
+            $scope.items = data.results;
+        });
+
+        $scope.onItemDelete = function (item) {
+            PastPapers.delete(item.objectId);
+            $scope.items.splice($scope.items.indexOf(item), 1);
+        }
+
+}])
+    .controller('PastPapersController', ['$scope', 'PastPapers', '$state', function ($scope, PastPapers, $state) {
+
+        $scope.pastpapers = {};
+
+        $scope.create = function () {
+            PastPapers.create({
+                content: $scope.pastpapers.content,
+                email: $scope.pastpapers.email,
+                Names: $scope.pastpapers.Names,
+                Number: $scope.pastpapers.Number
+            }).success(function (data) {
+                $state.go('tabs.home');
+            });
+        }
+
+
+}])
+    .controller('PastPapersEditController', ['$scope', 'PastPapers', '$state', '$stateParams', function ($scope, PastPapers, $state, $stateParams) {
+
+        $scope.pastpapers = {
+            id: $stateParams.id,
+            content: $stateParams.content
+        };
+
+        $scope.edit = function () {
+            PastPapers.edit($scope.pastpapers.id, {
+                content: $scope.pastpapers.content
+            }).success(function (data) {
+                $state.go('tabs.home');
+            });
+        }
+
+}])
+    // End of parse controller
+
+/* User sends text to the libary number from the app
+ * Use this incase the online one is ineffective
+ */
+.controller('SMSController', function ($scope, $cordovaSms) {
+    $scope.sms = {
+        number: '0721112312',
+        message: 'This is some dummy text',
+        unitcode: '',
+        unittitle: '',
+        email: '',
+        name: '',
+        number: '',
+
+    };
+
+    document.addEventListener("deviceready", function () {
+
+        var options = {
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                intent: '' // send SMS with the native android SMS messaging
+                    //intent: '' // send SMS without open any other app
+                    //intent: 'INTENT' // send SMS inside a default SMS app
+            }
+        };
+
+        $scope.sendSMS = function () {
+
+            $cordovaSms
+                .send('0721112312', 'Requesting pastpapers', options)
+                .then(function () {
+                    alert('Success');
+                    $location.path('#/elibrary');
+
+                    // Success! SMS was sent
+                }, function (error) {
+                    alert('Error');
+                    // An error occurred
+                });
+        }
+    });
+})
+
+//Controller For Submitting feedback via a form
+.controller('FeedBackListController', ['$scope', 'FeedBack', function ($scope, FeedBack) {
+
+        FeedBack.getAll().success(function (data) {
+            $scope.items = data.results;
+        });
+
+        $scope.onItemDelete = function (item) {
+            PastPapers.delete(item.objectId);
+            $scope.items.splice($scope.items.indexOf(item), 1);
+        }
+
+}])
+    .controller('FeedBackController', ['$scope', 'FeedBack', '$state', function ($scope, FeedBack, $state) {
+
+        $scope.feedback = {};
+
+        $scope.submit = function () {
+            FeedBack.create({
+                type: $scope.feedback.type,
+                email: $scope.feedback.email,
+                content: $scope.feedback.content,
+            }).success(function (data) {
+                $state.go('about.home');
+            });
+        }
+
+
+}])
+    .controller('FeedBackEditController', ['$scope', 'FeedBack', '$state', '$stateParams', function ($scope, FeedBack, $state, $stateParams) {
+
+        $scope.feedback = {
+            id: $stateParams.id,
+            content: $stateParams.content
+        };
+
+        $scope.edit = function () {
+            FeedBack.edit($scope.feedback.id, {
+                content: $scope.feedback.content
+            }).success(function (data) {
+                $state.go('about.home');
+            });
+        }
+
+}])
+
+//Eservices controllers
+//Controller For Submitting eservice request via a form
+.controller('EserviceListController', ['$scope', 'Eservice', 'ionic-toast', function ($scope, Eservice, ionicToast) {
+
+        Eservice.getAll().success(function (data) {
+            $scope.items = data.results;
+        });
+
+        $scope.onItemDelete = function (item) {
+            Eservice.delete(item.objectId);
+            $scope.items.splice($scope.items.indexOf(item), 1);
+        }
+
+}])
+    .controller('EserviceController', ['$scope', 'Eservice', '$state', 'ionicToast', function ($scope, Eservice, $state, ionicToast) {
+
+        $scope.showToast = function(){
+        // ionicToast.show(message, position, stick, time);
+          ionicToast.show('Kindly Hold on. We are processing your request....', 'bottom', true, 2500);
+        };
+        $scope.hideToast = function(){
+          ionicToast.hide();
+        };
+        $scope.eservice = {};
+
+        $scope.request = function () {
+            $scope.showToast();
+            Eservice.create({
+                type: $scope.eservice.type,
+                email: $scope.eservice.email,
+                content: $scope.eservice.content,
+                Number: $scope.eservice.Number,
+                names: $scope.eservice.names,
+
+            }).success(function (data) {
+                $scope.hideToast();
+                $state.go('eservices');
+            });
+        }
+
+
+}])
+    .controller('EserviceEditController', ['$scope', 'Eservice', '$state', '$stateParams', function ($scope, Eservice, $state, $stateParams) {
+
+        $scope.eservice = {
+            id: $stateParams.id,
+            content: $stateParams.content
+        };
+
+        $scope.edit = function () {
+            Eservice.edit($scope.eservice.id, {
+                content: $scope.eservice.content
+            }).success(function (data) {
+                $state.go('eservices');
+            });
+        }
+
+}])
 
 //Custom Material Effects in The App
-    .controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
+.controller('ExtensionsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicLoading, $ionicModal, $ionicPopup, ionicMaterialInk, $ionicPopover) {
 
 
-        // Triggered on a button click, or some other target
-        $scope.actionSheet = function () {
+    // Triggered on a button click, or some other target
+    $scope.actionSheet = function () {
 
-            // Show the action sheet
-            var hideSheet = $ionicActionSheet.show({
-                buttons: [{
-                    text: '<b>Share</b> This'
+        // Show the action sheet
+        var hideSheet = $ionicActionSheet.show({
+            buttons: [{
+                text: '<b>Share</b> This'
             }, {
-                    text: 'Move'
+                text: 'Move'
             }],
-                destructiveText: 'Delete',
-                titleText: 'Modify your album',
-                cancelText: 'Cancel',
-                cancel: function () {
-                    // add cancel code..
-                },
-                buttonClicked: function (index) {
-                    return true;
-                }
-            });
-
-            // For example's sake, hide the sheet after two seconds
-            $timeout(function () {
-                hideSheet();
-            }, 2000);
-
-        };
-
-
-        $scope.loading = function () {
-            $ionicLoading.show({
-                template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
-            });
-
-            // For example's sake, hide the sheet after two seconds
-            $timeout(function () {
-                $ionicLoading.hide();
-            }, 2000);
-        };
-
-        $ionicModal.fromTemplateUrl('my-modal.html', {
-            scope: $scope,
-            animation: 'slide-in-up'
-        }).then(function (modal) {
-            $scope.modal = modal;
+            destructiveText: 'Delete',
+            titleText: 'Modify your album',
+            cancelText: 'Cancel',
+            cancel: function () {
+                // add cancel code..
+            },
+            buttonClicked: function (index) {
+                return true;
+            }
         });
 
-        $scope.openModal = function () {
-            $scope.modal.show();
-            $timeout(function () {
-                $scope.modal.hide();
-            }, 2000);
-        };
-        // Cleanup the modal when we're done with it
-        $scope.$on('$destroy', function () {
-            $scope.modal.remove();
-        });
+        // For example's sake, hide the sheet after two seconds
+        $timeout(function () {
+            hideSheet();
+        }, 2000);
 
-        // Popover
-        $scope.popover = function () {
-            $scope.$parent.popover.show();
-            $timeout(function () {
-                $scope.$parent.popover.hide();
-            }, 2000);
-        };
-
-
-        // Confirm
-        $scope.showPopup = function () {
-            var alertPopup = $ionicPopup.alert({
-                title: 'You are now my subscribed to Cat Facts',
-                template: 'You will meow receive fun daily facts about CATS!'
-            });
-
-
-            $timeout(function () {
-                ionicMaterialInk.displayEffect();
-            }, 0);
-        };
-
-        // Toggle Code Wrapper
-        var code = document.getElementsByClassName('code-wrapper');
-        for (var i = 0; i < code.length; i++) {
-            code[i].addEventListener('click', function () {
-                this.classList.toggle('active');
-            });
-        }
-    })
-
-//Map Controller
-.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
-  var options = {timeout: 10000, enableHighAccuracy: true};
-
-  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
-
-    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    var mapOptions = {
-      center: latLng,
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-  }, function(error){
-    console.log("Could not get location");
-  });
+    $scope.loading = function () {
+        $ionicLoading.show({
+            template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>'
+        });
+
+        // For example's sake, hide the sheet after two seconds
+        $timeout(function () {
+            $ionicLoading.hide();
+        }, 2000);
+    };
+
+    $ionicModal.fromTemplateUrl('my-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openModal = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    });
+
+
+
+
+    // Popover
+    $scope.popover = function () {
+        $scope.$parent.popover.show();
+        $timeout(function () {
+            $scope.$parent.popover.hide();
+        }, 2000);
+    };
+
+
+    // Confirm
+    $scope.showPopup = function () {
+        var alertPopup = $ionicPopup.alert({
+            title: 'DISCLAIMER',
+            template: 'The School does not like us. Therefore we do not own any content displayed in the App. <br/>All credits are provided below.<br><p><strong>CREDITS</strong><p>Timothy Maina<p>Sam Kairu'
+        });
+
+
+        $timeout(function () {
+            ionicMaterialInk.displayEffect();
+        }, 0);
+    };
+
+    // Toggle Code Wrapper
+    var code = document.getElementsByClassName('code-wrapper');
+    for (var i = 0; i < code.length; i++) {
+        code[i].addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+    }
+})
+
+.controller('LibraryCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+    //Library modal
+    $ionicModal.fromTemplateUrl('library.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openLibrary = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    });
+
+
+
+
+})
+
+//Controller for labs
+.controller('LabsCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+    $ionicModal.fromTemplateUrl('lab.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openLab = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    });
+
+})
+
+//controller for farm
+.controller('FarmCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+    //Farm modal
+    $ionicModal.fromTemplateUrl('farm.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openFarm = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    });
+
+})
+
+//controller for conservancy
+//controller for farm
+.controller('ConservancyCtrl', function ($scope, $stateParams, $ionicActionSheet, $timeout, $ionicModal) {
+    $ionicModal.fromTemplateUrl('conservancy.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal = modal;
+    });
+
+    $scope.openConservancy = function () {
+        $scope.modal.show();
+        $timeout(function () {
+            $scope.modal.hide();
+        }, 2000);
+    };
+    // Cleanup the modal when we're done with it
+    $scope.$on('$destroy', function () {
+        $scope.modal.remove();
+    });
+})
+
+
+//Map Controller
+.controller('MapCtrl', function ($scope, $state, $cordovaGeolocation) {
+    var options = {
+        timeout: 10000,
+        enableHighAccuracy: true
+    };
+
+    $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
+
+        var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        var mapOptions = {
+            center: latLng,
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    }, function (error) {
+        console.log("Could not get location");
+    });
     //After Map has Loaded
-    google.maps.event.addListenerOnce($scope.map, 'idle', function(){
- 
-  var marker = new google.maps.Marker({
-      map: $scope.map,
-      animation: google.maps.Animation.DROP,
-      position: latLng
-  });      
- 
-});
-    
+    google.maps.event.addListenerOnce($scope.map, 'idle', function () {
+
+        var marker = new google.maps.Marker({
+            map: $scope.map,
+            animation: google.maps.Animation.DROP,
+            position: latLng
+        });
+
+    });
+
 })
 
 .controller("InviteCtrl", function ($scope, $cordovaSocialSharing) {
@@ -168,8 +466,8 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
 })
 
 
-    //Contoller for getting notices
-    .controller('NoticesCtrl', function ($scope, Notice) {
+//Contoller for getting notices
+.controller('NoticesCtrl', function ($scope, Notice) {
         $scope.notices = Notice.query();
     })
     //Controller for Sessions(plural)
@@ -177,7 +475,7 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
         $scope.notice = Notice.get({
             noticeId: $stateParams.noticeId
         });
-   
+
         //Added Share Function/Feature in Sessions Controller
         // check if  $cordovaSocialSharing module is a must
         $scope.shareNative = function () {
@@ -219,9 +517,9 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
     })
 
 //TimeTable Local Notifications
-.controller("TimetableNotificationCtrl", function($scope, $cordovaLocalNotification) {
+.controller("TimetableNotificationCtrl", function ($scope, $cordovaLocalNotification) {
 
-    $scope.add = function() {
+    $scope.add = function () {
         var alarmTime = new Date();
         alarmTime.setMinutes(alarmTime.getMinutes() + 1);
         $cordovaLocalNotification.add({
@@ -236,20 +534,20 @@ angular.module('dekutapp.controller', ['ionic', 'ngCordova', 'ngResource', 'deku
         });
     };
 
-    $scope.isScheduled = function() {
-        $cordovaLocalNotification.isScheduled("1234").then(function(isScheduled) {
-            alert("Notification 1234 Scheduled: " + isScheduled);
-        });
-    }
-    //Prompt for permission in iOS 8 only
-    $ionicPlatform.ready(function() {
-    if(device.platform === "iOS") {
-        window.plugin.notification.local.promptForPermission();
-    }
-});
+    $scope.isScheduled = function () {
+            $cordovaLocalNotification.isScheduled("1234").then(function (isScheduled) {
+                alert("Notification 1234 Scheduled: " + isScheduled);
+            });
+        }
+        //Prompt for permission in iOS 8 only
+    $ionicPlatform.ready(function () {
+        if (device.platform === "iOS") {
+            window.plugin.notification.local.promptForPermission();
+        }
+    });
     //Add Event Listener for notification added
-    $scope.$on("$cordovaLocalNotification:added", function(id, state, json) {
-    alert("Added a notification");
-});
+    $scope.$on("$cordovaLocalNotification:added", function (id, state, json) {
+        alert("Added a notification");
+    });
 
 });

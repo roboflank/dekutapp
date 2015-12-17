@@ -23,7 +23,7 @@ angular.module('dekutapp.home', ['lbServices'])
             template: data
         })
     };
-    
+
     //Show Modal for new Tweet
     $ionicModal.fromTemplateUrl('newtweet.html', {
             scope: $scope,

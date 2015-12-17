@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "",
       "projectGuid": "c66043b5-bb0e-4c13-8cfb-5fad92cd7287",
-      "lastModifiedDate": 1439988777642,
+      "lastModifiedDate": 1443114232188,
       "creationDate": 1431692504568
     },
     "sourceDirectory": "www",
@@ -18,35 +18,7 @@
     "projectFiles": {},
     "projectDirectories": {},
     "libraries": [],
-    "cordovaPlugins": [
-      {
-        "id": "org.apache.cordova.device",
-        "version": "0.2.13",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      },
-      {
-        "id": "org.apache.cordova.splashscreen",
-        "version": "0.3.5",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      },
-      {
-        "id": "nl.x-services.plugins.socialsharing",
-        "version": "4.3.16",
-        "selectedState": "Auto",
-        "data": {},
-        "paramvals": {},
-        "dependsOn": [],
-        "dependedBy": []
-      }
-    ],
+    "cordovaPlugins": [],
     "serviceMethods": [],
     "buildConfigurations": {
       "Android": {
@@ -61,7 +33,7 @@
         },
         "isActive_": true,
         "appName_": "DekutApp",
-        "appID_": "not.yet.specified",
+        "appID_": "com.dekutapp.dekutapp",
         "appAccess_": [
           {
             "origin": "*"
@@ -107,12 +79,12 @@
         ],
         "addlPermissions_": "",
         "excludedLibraries_": "",
-        "appVersion_": "0.0.1",
+        "appVersion_": "1.0.0",
         "appVersionCode_": "1",
         "crosswalkVersion_": "10",
         "cordovaCLIVersion_": "4.1.2",
-        "appDescription_": "",
-        "appAuthor_": ""
+        "appDescription_": "Student Companion app for Dedan Kimathi University",
+        "appAuthor_": "denzjoseph@gmail.com + thomasmuhyka@gmail.com"
       },
       "Android-Crosswalk": {
         "platform_": "android",

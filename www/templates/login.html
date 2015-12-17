@@ -1,9 +1,8 @@
 <ion-view view-title="Login" align-title="left">
-<ion-content class="ionic login animate-pan-in-left" style="background: url('../img/bg.jpg') center; background-size: cover;">
-
+<ion-content class="ionic login animate-pan-left">
     <div class="hero no-header flat">
         <div class="content">
-            <i class="ion-unlocked icon hero-icon royal-bg"></i>
+            <i class="ion-person icon hero-icon"></i>
             <h1 class="title-center">Login</h1>
         </div>
     </div>
@@ -11,8 +10,14 @@
     <form novalidate="novalidate" name="loginForm">
 
         <div class="list">
-            <ion-md-input highlight-color="balanced" type="text" name="username" placeholder="Username" ng-model="credentials.username" required></ion-md-input>
+            <ion-md-input highlight-color="balanced" type="text" name="email" placeholder="Email" ng-model="credentials.email" required></ion-md-input>
             <ion-md-input highlight-color="energized" type="password" name="password" placeholder="Password" ng-model="credentials.password" required></ion-md-input>
+        <!--    <div>
+                <input type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()" />
+  <label for="checkbox" ng-if="passwordCheckbox">Hide password</label>
+  <label for="checkbox" ng-if="!passwordCheckbox">Show password</label>
+            </div>
+        -->
         </div>
         <div class="padding">
             <button ng-disabled="!loginForm.$valid" class="button button-block button-positive waves-effect waves-light" ng-click="login()">Login &nbsp
@@ -21,6 +26,7 @@
             <button class="button button-block button-raised button-stable ink-dark" ng-click="goToRegister()">Don't have an account yet?
             </button>
         </div>
+
     </form>
 
 

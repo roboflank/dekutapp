@@ -3,7 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet', 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput', 'dekutapp.controller', 'rssappControllers', 'rssappServices', 'dekutapp.factory'])
+angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account',
+'dekutapp.dev', 'dekutapp.home', 'dekutapp.login', 'dekutapp.register', 'dekutapp.tweet',
+ 'ionic', 'lbServices', 'bd.timedistance', 'ngCordova', 'ionic-material', 'ionMdInput',
+ 'dekutapp.controller', 'dekutapp.factory', 'dekutapp.services'])
 
 /*.run(function ($ionicPlatform) {
  $ionicPlatform.ready(function () {
@@ -29,27 +32,28 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
     }
 
     if (window.StatusBar) {
-        StatusBar.styleLightContent(); //status bar will have white text and icons
+        StatusBar.styleDefault();
+    //    StatusBar.styleLightContent(); //status bar will have white text and icons
     }
 
     //Replace $ionicPopup function with toast function
 
-    if (window.Connection) {
-        if (navigator.connection.type == Connection.NONE) {
-            $ionicPopup.confirm({
-                    title: 'No Internet Connection',
-                    content: 'Some Features Require Internet Connection to work. Kindly Enable Internet Connectivity'
-                })
-                .then(function(result) {
-                    if (!result) {
-                        console.log("Enable Internet then continue");
+    /*  if (window.Connection) {
+          if (navigator.connection.type == Connection.NONE) {
+              $ionicPopup.confirm({
+                      title: 'No Internet Connection',
+                      content: 'Some Features Require Internet Connection to work. Kindly Enable Internet Connectivity'
+                  })
+                  .then(function(result) {
+                      if (!result) {
+                          console.log("Enable Internet then continue");
 
-                        //$rootScope.notify("Error Encountered");
-                        //ionic.Platform.exitApp();
-                    }
-                });
-        }
-    }
+                          //$rootScope.notify("Error Encountered");
+                          //ionic.Platform.exitApp();
+                      }
+                  });
+          }
+      } */
 
     //Go home func
     $rootScope.goHome = function() {
@@ -57,6 +61,24 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
     };
 
     $ionicPlatform.ready(function() {
+      //pushbots initialize
+
+if (PushbotsPlugin.isAndroid()) {
+PushbotsPlugin.initializeAndroid('55ed935e177959a0098b4567', 'AIzaSyBWyJaqD6xXP2DroyQMmebJEztVhZstHa4');
+} else if (PushbotsPlugin.isiOS()) {
+PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
+}
+       //Onesignal starts here
+    var notificationOpenedCallback = function(jsonData) {
+      alert("Notification received:\n" + JSON.stringify(jsonData));
+      console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+    };
+
+    // OneSignal AppId and googleProjectNumber before running.
+    window.plugins.OneSignal.init("02782c08-6811-11e5-bd58-4bd93de4f2df",
+                                   {googleProjectNumber: "1006084432056"},
+                                   notificationOpenedCallback);
+
         //load cordova local notifications plugin with default settings
         window.plugin.notification.local.onadd = function(id, state, json) {
             var notification = {
@@ -202,15 +224,52 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
                 }
             }
         })
-        .state('academics.reminders', {
-            url: '/reminders',
+
+    .state('academics.reminders', {
+        url: '/reminders',
+        views: {
+            'academics-reminders': {
+                templateUrl: 'templates/academics-reminders.html',
+                controller: 'ListCtrl'
+            }
+        }
+    })
+
+     //Elibrary Logics
+    .state('elibrary', {
+            url: "/elibrary",
+            abstract: true,
+            templateUrl: "templates/elib.html"
+        })
+        .state('elibrary.home', {
+            url: '',
             views: {
-                'academics-reminders': {
-                    templateUrl: 'templates/academics-reminders.html',
-                    controller: 'ListCtrl'
+                'elibrary-home': {
+                    templateUrl: 'templates/elibrary-home.html'
+
                 }
             }
         })
+        .state('elibrary.pastpapers', {
+            url: '/pastpapers',
+            views: {
+                'elibrary-pastpapers': {
+                    templateUrl: 'templates/pastpapers.html',
+                    controller: 'ExtensionsCtrl'
+
+                }
+            }
+        })
+
+    .state('elibrary.checkin', {
+        url: '/checkin',
+        views: {
+            'elibrary-checkin': {
+                templateUrl: 'templates/checkin.html',
+                controller: 'ListCtrl'
+            }
+        }
+    })
 
     // Timetable and Academic Logics
     .state('timetables', {
@@ -218,14 +277,26 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
             templateUrl: 'templates/academics-timetables.html',
             controller: 'TimetableNotificationCtrl'
         })
-        .state('resources', {
-            url: '/resources',
-            templateUrl: 'templates/academics-resources.html'
+        .state('pastpapers', {
+            url: '/pastpapers',
+            templateUrl: 'templates/pastpapers.html',
+        controller: 'PastPapersController'
         })
+        /*    .state('resources', {
+         *      url: '/resources',
+         *  templateUrl: 'templates/academics-resources.html'
+         *    })
+         */
         //Eservices Route
         .state('eservices', {
             url: '/eservices',
             templateUrl: 'templates/eservices.html'
+        })
+        //eservices form
+    .state('eserviced', {
+            url: '/eserviced',
+            templateUrl: 'templates/eserviced.html',
+        controller: 'EserviceController'
         })
         //Notice Board Logics
         .state('notices', {
@@ -345,6 +416,31 @@ angular.module('dekutapp', ['ngResource', 'firebase', 'dekutapp.account', 'dekut
                 }
             }
         })
+        //About Pages
+        .state('about', {
+                url: '/about',
+                abstract: true,
+                templateUrl: "templates/about.html"
+            })
+            .state('about.home', {
+                url: '/home',
+                views: {
+                    'about-home': {
+                        templateUrl: 'templates/about-home.html'
+
+                    }
+                }
+            })
+            .state('about.feedback', {
+                url: '/feedback',
+                views: {
+                    'about-feedback': {
+                        templateUrl: 'templates/feedback.html',
+                        contoller: 'FeedBackController'
+
+                    }
+                }
+            })
         //Rss Routes
         .state('Home', {
             url: '/home',

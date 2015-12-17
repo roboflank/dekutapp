@@ -2,32 +2,22 @@
 <ion-view title="What's Happening">
 
     <ion-content padding="false">
-        <ion-refresher
-                pulling-text="Pull to refresh..."
-                on-refresh="refresh()">
-        </ion-refresher>
+
         {{getCount().count}}
+
         <ion-list ng-repeat="tweet in tweets" class="list card stable-bg">
+
             <!--- Tweet -->
             <ion-item class="item item-avatar">
               <img ng-src="{{tweet.avatar}}">
 
                 <h2>{{tweet.ownerUsername}}<p class="date">{{tweet.date | timeDistance}}</p></h2>
-                <p>
+                <p  ng-click="go('/tab/tweet/{{tweet.id}}')">
                     <!--<blockquote style="padding-top: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align: justify;"></blockquote>-->
                     {{tweet.content}}
                 </p>
 
-                <div class="btnFeed">
-                    <button ng-class="tweet.userLikedTweet ? 'button button-small button-royal' : 'button button-small button-outline button-balanced'" ng-click="like({{$index}})">
-                        {{tweet.likes}}
-                        <i class="ion-ios7-star"></i></a>
-                    </button>
-                    <button class="button button-small button-balanced button-outline" ng-click="go('/tab/tweet/{{tweet.id}}')">
-                        {{tweet.comments}}
-                        <i class="ion-chatboxes"></i></a>
-                    </button>
-                </div>
+              
             </ion-item>
         </ion-list>
         <ion-infinite-scroll
@@ -47,7 +37,7 @@
                     <span class="input-label">What's Happening</span>
                 <input type="text" placeholder="Type your twitt" ng-model="newTweet.content" required/>
                 </label>
-           
+
   <button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
                         data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
 Send

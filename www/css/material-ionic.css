@@ -254,7 +254,6 @@ a.waves-effect .waves-ripple {
 }
 .ionic .assertive-bg {
     background-color: #ef4e3a;
-
 }
 .ionic .assertive-border {
     border-color: #cc2311;
@@ -641,24 +640,12 @@ a.waves-effect .waves-ripple {
     text-align: center;
     width: 100%;
 }
-.ionic .mottocontent {
-    bottom: 0;
-    text-align: center;
-    width: 100%;
-    position: inherit;
-
-}
 .ionic .hero.no-header {
     height: 244px;
 }
-/** Removed below
-bottom: 0;
-position: inherit;
-so as to postion the logo in the middle of the app
-**/
 .ionic .hero > .content {
     bottom: 0;
-    position: relative;
+    position: absolute;
     text-align: center;
     width: 100%;
     z-index: 1;
@@ -678,18 +665,10 @@ so as to postion the logo in the middle of the app
 .ionic .hero h1 .ionic .hero h2, .ionic .hero h3, .ionic .hero h4, .ionic .hero h5, .ionic .hero h6 {
     color: #fff;
     margin: 0;
-
 }
 .ionic .hero h4 {
     color: rgba(255, 255, 255, 0.7);
     margin: 3px 0 16px;
-}
-.ionic .hero h3 {
-    font-size: 16px;
-    font-family: fantasy;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 3px 0 13px;
-    color: green;
 }
 .ionic .hero h1 > a, .ionic .hero h2 > a, .ionic .hero h3 > a, .ionic .hero h4 > a, .ionic .hero h5 > a, .ionic .hero h6 > a {
     text-decoration: none;

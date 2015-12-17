@@ -9,7 +9,7 @@
         <form novalidate="novalidate" name="registerForm">
             <div class="list list-inset">
                 <label class="item item-input">
-                    <i class="icon ion-ios7-person"></i>
+                    <i class="icon ion-ios-person"></i>
                     <input type="text" placeholder="Username" name="username" ng-model="registration.username" required>
                 </label>
                 <label class="item item-input">
@@ -17,10 +17,16 @@
                     <input type="email" placeholder="E-mail" name="email" ng-model="registration.email" required>
                 </label>
                 <label class="item item-input">
-                    <i class="icon ion-ios7-locked"></i>
-                    <input type="password" placeholder="Password" name="password" ng-model="registration.password"
+                    <i class="icon ion-ios-locked"></i>
+                    <input type="{{inputType}}" placeholder="Password" name="password" ng-model="registration.password"
                            required>
+
                 </label>
+                <ion-toggle ng-model="passwordCheckbox" toggle-class="toggle-calm" ng-click="hideShowPassword()" >Show password</ion-toggle>
+
+             <div>
+
+     </div>
             </div>
             <div class="padding">
                 <h3>Choose your avatar<small>&nbsp;(Custom Avatars coming soon)</small></h3>
@@ -44,15 +50,16 @@
                         <img ng-src="img/avatar/{{i}}.png" ng-click="$parent.avatar.id={{i}}" ng-class="$parent.avatar.id==={{i}} ? 'avatar-active':''"/>
                     </div>
                 </div>
+                <!--
 <div class="item item-checkbox">
                     <label class="checkbox">
                         <input type="checkbox" ng-model="regestration.terms" required>
                     </label>
-                   <a href="">                    
+                   <a href="">
                        I read the terms &amp; conditions.
 
                      </a>
-                </div>
+                </div> -->
                 <button ng-disabled="!registerForm.$valid || !avatar.id" ng-click="register()"
                         class="button button-full button-flat button-positive icon-left ion-outlet">
                     Register

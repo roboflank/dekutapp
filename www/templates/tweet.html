@@ -1,5 +1,5 @@
 <div  class="ionic">
-    <ion-view title="Tweet Detail">
+    <ion-view title="Twitt Detail">
     <ion-content class="ionic" padding="false">
         <ion-item class="item-avatar-left">
             <img ng-src="{{tweet.avatar}}">
@@ -9,9 +9,10 @@
                             {{tweet.content}}
 
             </div>
-            </div>
             
-           
+            </div>
+
+
         </ion-item>
 
         <h4 style="margin-left: 10px">Comments</h4>
@@ -37,7 +38,7 @@
                     <span class="input-label">Type Your Comment</span>
                 <input type="text" placeholder="Type your comment" ng-model="newComment.content" required/>
                 </label>
-           
+
   <button ng-disabled="!commentForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
                         data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveComment()">
 Comment

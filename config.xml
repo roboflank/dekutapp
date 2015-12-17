@@ -1,21 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.dekutapp.dekutapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.dekutapp.dekutapp" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>DekutApp</name>
   <description>
-        School App for Dedan Kimathi University.
+    Student Companion App for Dedan Kimathi University
     </description>
   <author email="denzjoseph@gmail.com" href="https://twitter.com/denzelwamburu">
       Denzel Wamburu + Thomas Muhika
     </author>
   <content src="index.html"/>
   <access origin="*"/>
-        <allow-intent href="*.firebaseio.com" />
-    <allow-intent href="auth.firebase.com" />
+  <allow-intent href="*.firebaseio.com"/>
+  <allow-intent href="auth.firebase.com"/>
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="BackupWebStorage" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="3000"/>
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>
+  <platform name="android">
+    <icon src="resources/android/icon/96.png" density="ldpi"/>
+    <icon src="resources/android/icon/96.png" density="mdpi"/>
+    <icon src="resources/android/icon/96.png" density="hdpi"/>
+    <icon src="resources/android/icon/96.png" density="xhdpi"/>
+    <icon src="resources/android/icon/96.png" density="xxhdpi"/>
+    <icon src="resources/android/icon/96.png" density="xxxhdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="land-ldpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="land-mdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="land-hdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="land-xhdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="land-xxhdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="land-xxxhdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="port-ldpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="port-mdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="port-hdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="port-xhdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="port-xxhdpi"/>
+    <splash src="resources/android/splash/splash-720by1280.png" density="port-xxxhdpi"/>
+  </platform>
 </widget>

@@ -8,7 +8,7 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
 
         $scope.show = function(message) {
             $ionicLoading.show({
-                template: '<div class="ionic loader"><svg class="circular"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Regestering,Please Wait...</div>'
+                template: '<div class="ionic loader"><svg class="path"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div> <div>Registering,Please Wait...</div>'
             });
         };
 
@@ -20,6 +20,22 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
          * if you want to use them in the controller. This seems to be a bug with
          * ionic creating a child scope for the ion-content directive
          */
+         // Set the default value of inputType
+            $scope.inputType = 'password';
+
+            // Hide & show password function
+            $scope.hideShowPassword = function(){
+              if ($scope.inputType == 'password')
+                $scope.inputType = 'text';
+              else
+                $scope.inputType = 'password';
+            };
+
+
+           $scope.registration = {};
+           $scope.avatar = {};
+
+
         $scope.registration = {};
         $scope.avatar = {};
 
@@ -51,6 +67,7 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                     Avatar.create({url: res.avatar, ownerId: res.id})
                         .$promise
                         .then(function (res) {
+                            $scope.hide();
                             /**
                              * Sign in new user
                              */
@@ -70,6 +87,8 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                             console.log(err);
                         })
                 }, function (err) {
+                  $scope.hide();
+
                     $scope.registerError = err;
                     $scope.showAlert(err.statusText, err.data.error.message);
                 });
@@ -91,4 +110,17 @@ angular.module('dekutapp.register', ['lbServices', 'ionic'])
                 console.log($scope.loginError);
             });
         };
+
+/**
+        // Set the default value of inputType
+        $scope.inputType = 'password';
+
+        // Hide & show password function
+        $scope.hideShowPassword = function(){
+          if ($scope.inputType == 'password')
+            $scope.inputType = 'text';
+          else
+            $scope.inputType = 'password';
+        };
+        **/
     });
