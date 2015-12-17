@@ -95,6 +95,7 @@ PushbotsPlugin.initializeiOS('55ed935e177959a0098b4567');
         } else {
             console.log("Google Analytics Unavailable");
         }
+        
     });
 
 
