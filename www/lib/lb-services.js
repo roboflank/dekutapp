@@ -1,14 +1,11 @@
 (function (window, angular, undefined) {
     'use strict';
 
-<<<<<<< HEAD
- var urlBase = "http://104.131.160.166:8000/api"; 
+ var urlBase = "http://107.170.141.10:3000/api";
     // var urlBase = "http://localhost:8000/api";
-    
-=======
+
   //var urlBase = "https://dkutappserver.herokuapp.com/api";
- var urlBase = "http://localhost:8000/api";
->>>>>>> master
+ //var urlBase = "http://localhost:8000/api";
 
     var authHeader = 'authorization';
 

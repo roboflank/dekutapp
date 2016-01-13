@@ -5,7 +5,7 @@
     "ionic": "driftyco/ionic-bower#v1.0.1"
   },
   "dependencies": {
-    "ionic": "driftyco/ionic-bower#v1.0.1",
+    "ionic": "~1.2.4",
     "angular-resource": "~1.4.3",
     "angularfire": "~1.1.2",
     "firebase": "~2.2.7",
