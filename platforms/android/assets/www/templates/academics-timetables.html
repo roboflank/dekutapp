@@ -1,0 +1,37 @@
+
+<ion-view ng-controller="TimetableNotificationCtrl" class="ionic walkthrough-view">
+              <ion-nav-bar class="ionic bar bar-header bar-positive" style="position: static;">
+                <h1 class="title">Lectures Timetable</h1>
+
+    <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+    </ion-nav-back-button>
+
+</ion-nav-bar>
+    <ion-content class="has-header">
+  <div class="top-content row">
+
+      <div class="col col-center">
+        <h2 class="title">Your Class TimeTable Will Appear</h2>
+      <small>Click on Add Notification Button To Add A Reminder in one minute</small>
+                <small>Click is Schedule To check if notification is added</small>
+
+        </div>
+
+    </div>
+
+
+<div class="padding">
+
+    <button class="button button-flat button-energized icon-left ion-calendar button-full" ng-click="add()">Add notification</button>
+    <button class="button button-flat button-energized icon-left ion-clock button-full" ng-click="isScheduled()">Is Scheduled</button>
+
+        </div>
+
+
+
+    </ion-content>
+    <a href="#/academics">
+                <button class="button button-fab button-fab-bottom-right button-assertive icon ion-home waves-effect waves-button waves-light"></button>
+
+    </a>
+</ion-view>

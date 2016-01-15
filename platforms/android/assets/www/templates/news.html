@@ -1,0 +1,16 @@
+   <ion-pane class="ionic">
+            <ion-header-bar class="ionic bar bar-header bar-positive">
+                <h1 class="title">Dekut Latest News</h1>
+              <a href="#/tab/home"> <button class="button icon ion-navicon"></button>
+</a>
+
+            </ion-header-bar>
+            <ion-content ng-controller="FeedController" ng-init="init()">
+                <div class="list">
+                   <a ng-repeat="entry in entries" class="item" ng-click="browse(entry.link)">
+    <b>{{entry.title}}</b><br>
+    <span ng-bind-html="entry.contentSnippet"></span>
+</a>
+                </div>
+            </ion-content>
+        </ion-pane>

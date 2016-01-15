@@ -1,0 +1,63 @@
+<div  class="ionic">
+    <ion-view title="Twitt Detail">
+    <ion-content class="ionic" padding="false">
+        <ion-item class="item-avatar-left">
+            <img ng-src="{{tweet.avatar}}">
+            <h2>{{tweet.ownerUsername}}<p class="date">{{tweet.date | timeDistance}}</p></h2>
+           <div class="card">
+            <div class="item item-text-wrap">
+                            {{tweet.content}}
+
+            </div>
+            
+            </div>
+
+
+        </ion-item>
+
+        <h4 style="margin-left: 10px">Comments</h4>
+        <div class="list card">
+            <div ng-repeat="comment in comments" class="item item-avatar" style="padding-top: 10px; padding-bottom:10px;">
+                <img ng-src="{{comment.avatar}}">
+                <h2>{{comment.username}}<p class="date">{{comment.date | timeDistance}}</p></h2>
+                <p>{{comment.content}}</p>
+            </div>
+
+        </div>
+
+    </ion-content>
+          <script id="newcomment.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <header class="bar bar-header bar-positive flat">
+      <h1 class="title fab-left">Add a Comment</h1>
+      <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+   </header>
+   <ion-content class="padding has-header">
+    <form novalidate="novalidate" name="commentForm">
+         <label class="item item-input item-floating-label">
+                    <span class="input-label">Type Your Comment</span>
+                <input type="text" placeholder="Type your comment" ng-model="newComment.content" required/>
+                </label>
+
+  <button ng-disabled="!commentForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+                        data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveComment()">
+Comment
+                    </button>
+       </form>
+
+   </ion-content>
+            </ion-modal-view>
+        </script>
+ <button class="button button-fab button-fab-bottom-right button-balanced icon ion-chatbox waves-effect waves-button waves-light" ng-click="openModal()"></button>
+   <!-- <form novalidate="novalidate" name="commentForm">
+        <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="Type your comment" ng-model="newComment.content" required/>
+            </label>
+            <button ng-disabled="!commentForm.$valid" class="button button-small button-calm ink" ng-click="saveComment()">
+                Comment
+            </button>
+        </ion-footer-bar>
+    </form> -->
+</ion-view>
+</div>

@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dekutapp.dekutapp" version="1.1.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="SocialSharing">
+        <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+    </feature>
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+    </feature>
+    <feature name="Calendar">
+        <param name="android-package" value="nl.xservices.plugins.Calendar" />
+    </feature>
+    <feature name="Sms">
+        <param name="android-package" value="com.cordova.plugins.sms.Sms" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="PushPlugin">
+        <param name="android-package" value="com.plugin.gcm.PushPlugin" />
+    </feature>
+    <feature name="OneSignalPush">
+        <param name="android-package" value="com.plugin.gcm.OneSignalPush" />
+    </feature>
+    <feature name="PushbotsPlugin">
+        <param name="android-package" value="com.pushbots.plugin.PushbotsPlugin" />
+    </feature>
+    <feature name="EmailComposer">
+        <param name="android-package" value="de.appplant.cordova.emailcomposer.EmailComposer" />
+    </feature>
+    <icon density="ldpi" src="resources/android/icon/96.png" />
+    <icon density="mdpi" src="resources/android/icon/96.png" />
+    <icon density="hdpi" src="resources/android/icon/96.png" />
+    <icon density="xhdpi" src="resources/android/icon/96.png" />
+    <icon density="xxhdpi" src="resources/android/icon/96.png" />
+    <icon density="xxxhdpi" src="resources/android/icon/96.png" />
+    <splash density="land-ldpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="land-mdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="land-hdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="land-xhdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="land-xxhdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="land-xxxhdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="port-ldpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="port-mdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="port-hdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="port-xhdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="port-xxhdpi" src="resources/android/splash/splash-720by1280.png" />
+    <splash density="port-xxxhdpi" src="resources/android/splash/splash-720by1280.png" />
+    <name>DekutApp</name>
+    <description>
+    Student Companion App for Dedan Kimathi University
+    </description>
+    <author email="denzjoseph@gmail.com" href="https://twitter.com/denzelwamburu">
+      Denzel Wamburu + Thomas Muhika
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="*.firebaseio.com" />
+    <allow-intent href="auth.firebase.com" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="3000" />
+</widget>

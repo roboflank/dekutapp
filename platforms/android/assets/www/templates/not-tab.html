@@ -1,0 +1,25 @@
+   <ion-content class="ionic has-header" scroll="true" title="Notices">
+
+
+        <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{notice._id}}">
+
+            <p class="item item-divinder title">{{notice.title}}</p>
+            <div class="item item-body">
+                {{notice.content}}
+                <h4>By {{notice.user.displayName}}</h4>
+
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+               <a class="tab-item" ng-click="addToCalender()">
+                    <i class="icon icon-left ion-calendar"></i>
+                    Add
+                </a>
+                <a class="tab-item" ng-click="shareNative()">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>
+        </ion-item>
+
+
+    </ion-content>

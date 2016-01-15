@@ -1,0 +1,330 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.cordova.plugins.sms.Sms\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"PushPlugin\"><param name=\"android-package\" value=\"com.plugin.gcm.PushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"android-package\" value=\"com.plugin.gcm.OneSignalPush\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.emailcomposer.EmailComposer\" /></feature>",
+                            "count": 1
+                        }
+                    ],
+                    "/widget": [
+                        {
+                            "xml": "<feature name=\"PushbotsPlugin\"><param name=\"android-package\" value=\"com.pushbots.plugin.PushbotsPlugin\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_CALENDAR\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_CALENDAR\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.SEND_SMS\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.google.android.c2dm.permission.RECEIVE\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<permission android:name=\"com.dekutapp.dekutapp.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"com.dekutapp.dekutapp.permission.C2D_MESSAGE\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<activity android:exported=\"true\" android:name=\"com.plugin.gcm.PushHandlerActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.plugin.gcm.CordovaGCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.dekutapp.dekutapp\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.plugin.gcm.GCMIntentService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<amazon:enable-feature android:name=\"com.amazon.device.messaging\" android:required=\"false\" xmlns:amazon=\"http://schemas.amazon.com/apk/res/android\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:exported=\"false\" android:name=\"com.onesignal.ADMMessageHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.onesignal.ADMMessageHandler$Receiver\" android:permission=\"com.amazon.device.messaging.permission.SEND\"><intent-filter><action android:name=\"com.amazon.device.messaging.intent.REGISTRATION\" /><action android:name=\"com.amazon.device.messaging.intent.RECEIVE\" /><category android:name=\"com.dekutapp.dekutapp\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.pushbots.google.gcm.GCMBroadcastReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><action android:name=\"com.google.android.c2dm.intent.REGISTRATION\" /><category android:name=\"com.dekutapp.dekutapp\" /></intent-filter></receiver>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.pushbots.plugin.PushHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<receiver android:name=\"com.pushbots.push.DefaultPushHandler\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<service android:name=\"com.pushbots.push.GCMIntentService\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.google.android.gms.version\" android:value=\"@integer/google_play_services_version\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*/application/activity": [
+                        {
+                            "xml": "<intent-filter><action android:name=\"com.dekutapp.dekutapp.MESSAGE\" /><category android:name=\"android.intent.category.DEFAULT\" /></intent-filter>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "com.cordova.plugins.sms": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-plugin-android-support-v4": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "pushbots-cordova-plugin": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "de.appplant.cordova.plugin.email-composer": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-android-support-v13": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        },
+        "cordova-google-play-services": {
+            "PACKAGE_NAME": "com.dekutapp.dekutapp"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "pluginId": "cordova-plugin-x-socialsharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/network.js",
+            "id": "cordova-plugin-network-information.network",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "navigator.connection",
+                "navigator.network.connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-network-information/www/Connection.js",
+            "id": "cordova-plugin-network-information.Connection",
+            "pluginId": "cordova-plugin-network-information",
+            "clobbers": [
+                "Connection"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+            "id": "cordova-plugin-calendar.Calendar",
+            "pluginId": "cordova-plugin-calendar",
+            "clobbers": [
+                "Calendar"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-calendar/test/tests.js",
+            "id": "cordova-plugin-calendar.tests",
+            "pluginId": "cordova-plugin-calendar"
+        },
+        {
+            "file": "plugins/com.cordova.plugins.sms/www/sms.js",
+            "id": "com.cordova.plugins.sms.Sms",
+            "pluginId": "com.cordova.plugins.sms",
+            "clobbers": [
+                "window.sms"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-whitelist/whitelist.js",
+            "id": "cordova-plugin-whitelist.whitelist",
+            "pluginId": "cordova-plugin-whitelist",
+            "runs": true
+        },
+        {
+            "file": "plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js",
+            "id": "com.phonegap.plugins.PushPlugin.PushNotification",
+            "pluginId": "com.phonegap.plugins.PushPlugin",
+            "clobbers": [
+                "PushNotification"
+            ]
+        },
+        {
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
+        },
+        {
+            "file": "plugins/pushbots-cordova-plugin/www/pushbots.js",
+            "id": "pushbots-cordova-plugin.PushbotsPlugin",
+            "pluginId": "pushbots-cordova-plugin",
+            "clobbers": [
+                "PushbotsPlugin"
+            ]
+        },
+        {
+            "file": "plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js",
+            "id": "de.appplant.cordova.plugin.email-composer.EmailComposer",
+            "pluginId": "de.appplant.cordova.plugin.email-composer",
+            "clobbers": [
+                "cordova.plugins.email",
+                "plugin.email"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-x-socialsharing": "5.0.9",
+        "cordova-plugin-network-information": "1.1.0",
+        "cordova-plugin-calendar": "4.4.6",
+        "cordova-plugin-geolocation": "1.0.1",
+        "com.cordova.plugins.sms": "0.1.2",
+        "cordova-plugin-console": "1.0.2",
+        "cordova-plugin-whitelist": "1.2.0",
+        "com.phonegap.plugins.PushPlugin": "2.5.0",
+        "onesignal-cordova-plugin": "1.10.1",
+        "cordova-plugin-android-support-v4": "21.0.1",
+        "pushbots-cordova-plugin": "1.3.0",
+        "de.appplant.cordova.plugin.email-composer": "0.8.3dev",
+        "cordova-android-support-v13": "13.0.0",
+        "cordova-google-play-services": "25.0.0"
+    }
+}
