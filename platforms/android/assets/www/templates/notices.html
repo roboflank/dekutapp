@@ -1,0 +1,187 @@
+<ion-view class="ionic">
+    <ion-side-menus>
+
+        <ion-side-menu-content>
+
+<ion-header-bar class="ionic bar bar-header bar-positive item-input-inset" style="position: static;">
+        <button ng-controller="NavCtrl" class="button icon ion-navicon"  ng-click="showMenu()"></button>
+
+        <ion-nav-back-button class="ionic button-icon ion-arrow-left-c">
+        </ion-nav-back-button>
+ <div class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input id="searchKey" type="search" placeholder="Search The Notice Board" ng-model="search"
+               autocorrect="off" ng-change="setFilter()">
+      </div>
+    </ion-header-bar>
+<label class="ionic bar bar-subheader bar-positive" style="position: static;">
+              <div class="pull-left">
+                  <em class="title">Sort By</em>
+              </div>
+    <div class="pull-right">
+    <select ng-model="field">
+                  <option value="all" ng-selected="true" selected>All</option>
+                  <option value="title">Title</option>
+                <option value="type">Type</option>
+                  <option value="displayName">User</option>
+                  <option value="content">Content</option>
+                  <option value="date">Date</option>
+
+              </select>
+    </div>
+              
+          </label>
+    <ion-content class="ionic has-subheader" scroll="true">
+
+
+        <ion-item ng-repeat="notice in notices | filter:search | orderBy: field" type="item-text-wrap" class="list card padding stable-bg" href="#/notices/{{notice._id}}">
+
+            <p class="item item-divinder title">{{notice.title}}</p>
+            <div class="item item-body">
+                {{notice.content}}
+                <h4>By {{notice.user.displayName}}</h4>
+
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+               <a class="tab-item" ng-click="addToCalender()">
+                    <i class="icon icon-left ion-calendar"></i>
+                    Add
+                </a>
+                <a class="tab-item" ng-click="shareNative()">
+                    <i class="icon ion-share"></i>
+                    Share
+                </a>
+            </div>
+        </ion-item>
+
+
+    </ion-content>
+    <div ng-controller="ExtensionsCtrl"><button class="button button-fab button-fab-bottom-right button-assertive icon ion-plus waves-effect waves-button waves-light" ng-click="openModal()"></button></div>
+       <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <ion-header-bar>
+                    <h1 class="title">Notice Board Instructions</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                Click on a Notice to view More Content.
+                    <p></p>
+                    Post A Notice Here.
+                    <p> Login to this site (<a href="http://104.131.160.166:3000/notices/create">DekutApp Site</a> and create your notice which will appear automatically here in the Notice Board section.
+
+                </ion-content>
+            </ion-modal-view>
+        </script>
+     </ion-side-menu-content>
+
+        <ion-side-menu side="left" ng-controller="HomeTabCtrl">
+          <ion-header-bar class="bar bar-header bar-positive">
+            <h1 class="title">Panel</h1>
+          </ion-header-bar>
+          <ion-content has-header="true" class="ionic">
+              <div class="list ionic">
+              <a class="item item-avatar" href="#/tab/account">
+                    <img ng-src="{{currentUser.avatar}}">
+                    <h2>Hi @<b>{{currentUser.username}}</b></h2>
+                    <p>Welcome Back</p>
+                </a>
+            <ul class="ionic">
+                <div class="item item-divider">
+                      Home
+                </div>
+                <li>
+
+                <a class="item item-icon-right" menu-close nav-clear href="#/tab/home" >
+                    <i class="icon ion-mic-b"></i>
+                   <h2 class="menu-text">What's Happening</h2> </a>
+              </li>
+
+              <li>
+                <a class="item item-icon-right" menu-close href="#/articles">
+        <i class="icon ion-radio-waves"></i>
+                   <h2 class="menu-text">News</h2>
+
+                 </a>
+              </li>
+
+                 <li>
+                <a class="item item-icon-right" menu-close href="#/notices">
+        <i class="icon ion-clipboard"></i>
+                   <h2 class="menu-text">Notices</h2>
+
+                 </a>
+              </li>
+                <div class="item item-divider">
+                     Academics
+                </div>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/elibrary">
+                    <i class="icon ion-laptop"></i>
+                   <h2 class="menu-text">Elibrary</h2> </a>
+              </li>
+                <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/academics/reminders">
+                    <i class="icon ion-clock"></i>
+                   <h2 class="menu-text">Reminders</h2> </a>
+              </li>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/academics">
+                    <i class="icon ion-more"></i>
+                   <h2 class="menu-text">More...</h2> </a>
+              </li>
+                <div class="item item-divider">
+                     E-Learning Portal
+                </div>
+                 <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/tour">
+                    <i class="icon">
+
+                    <span class="icon badge badge-assertive">Coming Soon</span>
+
+                    </i>
+                     </a>
+              </li>
+                <div class="item item-divider">
+                     School
+                </div>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/tour">
+                    <i class="icon ion-map"></i>
+                   <h2 class="menu-text">Take A Tour</h2> </a>
+              </li>
+              <li>
+                <a class="item item-icon-right" nav-clear menu-close href="#/eservices">
+                    <i class="icon ion-help-buoy"></i>
+                   <h2 class="menu-text">E-Services</h2> </a>
+              </li>
+                <div class="item item-divider">
+                      Account
+                </div>
+                <li>
+                <a class="item item-icon-right" menu-close href="#/tab/account">
+                  <i class="icon ion-person"></i>
+                   <h2 class="menu-text">My Profile</h2> </a>
+              </li>
+                <li>
+                <a class="item item-icon-right" menu-close ng-click="logout()">
+                    <i class="icon ion-log-out"></i>
+                 <h2 class="menu-text">Logout</h2> </a>
+
+              </li>
+                 <li>
+                <a class="item item-icon-right" menu-close href="#/about/feedback">
+                    <i class="icon ion-email"></i>
+                 <h2 class="menu-text">FeedBack</h2> </a>
+
+              </li>
+ <div class="item item-divider">
+                </div>
+
+            </ul>
+              </div>
+          </ion-content>
+        </ion-side-menu>
+
+
+      </ion-side-menus>
+
+</ion-view>

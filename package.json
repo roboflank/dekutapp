@@ -34,7 +34,19 @@
       "locator": "https://github.com/cordova-sms/cordova-sms-plugin.git",
       "id": "com.cordova.plugins.sms"
     },
-    "cordova-plugin-console"
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    {
+      "locator": "https://github.com/phonegap-build/PushPlugin.git",
+      "id": "com.phonegap.plugins.PushPlugin"
+    },
+    "add",
+    "com.pushbots.push",
+    "onesignal-cordova-plugin",
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-email-composer.git",
+      "id": "de.appplant.cordova.plugin.email-composer"
+    }
   ],
   "cordovaPlatforms": [
     "android"

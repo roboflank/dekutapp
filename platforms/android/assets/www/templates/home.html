@@ -1,0 +1,52 @@
+<div class="ionic">
+<ion-view title="What's Happening">
+
+    <ion-content padding="false">
+
+        {{getCount().count}}
+
+        <ion-list ng-repeat="tweet in tweets" class="list card stable-bg">
+
+            <!--- Tweet -->
+            <ion-item class="item item-avatar">
+              <img ng-src="{{tweet.avatar}}">
+
+                <h2>{{tweet.ownerUsername}}<p class="date">{{tweet.date | timeDistance}}</p></h2>
+                <p  ng-click="go('/tab/tweet/{{tweet.id}}')">
+                    <!--<blockquote style="padding-top: 0px; padding-bottom: 0px; margin-bottom: 0px; text-align: justify;"></blockquote>-->
+                    {{tweet.content}}
+                </p>
+
+              
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+                ng-if="!noMoreTweets"
+                on-infinite="loadMore()">
+        </ion-infinite-scroll>
+    </ion-content>
+       <script id="newtweet.html" type="text/ng-template">
+            <ion-modal-view class="ionic">
+                <header class="bar bar-header bar-positive flat">
+      <h1 class="title fab-left">New Twitt</h1>
+      <button class="button button-icon icon ion-close-round flat pull-left" ng-click="close()"></button>
+   </header>
+   <ion-content class="padding has-header">
+                <form novalidate="novalidate" name="tweetForm">
+         <label class="item item-input item-floating-label">
+                    <span class="input-label">What's Happening</span>
+                <input type="text" placeholder="Type your twitt" ng-model="newTweet.content" required/>
+                </label>
+
+  <button ng-disabled="!tweetForm.$valid" class="button button-full button-positive icon-left ion-paper-airplane"
+                        data-ink-color="#9DEAFF" data-ink-opacity="1" ng-click="saveTweet()">
+Send
+                    </button>
+       </form>
+
+   </ion-content>
+            </ion-modal-view>
+        </script>
+ <button class="button button-fab button-fab-bottom-right button-assertive icon ion-edit waves-effect waves-button waves-light" ng-click="openModal()"></button>
+</ion-view>
+</div>

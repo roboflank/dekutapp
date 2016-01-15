@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "ionic": "~1.2.4",
-    "angular-resource": "~1.4.3",
+    "angular-resource": "~1.4.8",
     "angularfire": "~1.1.2",
     "firebase": "~2.2.7",
     "ionic-datepicker": "~0.6.0"
