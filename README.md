@@ -1,6 +1,8 @@
 
 # Getting Started
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/denzelwamburu/dekutapp.svg)](https://greenkeeper.io/)
+
 ## Dependencies
 You will need to install some stuff, if you haven't already:
 
